@@ -19,4 +19,5 @@ node_modules/
 
 # Collector deploy config (contains account ids)
 collector/wrangler.toml
-collector/.wrangler/
+# Wrangler caches (account ids) anywhere in the repository
+.wrangler/
