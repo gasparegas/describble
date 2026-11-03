@@ -1,0 +1,15 @@
+{
+  "about": "Words people wrote that Scribble does not understand yet. 'todo' words wait for a synonym or a new piece; 'skip' words are left out on purpose. A test keeps this list honest: when a word gets understood, remove it from here.",
+  "words": [
+    { "word": "astronauta", "lang": "it", "status": "todo", "note": "needs a space helmet piece" },
+    { "word": "astronaut", "lang": "en", "status": "todo", "note": "needs a space helmet piece" },
+    { "word": "influencer", "lang": "it", "status": "todo", "note": "no visual meaning yet; maybe phone in hand" },
+    { "word": "neon", "lang": "en", "status": "todo", "note": "colour with no obvious hue on its own" },
+    { "word": "fluo", "lang": "it", "status": "todo", "note": "colour with no obvious hue on its own" },
+    { "word": "fishnet", "lang": "en", "status": "todo", "note": "needs a mesh pattern for clothes" },
+    { "word": "sunburn", "lang": "en", "status": "todo", "note": "could be a red-cheeks skin detail" },
+    { "word": "scottatura", "lang": "it", "status": "todo", "note": "could be a red-cheeks skin detail" },
+    { "word": "kippah", "lang": "en", "status": "todo", "note": "needs a small cap piece, drawn respectfully" },
+    { "word": "sombrero", "lang": "it", "status": "skip", "note": "easily turns into an ethnic stereotype on its own" }
+  ]
+}
