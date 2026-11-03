@@ -2,6 +2,7 @@
 // and dist/chat.html (the earlier chat with Enter, kept for comparison and debugging pages),
 // that work from disk or GitHub Pages.
 // The modules stay ES modules for the Node tests; import and export are stripped here.
+import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -273,3 +274,31 @@ ${script}
 const live = site(siteScript);
 writeFileSync(join(here, 'dist', 'index.html'), live);
 console.log(`ok: dist/index.html (${(live.length / 1024).toFixed(0)} KB${links.repo ? '' : ', no repo link yet'})`);
+
+// ---------- what gets published: dist/site/ (Cloudflare Pages or GitHub Pages) ----------
+// A strict Content Security Policy: only our own inline script and style (by hash) may run,
+// fonts and images come from data:/blob: URLs, and the only address the page may contact
+// is the optional word-report collector.
+const hashOf = (text) => `'sha256-${createHash('sha256').update(text).digest('base64')}'`;
+const inline = (tag) => live.match(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`))[1];
+const reportOrigin = process.env.DESCRIBBLE_REPORT_ENDPOINT ? new URL(process.env.DESCRIBBLE_REPORT_ENDPOINT).origin : "'none'";
+const csp = [
+  "default-src 'none'",
+  `script-src ${hashOf(inline('script'))}`,
+  `style-src ${hashOf(inline('style'))}`,
+  'img-src data: blob:',
+  'font-src data:',
+  `connect-src ${reportOrigin}`,
+  "base-uri 'none'",
+  "form-action 'none'",
+].join('; ');
+const headers = `/*
+  Content-Security-Policy: ${csp}
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+`;
+mkdirSync(join(here, 'dist', 'site'), { recursive: true });
+writeFileSync(join(here, 'dist', 'site', 'index.html'), live);
+writeFileSync(join(here, 'dist', 'site', '_headers'), headers);
+console.log('ok: dist/site/ (index.html and _headers, ready to publish)');

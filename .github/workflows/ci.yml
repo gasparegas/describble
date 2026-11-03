@@ -49,13 +49,10 @@ jobs:
           DESCRIBBLE_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
           DESCRIBBLE_SUPPORT_URL: ${{ vars.DESCRIBBLE_SUPPORT_URL }}
           DESCRIBBLE_REPORT_ENDPOINT: ${{ vars.DESCRIBBLE_REPORT_ENDPOINT }}
-        run: |
-          node build.mjs
-          mkdir -p ../_site
-          cp dist/index.html ../_site/index.html
+        run: node build.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: app/dist/site
       - id: pages
         uses: actions/deploy-pages@v4

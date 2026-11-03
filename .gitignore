@@ -3,7 +3,6 @@
 
 # Build output
 app/dist/
-_site/
 
 # Editor and OS files
 .DS_Store
