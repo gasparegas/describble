@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Describble">
+  <!-- A face whose nose is a text cursor: writing turns into a drawing. Original mark, ink on paper. -->
+  <path d="M256 74 C150 70 72 150 76 262 C80 372 158 446 258 442 C362 438 440 362 436 254 C432 146 356 78 256 74 Z" fill="#f6efe1" stroke="#1b1b1f" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M176 206 L178 236 M336 202 L334 234" fill="none" stroke="#1b1b1f" stroke-width="34" stroke-linecap="round"/>
+  <path d="M232 170 L280 170 M256 172 L256 304 M232 306 L280 306" fill="none" stroke="#1b1b1f" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M172 340 C214 382 300 384 344 336" fill="none" stroke="#1b1b1f" stroke-width="28" stroke-linecap="round"/>
+</svg>

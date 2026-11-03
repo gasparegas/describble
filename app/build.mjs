@@ -3,7 +3,7 @@
 // that work from disk or GitHub Pages.
 // The modules stay ES modules for the Node tests; import and export are stripped here.
 import { createHash } from 'node:crypto';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -91,8 +91,11 @@ const siteScript = checked(bundle('live', ['site'])
 // so the page never asks a font service for it.
 const displayFont = readFileSync(join(here, 'assets', 'fonts', 'bricolage-grotesque-latin-750.woff2')).toString('base64');
 
-// An original favicon: a paper disc with two ink eyes and a smile.
-const favicon = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#f6efe1"/><path d="M22 27v4M42 27v4M21 41c6 6 16 6 22 0" stroke="#1b1b1f" stroke-width="4" stroke-linecap="round" fill="none"/></svg>')}`;
+// The mark (app/assets/brand/mark.svg): a face whose nose is a text cursor. It is the favicon
+// and sits inline next to the wordmark; the PNG icons beside it are published as files.
+const markSvg = readFileSync(join(here, 'assets', 'brand', 'mark.svg'), 'utf8').replace(/<!--[\s\S]*?-->\s*/g, '').trim();
+const favicon = `data:image/svg+xml,${encodeURIComponent(markSvg)}`;
+const markInline = markSvg.replace('<svg ', '<svg class="mark" aria-hidden="true" ').replace(/ role="img" aria-label="Describble"/, '');
 
 const site = (script) => `<!doctype html>
 <html lang="en">
@@ -108,6 +111,12 @@ const site = (script) => `<!doctype html>
 <meta property="og:url" content="https://describble.com/">
 <link rel="canonical" href="https://describble.com/">
 <link rel="icon" href="${favicon}">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://describble.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Describble: a hand-drawn avatar appearing from a sentence">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 @font-face { font-family: "Bricolage Grotesque"; font-weight: 750; font-display: swap; src: url(data:font/woff2;base64,${displayFont}) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212; }
@@ -135,7 +144,8 @@ h1, h2 { text-wrap: balance; }
 
 header { position: absolute; inset: 0 0 auto; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px;
   max-width: var(--wide); margin: 0 auto; padding: 18px var(--gutter); }
-.wordmark { font-family: var(--display); font-weight: 750; font-size: 20px; letter-spacing: -.01em; text-decoration: none; }
+.wordmark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 750; font-size: 20px; letter-spacing: -.01em; text-decoration: none; }
+.mark { width: 30px; height: 30px; flex: none; }
 .tools { display: flex; align-items: center; gap: 6px; }
 .lang { border: 0; background: none; padding: 6px 8px; border-radius: 8px; color: var(--faint); cursor: pointer; }
 .lang[aria-pressed=true] { color: var(--text); background: var(--rule); }
@@ -205,7 +215,7 @@ footer p { margin: 0; max-width: 46em; }
 </style>
 <canvas id="lines" aria-hidden="true"></canvas>
 <header>
-  <a class="wordmark" href="#hero">Describble</a>
+  <a class="wordmark" href="#hero">${markInline}<span>Describble</span></a>
   <nav class="tools" aria-label="Language and project">
     <button class="lang" type="button" data-lang="en" aria-pressed="true">EN</button>
     <button class="lang" type="button" data-lang="it" aria-pressed="false">IT</button>
@@ -288,7 +298,7 @@ const csp = [
   "default-src 'none'",
   `script-src ${hashOf(inline('script'))}`,
   `style-src ${hashOf(inline('style'))}`,
-  'img-src data: blob:',
+  "img-src 'self' data: blob:",
   'font-src data:',
   `connect-src ${reportOrigin}`,
   "base-uri 'none'",
@@ -303,4 +313,8 @@ const headers = `/*
 mkdirSync(join(here, 'dist', 'site'), { recursive: true });
 writeFileSync(join(here, 'dist', 'site', 'index.html'), live);
 writeFileSync(join(here, 'dist', 'site', '_headers'), headers);
+// Icons and the social preview, rendered once from the mark (see app/assets/brand/README.md).
+for (const file of ['apple-touch-icon.png', 'og.png']) {
+  copyFileSync(join(here, 'assets', 'brand', file), join(here, 'dist', 'site', file));
+}
 console.log('ok: dist/site/ (index.html and _headers, ready to publish)');

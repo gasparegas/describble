@@ -1,3 +1,5 @@
+<img src="app/assets/brand/mark.svg" width="88" alt="">
+
 # Describble
 
 **Describe someone. Watch them get drawn.** Try it at **[describble.com](https://describble.com)**.
