@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: node --test test/
+      - run: node build.mjs
+
+  # The website is published only from main. Optional links come from repository
+  # variables (Settings → Secrets and variables → Actions → Variables), never from the code.
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Build the site
+        working-directory: app
+        env:
+          SCRIBBLE_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+          SCRIBBLE_SUPPORT_URL: ${{ vars.SCRIBBLE_SUPPORT_URL }}
+          SCRIBBLE_REPORT_ENDPOINT: ${{ vars.SCRIBBLE_REPORT_ENDPOINT }}
+        run: |
+          node build.mjs
+          mkdir -p ../_site
+          cp dist/index.html ../_site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: pages
+        uses: actions/deploy-pages@v4

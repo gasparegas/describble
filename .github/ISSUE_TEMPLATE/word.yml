@@ -1,0 +1,23 @@
+name: Word not understood
+description: Suggest a word or phrase Scribble should know.
+labels: [lexicon]
+body:
+  - type: input
+    id: word
+    attributes:
+      label: Word or phrase
+      placeholder: zaino / backpack
+    validations:
+      required: true
+  - type: dropdown
+    id: lang
+    attributes:
+      label: Language
+      options: [Italian, English]
+  - type: textarea
+    id: meaning
+    attributes:
+      label: What it should draw
+      description: An existing piece (for example "the same as beanie") or something new.
+    validations:
+      required: true
