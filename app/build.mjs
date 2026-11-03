@@ -105,6 +105,8 @@ const site = (script) => `<!doctype html>
 <meta property="og:title" content="Describble: free avatar maker from a sentence, no AI">
 <meta property="og:description" content="Type a description and get a hand-drawn avatar in seconds. No AI, no photo, no sign-up. Free and open source.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://describble.com/">
+<link rel="canonical" href="https://describble.com/">
 <link rel="icon" href="${favicon}">
 <style>
 @font-face { font-family: "Bricolage Grotesque"; font-weight: 750; font-display: swap; src: url(data:font/woff2;base64,${displayFont}) format("woff2");

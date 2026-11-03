@@ -1,6 +1,6 @@
 # Describble
 
-**Describe someone. Watch them get drawn.**
+**Describe someone. Watch them get drawn.** Try it at **[describble.com](https://describble.com)**.
 
 ![Typing "blond, cigarette in mouth, tired eyes, red beanie" draws the character live](docs/demo.gif)
 

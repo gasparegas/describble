@@ -18,7 +18,7 @@
 - [ ] One data file per piece with a schema checked at build time
 - [ ] Renderer that outputs an SVG string without a browser
 - [x] README demo GIF recorded from the app itself
-- [x] CI that runs the tests on every push and publishes the site to GitHub Pages from `main`
+- [x] CI that runs the tests on every push; the site deploys to describble.com on Cloudflare from `main`
 
 ## Then: growth
 
