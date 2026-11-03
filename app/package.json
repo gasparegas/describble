@@ -1,0 +1,14 @@
+{
+  "name": "scribble",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "description": "Hand-drawn avatars from a sentence, drawn live in the browser. No AI."
+}
