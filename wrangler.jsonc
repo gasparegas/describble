@@ -1,0 +1,11 @@
+// Cloudflare Workers configuration for the website: a static-assets-only Worker.
+// Cloudflare builds it from GitHub (build command: cd app && node build.mjs) and serves
+// app/dist/site, including its _headers file. The word collector has its own config in collector/.
+{
+  "name": "describble",
+  "compatibility_date": "2026-05-01",
+  "assets": {
+    "directory": "./app/dist/site",
+    "not_found_handling": "single-page-application"
+  }
+}
