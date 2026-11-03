@@ -1,5 +1,5 @@
 name: Word not understood
-description: Suggest a word or phrase Scribble should know.
+description: Suggest a word or phrase Describble should know.
 labels: [lexicon]
 body:
   - type: input

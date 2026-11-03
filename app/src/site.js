@@ -3,12 +3,12 @@
 import { createStage } from './stage.js';
 import { applyMessage, initialState, sceneFor } from './dialogue.js';
 
-// Filled in by build.mjs from SCRIBBLE_REPO_URL and SCRIBBLE_SUPPORT_URL; empty links stay hidden.
+// Filled in by build.mjs from DESCRIBBLE_REPO_URL and DESCRIBBLE_SUPPORT_URL; empty links stay hidden.
 export const SITE_LINKS = { repo: '', support: '' };
 
 export const siteCopy = {
   en: {
-    title: 'Scribble: hand-drawn avatars from a sentence',
+    title: 'Describble: free avatar maker from a sentence, no AI',
     headline: 'Describe someone. Watch them get drawn.',
     lede: 'Hand-drawn avatars from a sentence. No AI, no account, nothing to install.',
     inputLabel: 'Describe the character',
@@ -34,16 +34,16 @@ export const siteCopy = {
     suggest: 'Suggest a word',
     code: 'Read the code',
     supportTitle: 'Keep it free',
-    support: 'Scribble has no ads and no paid plan. If it made you smile, you can buy the drawings a coffee.',
+    support: 'Describble has no ads and no paid plan. If it made you smile, you can buy the drawings a coffee.',
     supportLink: 'Support on Ko-fi',
     privacy: 'Your sentence stays in your browser.',
     privacyReports: 'To grow the dictionary, single words it did not understand are counted anonymously. Never your sentence.',
     reports: (on) => `Word reports: ${on ? 'on' : 'off'}`,
     license: 'Code MIT, drawings CC0.',
-    noscript: 'Scribble draws with JavaScript. Turn it on to describe your character.',
+    noscript: 'Describble draws with JavaScript. Turn it on to describe your character.',
   },
   it: {
-    title: 'Scribble: avatar disegnati a mano da una frase',
+    title: 'Describble: crea il tuo avatar gratis da una frase, senza AI',
     headline: 'Descrivi qualcuno. Guardalo prendere forma.',
     lede: 'Avatar disegnati a mano da una frase. Niente AI, niente account, niente da installare.',
     inputLabel: 'Descrivi il personaggio',
@@ -69,13 +69,13 @@ export const siteCopy = {
     suggest: 'Suggerisci una parola',
     code: 'Leggi il codice',
     supportTitle: 'Tienilo gratis',
-    support: 'Scribble non ha pubblicità né piani a pagamento. Se ti ha strappato un sorriso, puoi offrire un caffè ai disegni.',
+    support: 'Describble non ha pubblicità né piani a pagamento. Se ti ha strappato un sorriso, puoi offrire un caffè ai disegni.',
     supportLink: 'Sostieni su Ko-fi',
     privacy: 'La tua frase resta nel tuo browser.',
     privacyReports: 'Per far crescere il dizionario, le singole parole che non ha capito vengono contate in forma anonima. Mai la frase.',
     reports: (on) => `Segnalazione parole: ${on ? 'attiva' : 'spenta'}`,
     license: 'Codice MIT, disegni CC0.',
-    noscript: 'Scribble disegna con JavaScript. Attivalo per descrivere il tuo personaggio.',
+    noscript: 'Describble disegna con JavaScript. Attivalo per descrivere il tuo personaggio.',
   },
 };
 
@@ -146,7 +146,7 @@ export async function copyText(text) {
 // Saved choice first, then the browser language; English for everyone else.
 export function pickSiteLanguage() {
   try {
-    const saved = localStorage.getItem('scribble-lang');
+    const saved = localStorage.getItem('describble-lang');
     if (saved === 'en' || saved === 'it') return saved;
   } catch {}
   return (navigator.language ?? 'en').toLowerCase().startsWith('it') ? 'it' : 'en';
@@ -154,7 +154,7 @@ export function pickSiteLanguage() {
 
 export function saveSiteLanguage(lang) {
   try {
-    localStorage.setItem('scribble-lang', lang);
+    localStorage.setItem('describble-lang', lang);
   } catch {}
 }
 

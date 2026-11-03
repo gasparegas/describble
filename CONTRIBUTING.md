@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping! Scribble grows through small, focused contributions: a missing word, a new language, a new hat.
+Thanks for helping! Describble grows through small, focused contributions: a missing word, a new language, a new hat.
 
 ## Setup
 
@@ -29,7 +29,7 @@ Most contributions are here. Open `app/src/lexicon.js`, find the trait and add t
 
 ## The word backlog
 
-`app/lexicon-backlog.json` keeps the words people wrote that Scribble does not understand yet, so they are not lost between releases. Each one is `todo` (waiting for a synonym or a new piece) or `skip` (left out on purpose, with the reason). Picking a `todo` word is a good first contribution.
+`app/lexicon-backlog.json` keeps the words people wrote that Describble does not understand yet, so they are not lost between releases. Each one is `todo` (waiting for a synonym or a new piece) or `skip` (left out on purpose, with the reason). Picking a `todo` word is a good first contribution.
 
 ## Reporting words it does not understand
 

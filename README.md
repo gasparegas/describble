@@ -1,18 +1,18 @@
-# Scribble
+# Describble
 
 **Describe someone. Watch them get drawn.**
 
 ![Typing "blond, cigarette in mouth, tired eyes, red beanie" draws the character live](docs/demo.gif)
 
-Scribble turns a sentence into a hand-drawn avatar while you type. Write `blond, cigarette in mouth, tired eyes` and a character appears on a round paper card, trembling while it figures you out, turning its head when something changes, settling when you stop. Download it, share the link, use it as your profile picture.
+Describble turns a sentence into a hand-drawn avatar while you type. Write `blond, cigarette in mouth, tired eyes` and a character appears on a round paper card, trembling while it figures you out, turning its head when something changes, settling when you stop. Download it, share the link, use it as your profile picture.
 
 No AI. No account. No ads. It all runs in your browser, in English or Italian. The only thing that can leave your browser is an anonymous count of single words it did not understand, so it can learn them, and one click turns that off. See [PRIVACY.md](PRIVACY.md).
 
-> Status: early, and growing fast. The name is a working title.
+> Status: early, and growing fast.
 
 ## Why
 
-Most avatar makers give you a random face or a long form of dropdowns. Scribble works like describing someone to a friend who draws:
+Most avatar makers give you a random face or a long form of dropdowns. Describble works like describing someone to a friend who draws:
 
 - **Just type.** The text box is the description. Delete a word and that piece disappears; `no glasses` works too.
 - **See it being drawn.** Lines tremble while you type and calm down when you pause. New pieces are traced stroke by stroke.
@@ -73,4 +73,4 @@ New words, new languages, new pieces and bug reports are all welcome. Adding a s
 - Drawn pieces and artwork: [CC0 1.0](LICENSE-ASSETS)
 - Website typeface: Bricolage Grotesque, [SIL Open Font License](app/assets/fonts/OFL.txt)
 
-Every piece is original. Scribble does not include or trace third-party artwork, logos or existing characters. See [CONTENT_POLICY.md](CONTENT_POLICY.md).
+Every piece is original. Describble does not include or trace third-party artwork, logos or existing characters. See [CONTENT_POLICY.md](CONTENT_POLICY.md).

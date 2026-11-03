@@ -1,6 +1,6 @@
 # Code of Conduct
 
-We want Scribble to be a friendly place for everyone, whatever their experience, background or identity.
+We want Describble to be a friendly place for everyone, whatever their experience, background or identity.
 
 ## Expected behaviour
 

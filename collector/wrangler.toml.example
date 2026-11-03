@@ -1,5 +1,5 @@
 # Copy to wrangler.toml (git-ignored) and fill in your own ids.
-name = "scribble-word-reports"
+name = "describble-word-reports"
 main = "worker.js"
 compatibility_date = "2026-10-01"
 

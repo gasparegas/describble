@@ -15,7 +15,7 @@ const bundle = (entry, extra = []) => [...engine, ...extra, entry]
     .replace(/^export /gm, ''))
   .join('\n')
   // The word-report collector is configured at build time and never committed in the source.
-  .replace("const REPORT_ENDPOINT = '';", `const REPORT_ENDPOINT = ${JSON.stringify(process.env.SCRIBBLE_REPORT_ENDPOINT ?? '')};`);
+  .replace("const REPORT_ENDPOINT = '';", `const REPORT_ENDPOINT = ${JSON.stringify(process.env.DESCRIBBLE_REPORT_ENDPOINT ?? '')};`);
 // Parse every bundle before writing it: a syntax error would otherwise leave a blank page.
 const checked = (code, name) => {
   try {
@@ -31,7 +31,7 @@ const page = `<!doctype html>
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,interactive-widget=resizes-content">
-<title>Scribble · chat</title>
+<title>Describble · chat</title>
 <style>
 @property --accent { syntax: '<color>'; inherits: true; initial-value: #6f7fa8; }
 :root { --accent: #6f7fa8; --bg: #f4efe4; --paper: #fbf6ec; --ink: #1b1b1f; --muted: #6b6760; transition: --accent .6s; }
@@ -82,7 +82,7 @@ console.log(`ok: dist/chat.html (${(page.length / 1024).toFixed(0)} KB)`);
 
 // ---------- the website: the live drawing as the hero, then the gallery and the project ----------
 // Optional links, given at build time so forks never point at someone else's pages.
-const links = { repo: process.env.SCRIBBLE_REPO_URL ?? '', support: process.env.SCRIBBLE_SUPPORT_URL ?? '' };
+const links = { repo: process.env.DESCRIBBLE_REPO_URL ?? '', support: process.env.DESCRIBBLE_SUPPORT_URL ?? '' };
 const siteScript = checked(bundle('live', ['site'])
   .replace("const SITE_LINKS = { repo: '', support: '' };", `const SITE_LINKS = ${JSON.stringify(links)};`), 'live');
 
@@ -97,12 +97,12 @@ const site = (script) => `<!doctype html>
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,interactive-widget=resizes-content">
-<title>Scribble: hand-drawn avatars from a sentence</title>
-<meta name="description" content="Describe someone and watch a hand-drawn avatar appear. No AI, no account, runs in your browser. Free and open source.">
+<title>Describble: free avatar maker from a sentence, no AI</title>
+<meta name="description" content="Type a description and get a hand-drawn avatar in seconds. Free pfp maker: no AI, no photo, no sign-up. Download a PNG for Discord, GitHub or WhatsApp.">
 <meta name="theme-color" content="#0f1118">
 <meta name="color-scheme" content="dark">
-<meta property="og:title" content="Scribble: hand-drawn avatars from a sentence">
-<meta property="og:description" content="Describe someone and watch a hand-drawn avatar appear. No AI, no account, free and open source.">
+<meta property="og:title" content="Describble: free avatar maker from a sentence, no AI">
+<meta property="og:description" content="Type a description and get a hand-drawn avatar in seconds. No AI, no photo, no sign-up. Free and open source.">
 <meta property="og:type" content="website">
 <link rel="icon" href="${favicon}">
 <style>
@@ -202,7 +202,7 @@ footer p { margin: 0; max-width: 46em; }
 </style>
 <canvas id="lines" aria-hidden="true"></canvas>
 <header>
-  <a class="wordmark" href="#hero">Scribble</a>
+  <a class="wordmark" href="#hero">Describble</a>
   <nav class="tools" aria-label="Language and project">
     <button class="lang" type="button" data-lang="en" aria-pressed="true">EN</button>
     <button class="lang" type="button" data-lang="it" aria-pressed="false">IT</button>
@@ -224,7 +224,7 @@ footer p { margin: 0; max-width: 46em; }
         <button class="button" id="share" type="button" data-copy="share" disabled>Copy link</button>
         <button class="button" id="surprise" type="button" data-copy="surprise">Surprise me</button>
       </div>
-      <noscript><p data-copy="noscript">Scribble draws with JavaScript. Turn it on to describe your character.</p></noscript>
+      <noscript><p data-copy="noscript">Describble draws with JavaScript. Turn it on to describe your character.</p></noscript>
     </div>
   </div>
 

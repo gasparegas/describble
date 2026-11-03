@@ -13,7 +13,7 @@
 
 ## Next: foundations
 
-- [ ] Choose a final, unique name
+- [x] Choose a final, unique name: Describble
 - [ ] Move to a TypeScript monorepo (`core`, `pieces`, `render`, `element`, `web`) once more people contribute
 - [ ] One data file per piece with a schema checked at build time
 - [ ] Renderer that outputs an SVG string without a browser
@@ -22,7 +22,7 @@
 
 ## Then: growth
 
-- [ ] `<scribble-avatar>` web component
+- [ ] `<describble-avatar>` web component
 - [ ] Optional endpoint returning an SVG for a description, usable in an `<img>` tag
 - [ ] Import pieces drawn in a vector editor, so artists can contribute without code
 - [ ] GIF export of the drawing process

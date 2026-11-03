@@ -1,4 +1,4 @@
-// Word-report collector: a Cloudflare Worker that counts the words Scribble did not understand.
+// Word-report collector: a Cloudflare Worker that counts the words Describble did not understand.
 // It stores only "language + word → count". No IP addresses, no sentences, no identifiers.
 //
 // POST /            body {"words": ["frullatore"], "lang": "it"}  → counts each word

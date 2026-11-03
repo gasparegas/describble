@@ -3,9 +3,9 @@
 // 2. Anonymous reports: single words only (never sentences), no identifiers, no capitalised words
 //    (likely names). On by default, off with one click, never sent when the browser asks for
 //    Global Privacy Control, and disabled entirely while REPORT_ENDPOINT is empty.
-const MISS_KEY = 'scribble-misses';
+const MISS_KEY = 'describble-misses';
 const MAX_MISSES = 300;
-const REPORT_KEY = 'scribble-report';
+const REPORT_KEY = 'describble-report';
 export const REPORT_ENDPOINT = '';
 const MAX_REPORTED = 8;
 const reported = new Set();

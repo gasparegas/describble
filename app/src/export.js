@@ -30,6 +30,6 @@ export async function exportPng(state, paint = (colors) => colors, fillScale = 1
   context.drawImage(image, 0, 0, EXPORT_SIZE, EXPORT_SIZE);
   URL.revokeObjectURL(url);
   const png = canvas.toDataURL('image/png');
-  Object.assign(document.createElement('a'), { href: png, download: 'scribble-avatar.png' }).click();
+  Object.assign(document.createElement('a'), { href: png, download: 'describble-avatar.png' }).click();
   return png;
 }

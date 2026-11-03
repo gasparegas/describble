@@ -46,9 +46,9 @@ jobs:
       - name: Build the site
         working-directory: app
         env:
-          SCRIBBLE_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
-          SCRIBBLE_SUPPORT_URL: ${{ vars.SCRIBBLE_SUPPORT_URL }}
-          SCRIBBLE_REPORT_ENDPOINT: ${{ vars.SCRIBBLE_REPORT_ENDPOINT }}
+          DESCRIBBLE_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+          DESCRIBBLE_SUPPORT_URL: ${{ vars.DESCRIBBLE_SUPPORT_URL }}
+          DESCRIBBLE_REPORT_ENDPOINT: ${{ vars.DESCRIBBLE_REPORT_ENDPOINT }}
         run: |
           node build.mjs
           mkdir -p ../_site

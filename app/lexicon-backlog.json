@@ -1,5 +1,5 @@
 {
-  "about": "Words people wrote that Scribble does not understand yet. 'todo' words wait for a synonym or a new piece; 'skip' words are left out on purpose. A test keeps this list honest: when a word gets understood, remove it from here.",
+  "about": "Words people wrote that Describble does not understand yet. 'todo' words wait for a synonym or a new piece; 'skip' words are left out on purpose. A test keeps this list honest: when a word gets understood, remove it from here.",
   "words": [
     { "word": "astronauta", "lang": "it", "status": "todo", "note": "needs a space helmet piece" },
     { "word": "astronaut", "lang": "en", "status": "todo", "note": "needs a space helmet piece" },

@@ -1,5 +1,5 @@
 name: Drawn wrong
-description: Scribble understood your words but drew something different.
+description: Describble understood your words but drew something different.
 labels: [drawing]
 body:
   - type: markdown

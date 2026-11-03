@@ -1,6 +1,6 @@
 # Architecture
 
-Scribble is a static web page. Everything from parsing the sentence to rendering the drawing happens in the browser. The only server piece is an optional collector (`collector/`, a Cloudflare Worker) that counts single words the parser did not understand.
+Describble is a static web page. Everything from parsing the sentence to rendering the drawing happens in the browser. The only server piece is an optional collector (`collector/`, a Cloudflare Worker) that counts single words the parser did not understand.
 
 ## Pipeline
 
@@ -47,7 +47,7 @@ The prototype will be split into packages once the data model is stable (see [RO
 packages/core      parser, lexicon, dialogue, scene (TypeScript, no DOM)
 packages/pieces    one data file per piece, CC0
 packages/render    SVG as a string (Node) and live animation (browser)
-packages/element   <scribble-avatar text="…"> web component
+packages/element   <describble-avatar text="…"> web component
 apps/web           the chat site, static
 apps/api           optional stateless endpoint returning an SVG for a description
 tools/import-svg   convert drawings made in a vector editor into piece files

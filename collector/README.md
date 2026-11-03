@@ -1,6 +1,6 @@
 # Word-report collector
 
-A tiny Cloudflare Worker that counts the words Scribble did not understand, so maintainers know which words to add to the lexicon. It is optional: without it, the app sends nothing.
+A tiny Cloudflare Worker that counts the words Describble did not understand, so maintainers know which words to add to the lexicon. It is optional: without it, the app sends nothing.
 
 ## What it stores
 
@@ -11,7 +11,7 @@ Only `language:word → count`, for example `it:frullatore → 12`. No IP addres
 1. Create a KV namespace and copy `wrangler.toml.example` to `wrangler.toml` with its id.
 2. Set the export secret: `npx wrangler secret put EXPORT_TOKEN`.
 3. Deploy: `npx wrangler deploy`.
-4. Build the app with the collector URL: `SCRIBBLE_REPORT_ENDPOINT=https://… node build.mjs` in `app/`.
+4. Build the app with the collector URL: `DESCRIBBLE_REPORT_ENDPOINT=https://… node build.mjs` in `app/`.
 
 ## Read the counts
 

@@ -1,6 +1,6 @@
 # Content policy
 
-Scribble is meant to be fun and usable as a profile picture anywhere. These rules decide what goes into the catalog of pieces and words.
+Describble is meant to be fun and usable as a profile picture anywhere. These rules decide what goes into the catalog of pieces and words.
 
 ## Always original
 
