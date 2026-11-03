@@ -1,0 +1,23 @@
+# Internal notes and experiments (not published)
+.private/
+
+# Build output
+app/dist/
+_site/
+
+# Editor and OS files
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Local tool state
+.claude/
+.hallmark/
+.taste-skill/
+.impeccable/
+node_modules/
+
+# Collector deploy config (contains account ids)
+collector/wrangler.toml
+collector/.wrangler/
