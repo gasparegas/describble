@@ -21,6 +21,7 @@ export const siteCopy = {
     surprise: 'Surprise me',
     github: 'GitHub',
     viewOnGithub: 'View on GitHub',
+    supportShort: 'Support',
     galleryTitle: 'Start from one of these',
     galleryNote: 'Tap a face to write its sentence, then change any word.',
     howTitle: 'No AI. Just words and a pencil.',
@@ -74,6 +75,7 @@ export const siteCopy = {
     surprise: 'Sorprendimi',
     github: 'GitHub',
     viewOnGithub: 'Guarda su GitHub',
+    supportShort: 'Sostieni',
     galleryTitle: 'Parti da uno di questi',
     galleryNote: 'Tocca una faccia per scriverne la frase, poi cambia quello che vuoi.',
     howTitle: 'Niente AI. Solo parole e una matita.',
@@ -216,7 +218,7 @@ export function applySiteLanguage(lang) {
 // Links are shown only when configured, so a fork never points at someone else's page.
 export function applySiteLinks() {
   const repo = SITE_LINKS.repo.replace(/\/+$/, '');
-  const targets = { repo, issues: repo && `${repo}/issues/new/choose`, privacy: repo && `${repo}/blob/main/PRIVACY.md`, support: SITE_LINKS.support };
+  const targets = { repo, releases: repo && `${repo}/releases`, issues: repo && `${repo}/issues/new/choose`, privacy: repo && `${repo}/blob/main/PRIVACY.md`, support: SITE_LINKS.support };
   for (const element of document.querySelectorAll('[data-link]')) {
     const href = targets[element.dataset.link];
     if (href) element.href = href;

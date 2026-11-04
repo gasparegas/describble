@@ -82,6 +82,8 @@ console.log(`ok: dist/chat.html (${(page.length / 1024).toFixed(0)} KB)`);
 
 
 // ---------- the website: the live drawing as the hero, then the gallery and the project ----------
+// The version shown in the footer, from package.json (see CHANGELOG.md).
+const { version } = JSON.parse(readFileSync(join(here, 'package.json'), 'utf8'));
 // Optional links, given at build time so forks never point at someone else's pages.
 const links = { repo: process.env.DESCRIBBLE_REPO_URL ?? '', support: process.env.DESCRIBBLE_SUPPORT_URL ?? '' };
 // A light, dependency-free minification of the published script: whole-line comments, blank
@@ -98,6 +100,8 @@ const displayFont = readFileSync(join(here, 'assets', 'fonts', 'bricolage-grotes
 // and sits inline next to the wordmark; the PNG icons beside it are published as files.
 const markSvg = readFileSync(join(here, 'assets', 'brand', 'mark.svg'), 'utf8').replace(/<!--[\s\S]*?-->\s*/g, '').trim();
 const favicon = `data:image/svg+xml,${encodeURIComponent(markSvg)}`;
+// A small hand-drawn heart for the support link (our own drawing).
+const heartMark = '<svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5 C7 16.6 3 13.4 3 9.2 C3 6.4 5.1 4.4 7.6 4.5 C9.5 4.6 11 5.8 12 7.6 C13 5.8 14.6 4.6 16.5 4.5 C19 4.4 21 6.4 21 9.2 C21 13.4 17 16.6 12 20.5 Z" fill="#e5484d"/></svg>';
 // GitHub's own mark (Octicons mark-github, MIT, by GitHub), used only to link to the repository.
 const githubMark = '<svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.766 11.328c-2.063-.25-3.516-1.734-3.516-3.656 0-.781.281-1.625.75-2.188-.203-.515-.172-1.609.063-2.062.625-.078 1.468.25 1.968.703.594-.187 1.219-.281 1.985-.281.765 0 1.39.094 1.953.265.484-.437 1.344-.765 1.969-.687.218.422.25 1.515.046 2.047.5.593.766 1.39.766 2.203 0 1.922-1.453 3.375-3.547 3.64.531.344.89 1.094.89 1.954v1.625c0 .468.391.734.86.547C13.781 14.359 16 11.53 16 8.03 16 3.61 12.406 0 7.984 0 3.563 0 0 3.61 0 8.031a7.88 7.88 0 0 0 5.172 7.422c.422.156.828-.125.828-.547v-1.25c-.219.094-.5.156-.75.156-1.031 0-1.64-.562-2.078-1.609-.172-.422-.36-.672-.719-.719-.187-.015-.25-.093-.25-.187 0-.188.313-.328.625-.328.453 0 .844.281 1.25.86.313.452.64.655 1.031.655s.641-.14 1-.5c.266-.265.47-.5.657-.656"/></svg>';
 const markInline = markSvg.replace('<svg ', '<svg class="mark" aria-hidden="true" ').replace(/ role="img" aria-label="Describble"/, '');
@@ -159,7 +163,21 @@ header { position: absolute; inset: 0 0 auto; z-index: 2; display: flex; align-i
 .tools { display: flex; align-items: center; gap: 6px; }
 .lang { border: 0; background: none; padding: 6px 8px; border-radius: 8px; color: var(--faint); cursor: pointer; }
 .lang[aria-pressed=true] { color: var(--text); background: var(--rule); }
-.gh { width: 18px; height: 18px; flex: none; }
+.gh, .heart { width: 18px; height: 18px; flex: none; }
+.support-link + .star { margin-left: 2px; }
+@media (max-width: 480px) {
+  /* On phones the header links show only their icons; the words stay for screen readers. */
+  .star { padding: 7px 10px; }
+  .star .label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+@media (max-width: 360px) {
+  header { gap: 6px; }
+  .wordmark { gap: 6px; font-size: 18px; }
+  .mark { width: 26px; height: 26px; }
+  .lang { padding: 6px 5px; }
+  .star { margin-left: 2px; padding: 6px 8px; }
+}
+
 .star { display: inline-flex; align-items: center; gap: 8px; margin-left: 8px; padding: 7px 14px; border: 1px solid var(--rule); border-radius: 999px; text-decoration: none; font-size: 15px; }
 .star:hover { border-color: var(--muted); }
 
@@ -221,6 +239,7 @@ footer p { margin: 0; max-width: 46em; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .footer-links a { color: var(--muted); }
 .footer-links a:hover { color: var(--text); }
+.footer-links .version { font-variant-numeric: tabular-nums; }
 #report { justify-self: start; border: 1px solid var(--rule); background: none; border-radius: 999px; padding: 4px 12px; color: var(--muted); cursor: pointer; font-size: 13px; }
 
 @media (min-width: 900px) {
@@ -241,7 +260,8 @@ footer p { margin: 0; max-width: 46em; }
   <nav class="tools" aria-label="Language and project">
     <button class="lang" type="button" data-lang="en" aria-pressed="true">EN</button>
     <button class="lang" type="button" data-lang="it" aria-pressed="false">IT</button>
-    <a class="star" data-link="repo" href="#">${githubMark}<span data-copy="github">GitHub</span></a>
+    <a class="star support-link" data-link="support" href="#">${heartMark}<span class="label" data-copy="supportShort">Support</span></a>
+    <a class="star" data-link="repo" href="#">${githubMark}<span class="label" data-copy="github">GitHub</span></a>
   </nav>
 </header>
 <main>
@@ -316,6 +336,7 @@ footer p { margin: 0; max-width: 46em; }
     <a data-link="privacy" data-copy="footerPrivacy" href="#">Privacy</a>
     <a data-link="repo" data-copy="footerCode" href="#">Source code</a>
     <a data-link="issues" data-copy="footerIssue" href="#">Report a problem</a>
+    <a data-link="releases" class="version" href="#">v${version}</a>
   </nav>
 </footer>
 <script>

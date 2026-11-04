@@ -4,7 +4,7 @@
 
 **Describe someone. Watch them get drawn.** Try it at **[describble.com](https://describble.com)**.
 
-![Typing "blond, cigarette in mouth, tired eyes, red beanie" draws the character live](docs/demo.gif)
+![Describble live: typing "blond, cigarette in mouth, tired eyes, red beanie" and then "girl with a pink bob, heart glasses and freckles" draws each character while you type](docs/demo.gif)
 
 Describble turns a sentence into a hand-drawn avatar while you type. Write `blond, cigarette in mouth, tired eyes` and a character appears on a round paper card, trembling while it figures you out, turning its head when something changes, settling when you stop. Download it, share the link, use it as your profile picture.
 
