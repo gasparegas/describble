@@ -68,3 +68,7 @@ All artwork must be **original** and is released under CC0 (see [LICENSE-ASSETS]
 - Describe what you changed and, for visual changes, include a before/after screenshot.
 
 By contributing you agree to license your code under MIT and your artwork under CC0.
+
+## License of contributions
+
+By opening a pull request you agree that your code is released under the MIT License and your drawings under CC0, like the rest of the project. Please contribute only work you made yourself: no traced artwork, logos or existing characters (see [CONTENT_POLICY.md](CONTENT_POLICY.md)).

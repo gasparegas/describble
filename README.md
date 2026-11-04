@@ -75,4 +75,8 @@ New words, new languages, new pieces and bug reports are all welcome. Adding a s
 - Drawn pieces and artwork: [CC0 1.0](LICENSE-ASSETS)
 - Website typeface: Bricolage Grotesque, [SIL Open Font License](app/assets/fonts/OFL.txt)
 
+### Name and logo
+
+The name **Describble** and the Describble logo (`app/assets/brand/`) are not covered by these licenses. You are welcome to fork and reuse the code and the drawings, but please give your version its own name and logo, so nobody mistakes it for this project.
+
 Every piece is original. Describble does not include or trace third-party artwork, logos or existing characters. See [CONTENT_POLICY.md](CONTENT_POLICY.md).
