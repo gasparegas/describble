@@ -84,8 +84,11 @@ console.log(`ok: dist/chat.html (${(page.length / 1024).toFixed(0)} KB)`);
 // ---------- the website: the live drawing as the hero, then the gallery and the project ----------
 // Optional links, given at build time so forks never point at someone else's pages.
 const links = { repo: process.env.DESCRIBBLE_REPO_URL ?? '', support: process.env.DESCRIBBLE_SUPPORT_URL ?? '' };
-const siteScript = checked(bundle('live', ['site'])
-  .replace("const SITE_LINKS = { repo: '', support: '' };", `const SITE_LINKS = ${JSON.stringify(links)};`), 'live');
+// A light, dependency-free minification of the published script: whole-line comments, blank
+// lines and indentation go away; everything else is kept as written. Checked to render the same.
+const minify = (code) => process.env.DESCRIBBLE_NO_MINIFY ? code : code.split('\n').map((line) => line.trim()).filter((line) => line && !line.startsWith('//')).join('\n');
+const siteScript = checked(minify(checked(bundle('live', ['site'])
+  .replace("const SITE_LINKS = { repo: '', support: '' };", `const SITE_LINKS = ${JSON.stringify(links)};`), 'live')), 'minified live');
 
 // The display face (Bricolage Grotesque, SIL OFL 1.1, see assets/fonts/OFL.txt) is inlined,
 // so the page never asks a font service for it.
