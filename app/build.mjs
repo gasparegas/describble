@@ -112,6 +112,7 @@ const site = (script) => `<!doctype html>
 <link rel="alternate" hreflang="it" href="https://describble.com/it/">
 <link rel="alternate" hreflang="x-default" href="https://describble.com/">
 <meta property="og:locale" content="en_US">
+<!--structured-data-->
 <meta name="theme-color" content="#0f1118">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="Describble: free avatar maker from a sentence, no AI">
@@ -209,6 +210,14 @@ ol.steps li::marker { color: var(--text); font-weight: 700; }
 footer { position: relative; z-index: 1; max-width: var(--wide); margin: clamp(64px, 10vw, 120px) auto 0; padding: 28px var(--gutter) 40px;
   border-top: 1px solid var(--rule); display: grid; gap: 8px; color: var(--faint); font-size: 14px; }
 footer p { margin: 0; max-width: 46em; }
+.faq { display: grid; gap: 10px; max-width: 46em; margin-top: 20px; }
+.faq details { border-top: 1px solid var(--rule); padding: 14px 0 4px; }
+.faq summary { cursor: pointer; font-weight: 650; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; float: right; color: var(--muted); }
+.faq details[open] summary::after { content: "–"; }
+.faq p { color: var(--muted); margin: 10px 0 8px; }
+.other-language { color: var(--muted); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .footer-links a { color: var(--muted); }
 .footer-links a:hover { color: var(--text); }
@@ -279,6 +288,18 @@ footer p { margin: 0; max-width: 46em; }
     </div>
   </section>
 
+  <section aria-labelledby="faq-title">
+    <h2 id="faq-title" data-copy="faqTitle">Questions</h2>
+    <div class="faq">
+      <details><summary data-copy="faqQ1"></summary><p data-copy="faqA1"></p></details>
+      <details><summary data-copy="faqQ2"></summary><p data-copy="faqA2"></p></details>
+      <details><summary data-copy="faqQ3"></summary><p data-copy="faqA3"></p></details>
+      <details><summary data-copy="faqQ4"></summary><p data-copy="faqA4"></p></details>
+      <details><summary data-copy="faqQ5"></summary><p data-copy="faqA5"></p></details>
+      <details><summary data-copy="faqQ6"></summary><p data-copy="faqA6"></p></details>
+    </div>
+  </section>
+
   <section aria-labelledby="support-title" data-needs="support">
     <h2 id="support-title" data-copy="supportTitle">Keep it free</h2>
     <p data-copy="support"></p>
@@ -290,6 +311,7 @@ footer p { margin: 0; max-width: 46em; }
   <p id="privacy-reports" data-copy="privacyReports" hidden></p>
   <button id="report" type="button" hidden></button>
   <p data-copy="license">Code MIT, drawings CC0.</p>
+  <p><a class="other-language" href="/it/" hreflang="it">Italiano</a></p>
   <nav class="footer-links" aria-label="Project" data-needs="repo">
     <a data-link="privacy" data-copy="footerPrivacy" href="#">Privacy</a>
     <a data-link="repo" data-copy="footerCode" href="#">Source code</a>
@@ -304,6 +326,7 @@ ${script}
 // Each language gets a complete page: the copy from site.js is written into the HTML, so search
 // engines and visitors without JavaScript read it too. English at /, Italian at /it/.
 const { siteCopy } = await import('./src/site.js');
+const SITE_REPO = links.repo.replace(/\/+$/, '');
 const escapeHtml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const prerender = (html, lang) => {
   const copy = siteCopy[lang];
@@ -326,6 +349,18 @@ const prerender = (html, lang) => {
     }
     return whole;
   });
+  // The footer points to the other language as a plain link search engines can follow.
+  if (lang === 'it') out = out.replace('href="/it/" hreflang="it">Italiano</a>', 'href="/" hreflang="en">English</a>');
+  // Structured data: the site as a free web app, and the questions section as an FAQ.
+  const faq = [1, 2, 3, 4, 5, 6].map((i) => ({ '@type': 'Question', name: copy[`faqQ${i}`], acceptedAnswer: { '@type': 'Answer', text: copy[`faqA${i}`] } }));
+  const data = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Describble', url, description: copy.description, inLanguage: lang,
+      applicationCategory: 'DesignApplication', operatingSystem: 'Any (web browser)', isAccessibleForFree: true,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, image: 'https://describble.com/og.png',
+      sameAs: SITE_REPO ? [SITE_REPO] : [] },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: lang, mainEntity: faq },
+  ];
+  out = out.replace('<!--structured-data-->', `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`);
   // The aria-labels set by the script start right in the page's language.
   return out
     .replace('aria-label="Describe the character"', `aria-label="${escapeHtml(copy.inputLabel)}"`)
@@ -364,6 +399,22 @@ writeFileSync(join(here, 'dist', 'site', 'index.html'), live);
 mkdirSync(join(here, 'dist', 'site', 'it'), { recursive: true });
 writeFileSync(join(here, 'dist', 'site', 'it', 'index.html'), liveItalian);
 writeFileSync(join(here, 'dist', 'site', '_headers'), headers);
+// For search engines: everything may be crawled, and the sitemap lists both languages as alternates.
+const today = new Date().toISOString().slice(0, 10);
+const pageEntry = (loc) => `  <url>
+    <loc>${loc}</loc>
+    <lastmod>${today}</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://describble.com/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://describble.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://describble.com/"/>
+  </url>`;
+writeFileSync(join(here, 'dist', 'site', 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${pageEntry('https://describble.com/')}
+${pageEntry('https://describble.com/it/')}
+</urlset>
+`);
+writeFileSync(join(here, 'dist', 'site', 'robots.txt'), 'User-agent: *\nAllow: /\n\nSitemap: https://describble.com/sitemap.xml\n');
 // Icons and the social preview, rendered once from the mark (see app/assets/brand/README.md).
 for (const file of ['apple-touch-icon.png', 'og.png']) {
   copyFileSync(join(here, 'assets', 'brand', file), join(here, 'dist', 'site', file));
