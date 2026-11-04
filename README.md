@@ -10,6 +10,8 @@ Describble turns a sentence into a hand-drawn avatar while you type. Write `blon
 
 No AI. No account. No ads. It all runs in your browser, in English or Italian. The only thing that can leave your browser is an anonymous count of single words it did not understand, so it can learn them, and one click turns that off. See [PRIVACY.md](PRIVACY.md).
 
+If Describble made you smile, a ⭐ on this repository helps other people find it. And if it didn't understand a word, [tell us](https://github.com/gasparegas/describble/issues/new/choose).
+
 > Status: early, and growing fast.
 
 ## Why
