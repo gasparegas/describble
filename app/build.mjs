@@ -103,6 +103,10 @@ const site = (script) => `<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,interactive-widget=resizes-content">
 <title>Describble: free avatar maker from a sentence, no AI</title>
 <meta name="description" content="Type a description and get a hand-drawn avatar in seconds. Free pfp maker: no AI, no photo, no sign-up. Download a PNG for Discord, GitHub or WhatsApp.">
+<link rel="alternate" hreflang="en" href="https://describble.com/">
+<link rel="alternate" hreflang="it" href="https://describble.com/it/">
+<link rel="alternate" hreflang="x-default" href="https://describble.com/">
+<meta property="og:locale" content="en_US">
 <meta name="theme-color" content="#0f1118">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="Describble: free avatar maker from a sentence, no AI">
@@ -199,6 +203,9 @@ ol.steps li::marker { color: var(--text); font-weight: 700; }
 footer { position: relative; z-index: 1; max-width: var(--wide); margin: clamp(64px, 10vw, 120px) auto 0; padding: 28px var(--gutter) 40px;
   border-top: 1px solid var(--rule); display: grid; gap: 8px; color: var(--faint); font-size: 14px; }
 footer p { margin: 0; max-width: 46em; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--text); }
 #report { justify-self: start; border: 1px solid var(--rule); background: none; border-radius: 999px; padding: 4px 12px; color: var(--muted); cursor: pointer; font-size: 13px; }
 
 @media (min-width: 900px) {
@@ -277,13 +284,49 @@ footer p { margin: 0; max-width: 46em; }
   <p id="privacy-reports" data-copy="privacyReports" hidden></p>
   <button id="report" type="button" hidden></button>
   <p data-copy="license">Code MIT, drawings CC0.</p>
+  <nav class="footer-links" aria-label="Project" data-needs="repo">
+    <a data-link="privacy" data-copy="footerPrivacy" href="#">Privacy</a>
+    <a data-link="repo" data-copy="footerCode" href="#">Source code</a>
+    <a data-link="issues" data-copy="footerIssue" href="#">Report a problem</a>
+  </nav>
 </footer>
 <script>
 ${script}
 </script>
 </html>
 `;
-const live = site(siteScript);
+// Each language gets a complete page: the copy from site.js is written into the HTML, so search
+// engines and visitors without JavaScript read it too. English at /, Italian at /it/.
+const { siteCopy } = await import('./src/site.js');
+const escapeHtml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const prerender = (html, lang) => {
+  const copy = siteCopy[lang];
+  const url = lang === 'it' ? 'https://describble.com/it/' : 'https://describble.com/';
+  let out = html
+    .replace('<html lang="en">', `<html lang="${lang}">`)
+    .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(copy.title)}</title>`)
+    .replace(/(<meta name="description" content=")[^"]*/, `$1${escapeHtml(copy.description)}`)
+    .replace(/(<meta property="og:title" content=")[^"]*/, `$1${escapeHtml(copy.title)}`)
+    .replace(/(<meta property="og:description" content=")[^"]*/, `$1${escapeHtml(copy.description)}`)
+    .replace(/(<meta property="og:url" content=")[^"]*/, `$1${url}`)
+    .replace(/(<link rel="canonical" href=")[^"]*/, `$1${url}`)
+    .replace(/(<meta property="og:locale" content=")[^"]*/, `$1${lang === 'it' ? 'it_IT' : 'en_US'}`);
+  out = out.replace(/(<(\w+)\b[^>]*\bdata-copy="(\w+)"[^>]*>)([\s\S]*?)(<\/\2>)/g, (whole, open, tag, key, inner, close) => {
+    const value = copy[key];
+    if (typeof value === 'string') return open + escapeHtml(value) + close;
+    if (Array.isArray(value)) {
+      const child = inner.match(/<(\w+)/)?.[1] ?? 'p';
+      return open + value.map((item) => `<${child}>${escapeHtml(item)}</${child}>`).join('') + close;
+    }
+    return whole;
+  });
+  // The aria-labels set by the script start right in the page's language.
+  return out
+    .replace('aria-label="Describe the character"', `aria-label="${escapeHtml(copy.inputLabel)}"`)
+    .replace('aria-label="The character you are describing"', `aria-label="${escapeHtml(copy.stageLabel)}"`);
+};
+const live = prerender(site(siteScript), 'en');
+const liveItalian = prerender(site(siteScript), 'it');
 writeFileSync(join(here, 'dist', 'index.html'), live);
 console.log(`ok: dist/index.html (${(live.length / 1024).toFixed(0)} KB${links.repo ? '' : ', no repo link yet'})`);
 
@@ -312,6 +355,8 @@ const headers = `/*
 `;
 mkdirSync(join(here, 'dist', 'site'), { recursive: true });
 writeFileSync(join(here, 'dist', 'site', 'index.html'), live);
+mkdirSync(join(here, 'dist', 'site', 'it'), { recursive: true });
+writeFileSync(join(here, 'dist', 'site', 'it', 'index.html'), liveItalian);
 writeFileSync(join(here, 'dist', 'site', '_headers'), headers);
 // Icons and the social preview, rendered once from the mark (see app/assets/brand/README.md).
 for (const file of ['apple-touch-icon.png', 'og.png']) {

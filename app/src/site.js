@@ -9,6 +9,7 @@ export const SITE_LINKS = { repo: '', support: '' };
 export const siteCopy = {
   en: {
     title: 'Describble: free avatar maker from a sentence, no AI',
+    description: 'Type a description and get a hand-drawn avatar in seconds. Free pfp maker: no AI, no photo, no sign-up. Download a PNG for Discord, GitHub or WhatsApp.',
     headline: 'Describe someone. Watch them get drawn.',
     lede: 'Hand-drawn avatars from a sentence. No AI, no account, nothing to install.',
     inputLabel: 'Describe the character',
@@ -40,10 +41,14 @@ export const siteCopy = {
     privacyReports: 'To grow the dictionary, single words it did not understand are counted anonymously. Never your sentence.',
     reports: (on) => `Word reports: ${on ? 'on' : 'off'}`,
     license: 'Code MIT, drawings CC0.',
+    footerPrivacy: 'Privacy',
+    footerCode: 'Source code',
+    footerIssue: 'Report a problem',
     noscript: 'Describble draws with JavaScript. Turn it on to describe your character.',
   },
   it: {
     title: 'Describble: crea il tuo avatar gratis da una frase, senza AI',
+    description: 'Descrivi qualcuno e ottieni un avatar disegnato a mano in pochi secondi. Gratis: niente AI, niente foto, niente registrazione. Scarica il PNG per WhatsApp, Discord o GitHub.',
     headline: 'Descrivi qualcuno. Guardalo prendere forma.',
     lede: 'Avatar disegnati a mano da una frase. Niente AI, niente account, niente da installare.',
     inputLabel: 'Descrivi il personaggio',
@@ -75,6 +80,9 @@ export const siteCopy = {
     privacyReports: 'Per far crescere il dizionario, le singole parole che non ha capito vengono contate in forma anonima. Mai la frase.',
     reports: (on) => `Segnalazione parole: ${on ? 'attiva' : 'spenta'}`,
     license: 'Codice MIT, disegni CC0.',
+    footerPrivacy: 'Privacy',
+    footerCode: 'Codice sorgente',
+    footerIssue: 'Segnala un problema',
     noscript: 'Describble disegna con JavaScript. Attivalo per descrivere il tuo personaggio.',
   },
 };
@@ -149,6 +157,8 @@ export function pickSiteLanguage() {
     const saved = localStorage.getItem('describble-lang');
     if (saved === 'en' || saved === 'it') return saved;
   } catch {}
+  // The Italian page (/it/) opens in Italian; the main page follows the browser.
+  if (document.documentElement.lang === 'it') return 'it';
   return (navigator.language ?? 'en').toLowerCase().startsWith('it') ? 'it' : 'en';
 }
 
@@ -178,7 +188,7 @@ export function applySiteLanguage(lang) {
 // Links are shown only when configured, so a fork never points at someone else's page.
 export function applySiteLinks() {
   const repo = SITE_LINKS.repo.replace(/\/+$/, '');
-  const targets = { repo, issues: repo && `${repo}/issues/new/choose`, support: SITE_LINKS.support };
+  const targets = { repo, issues: repo && `${repo}/issues/new/choose`, privacy: repo && `${repo}/blob/main/PRIVACY.md`, support: SITE_LINKS.support };
   for (const element of document.querySelectorAll('[data-link]')) {
     const href = targets[element.dataset.link];
     if (href) element.href = href;
