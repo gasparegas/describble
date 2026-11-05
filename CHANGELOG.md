@@ -2,6 +2,16 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.1.1 (2026-11-05)
+
+Words people typed on launch day.
+
+- Understands "dark" as a colour (dark hair, dark jacket) while "dark skin" stays dark skin.
+- "blue-eyed", "green-eyed" and friends colour the eyes.
+- New synonyms: blouse, button-up, checked, feminine, skinny / slim / thin, magro, "con la riga", woodchopper, ladro / thief.
+- Words that change nothing (from, sorry, huge...) are no longer reported as unknown.
+- The word backlog now lists bear ears, a Spartan helmet, a camera, drums, tongue out and multicolour hair, plus franchise items left out on purpose.
+
 ## 0.1.0 (2026-11-04)
 
 First public release.

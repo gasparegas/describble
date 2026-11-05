@@ -104,3 +104,15 @@ test('jobs: a plain "cappello" never replaces a specific hat', () => {
   const cases = { 'studentessa con lo zaino': 'detail:backpack', 'medico con lo stetoscopio': 'detail:stethoscope', 'pompiere': 'hat:helmet', 'pittore': 'hat:beret', 'cameriere': 'detail:bowtie', 'mechanic': 'clothes:overalls', 'calciatore': 'clothes:tshirt' };
   for (const [text, trait] of Object.entries(cases)) assert.ok(parse(text).found.includes(trait), `${text}: ${parse(text).found}`);
 });
+
+test('words people typed on launch day', () => {
+  const cases = {
+    'dark hair': 'hairColor:black', 'dark jacket': 'clothesColor:black', 'blue-eyed girl': 'eyeColor:blue', 'girl in a blouse': 'clothes:shirt',
+    'checked shirt': 'pattern:plaid', 'feminine guy': 'gender:female', 'skinny guy': 'face:long', 'magro con la riga': 'hair:sidepart',
+    'woodchopper': 'facial:beard', 'ladro': 'pattern:stripes',
+  };
+  for (const [text, trait] of Object.entries(cases)) assert.ok(parse(text).found.includes(trait), `${text}: ${parse(text).found}`);
+  assert.ok(parse('dark skin').found.includes('skin:dark'));
+  assert.ok(!parse('dark skin').found.includes('hairColor:black'));
+  assert.deepEqual(parse('glasses from describble').unknown, []);
+});

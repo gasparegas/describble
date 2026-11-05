@@ -26,7 +26,7 @@ export const traits = {
   'hair:quiff': ['ciuffo', 'banana', 'pompadour', 'quiff', 'chad'],
   'hair:buzz': ['rasato', 'rasati', 'capelli rasati', 'a spazzola', 'buzz cut', 'crew cut', 'buzzcut', 'soldato', 'soldier', 'militare'],
   'hair:pigtails': ['codini', 'due code', 'pigtails', 'twin tails', 'twintails', 'twin tail'],
-  'hair:sidepart': ['riga di lato', 'riga laterale', 'pettinato', 'leccato', 'gelatina', 'side part', 'slicked', 'combed', 'vampiro', 'vampire', 'dracula'],
+  'hair:sidepart': ['riga di lato', 'con la riga', 'capelli con la riga', 'parted hair', 'parted on the side', 'riga laterale', 'pettinato', 'leccato', 'gelatina', 'side part', 'slicked', 'combed', 'vampiro', 'vampire', 'dracula'],
   'hair:undercut': ['undercut', 'rasato ai lati', 'lati rasati', 'shaved sides', 'cyberpunk', 'rasati ai lati', 'rasata ai lati', 'capelli rasati ai lati', 'capelli rasato ai lati', 'rasati di lato', 'capelli rasati di lato', 'capelli rasati da un lato', 'rasata di lato', 'rasato di lato', 'rasati da un lato', 'half shaved', 'half shaved head', 'half-shaved', 'shaved on one side', 'side shave', 'sidecut'],
 
   'eyes:almond': ['occhi a mandorla', 'occhi sottili', 'almond eyes', 'narrow eyes'],
@@ -36,7 +36,7 @@ export const traits = {
   'ears:elf': ['orecchie a punta', 'orecchie da elfo', 'elfo', 'elfa', 'elf ears', 'pointy ears', 'elf'],
   'face:round': ['viso tondo', 'faccia tonda', 'viso rotondo', 'paffuto', 'paffutello', 'cicciottello', 'round face', 'chubby'],
   'face:square': ['mascella squadrata', 'viso squadrato', 'mascellone', 'mascella forte', 'square jaw', 'square face', 'strong jaw', 'chad', 'buff', 'muscoloso', 'muscolosa', 'palestrato', 'palestrata', 'muscular', 'jacked'],
-  'face:long': ['viso lungo', 'faccia lunga', 'viso allungato', 'long face'],
+  'face:long': ['viso lungo', 'magro', 'magra', 'magri', 'magre', 'smilzo', 'smilza', 'skinny', 'slim', 'thin', 'thin face', 'faccia lunga', 'viso allungato', 'long face'],
   'face:pointy': ['mento a punta', 'viso affilato', 'mento appuntito', 'pointy chin', 'sharp chin', 'pointed chin'],
   'nose:button': ['nasino', 'naso piccolo', 'naso all insu', 'button nose', 'small nose'],
   'nose:long': ['naso lungo', 'long nose'],
@@ -70,13 +70,13 @@ export const traits = {
   'eyewear:monocle': ['monocolo', 'monocle'],
   'eyewear:sunglasses': ['occhiali da sole', 'occhiali da aviatore', 'occhiali a goccia', 'aviator', 'aviators', 'aviator sunglasses', 'occhiali scuri', 'sunglasses', 'shades', 'hacker', 'rocker', 'rockstar', 'rapper', 'trapper', 'boss'],
 
-  'facial:beard': ['barba', 'barbuto', 'beard', 'bearded', 'hipster', 'boscaiolo', 'lumberjack'],
+  'facial:beard': ['barba', 'barbuto', 'beard', 'bearded', 'hipster', 'boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
   'facial:longBeard': ['barba lunga', 'barbone', 'barbona', 'barba da mago', 'long beard', 'big beard', 'wizard beard', 'mago', 'wizard', 'babbo natale', 'santa'],
   'facial:stubble': ['barba di tre giorni', 'barba di 3 giorni', 'barba incolta', 'barbetta', 'stubble', 'five o clock shadow', 'unshaven', 'chad', 'barba sfatta', 'barba trascurata', 'scruffy beard'],
   'facial:moustache': ['baffi', 'baffetti', 'moustache', 'mustache', 'stache', 'nonno', 'grandpa', 'baffoni', 'big mustache', 'big moustache'],
   'facial:goatee': ['pizzetto', 'goatee'],
 
-  'hat:beanie': ['berretto', 'berretta', 'marinaio', 'sailor', 'pescatore', 'fisherman', 'cuffia di lana', 'beanie', 'wool hat', 'knit hat', 'hipster', 'doomer', 'boscaiolo', 'lumberjack'],
+  'hat:beanie': ['berretto', 'berretta', 'ladro', 'ladra', 'thief', 'burglar', 'marinaio', 'sailor', 'pescatore', 'fisherman', 'cuffia di lana', 'beanie', 'wool hat', 'knit hat', 'hipster', 'doomer', 'boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
   'hat:cap': ['cappellino', 'visiera', 'coppola', 'cap', 'baseball cap', 'flat cap', 'poliziotto', 'poliziotta', 'cop', 'police'],
   'hat:hood': ['cappuccio', 'incappucciato', 'incappucciata', 'hood', 'hooded', 'hacker', 'misterioso', 'misteriosa', 'mysterious'],
   'hat:tophat': ['cilindro', 'top hat'],
@@ -99,11 +99,11 @@ export const traits = {
   'clothes:tshirt': ['maglietta', 't shirt', 'tee', 'maglia da calcio', 'calciatore', 'calciatrice', 'footballer', 'soccer player', 'jersey', 'metallaro', 'metalhead', 'skater', 'skateboarder'],
   'clothes:tank': ['canottiera', 'canotta', 'tank top', 'smanicato', 'sleeveless', 'buff', 'muscoloso', 'palestrato', 'muscular', 'jacked'],
   'clothes:turtleneck': ['dolcevita', 'collo alto', 'turtleneck'],
-  'pattern:stripes': ['a righe', 'marinaio', 'sailor', 'pigiama', 'in pigiama', 'pajamas', 'pyjamas', 'pjs', 'righe', 'rigato', 'rigata', 'striped', 'stripes', 'stripy'],
+  'pattern:stripes': ['a righe', 'ladro', 'ladra', 'thief', 'burglar', 'marinaio', 'sailor', 'pigiama', 'in pigiama', 'pajamas', 'pyjamas', 'pjs', 'righe', 'rigato', 'rigata', 'striped', 'stripes', 'stripy'],
   'pattern:dots': ['a pois', 'pois', 'polka dots', 'polka dot', 'dotted'],
   'pattern:flowers': ['a fiori', 'fiori', 'fiorata', 'floreale', 'hawaiana', 'hawaiano', 'floral', 'flowers', 'hawaiian'],
-  'pattern:plaid': ['a quadri', 'quadri', 'quadretti', 'scozzese', 'flanella', 'plaid', 'checkered', 'flannel', 'tartan', 'contadino', 'farmer', 'boscaiolo', 'lumberjack'],
-  'clothes:shirt': ['camicia', 'pigiama', 'in pigiama', 'pajamas', 'pyjamas', 'pjs', 'shirt', 'button up', 'contadino', 'farmer', 'boscaiolo', 'lumberjack'],
+  'pattern:plaid': ['a quadri', 'checked', 'check shirt', 'quadri', 'quadretti', 'scozzese', 'flanella', 'plaid', 'checkered', 'flannel', 'tartan', 'contadino', 'farmer', 'boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
+  'clothes:shirt': ['camicia', 'camicetta', 'blouse', 'blouses', 'buttonup', 'button-up', 'pigiama', 'in pigiama', 'pajamas', 'pyjamas', 'pjs', 'shirt', 'button up', 'contadino', 'farmer', 'boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
   'clothes:sweater': ['maglione', 'pullover', 'sweater', 'jumper', 'cardigan', 'maglione di lana', 'wool sweater'],
   'clothes:coat': ['cappotto', 'impermeabile', 'trench', 'coat', 'overcoat', 'raincoat', 'detective', 'investigatore', 'sherlock'],
   'clothes:uniform': ['uniforme', 'divisa', 'camice', 'uniform', 'lab coat', 'scrubs', 'pompiere', 'vigile del fuoco', 'firefighter', 'fireman', 'pilota', 'pilot', 'dentista', 'dentist', 'scienziato', 'scienziata', 'scientist', 'dottore', 'dottoressa', 'medico', 'doctor', 'infermiera', 'nurse', 'poliziotto', 'poliziotta', 'cop', 'police', 'soldato', 'soldier', 'militare'],
@@ -132,7 +132,7 @@ export const traits = {
   'detail:lipstick': ['rossetto', 'labbra rosse', 'labbra rifatte', 'labbra carnose', 'full lips', 'lipstick', 'red lips'],
   'detail:necklace': ['collana', 'catenina', 'catena', 'catena d oro', 'catenona', 'gold chain', 'tamarro', 'tamarra', 'necklace', 'chain', 'rapper', 'trapper', 'perle', 'collana di perle', 'pearls', 'pearl necklace'],
 
-  'gender:female': ['ragazza', 'donna', 'suora', 'monaca', 'nun', 'signora', 'signorina', 'tipa', 'femmina', 'girl', 'woman', 'lady', 'female', 'she', 'her', 'programmatrice', 'strega', 'witch', 'vampira', 'regina', 'queen', 'principessa', 'princess', 'scienziata', 'dottoressa', 'infermiera', 'poliziotta', 'nonna', 'grandma', 'studentessa'],
+  'gender:female': ['ragazza', 'feminine', 'femminile', 'donna', 'suora', 'monaca', 'nun', 'signora', 'signorina', 'tipa', 'femmina', 'girl', 'woman', 'lady', 'female', 'she', 'her', 'programmatrice', 'strega', 'witch', 'vampira', 'regina', 'queen', 'principessa', 'princess', 'scienziata', 'dottoressa', 'infermiera', 'poliziotta', 'nonna', 'grandma', 'studentessa'],
   'hair:wavyLong': ['capelli lunghi mossi', 'lunghi e mossi', 'boccoli', 'long wavy hair', 'wavy long hair', 'surfer', 'surfista'],
   'hair:spaceBuns': ['due chignon', 'doppio chignon', 'codini a palla', 'space buns', 'double buns', 'odango'],
   'hair:pixie': ['pixie', 'capelli cortissimi', 'taglio corto', 'pixie cut'],
@@ -220,7 +220,7 @@ export const traits = {
   'hairColor:blond': ['surfer', 'surfista'],
   'clothesColor:green': ['soldato', 'soldier', 'militare'],
   'hatColor:yellow': ['contadino', 'farmer'],
-  'clothesColor:red': ['boscaiolo', 'lumberjack'],
+  'clothesColor:red': ['boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
   'hairColor:grey': ['nonna', 'grandma'],
   'hair:mullet': ['mullet', 'capelli a triglia', 'triglia', 'business in front party in the back'],
   'hair:middlePart': ['riga in mezzo', 'riga centrale', 'frangia a tendina', 'middle part', 'curtain bangs', 'curtains'],
@@ -259,7 +259,7 @@ export const hairOnlyColors = {
 };
 
 export const colors = {
-  black: ['nero', 'nera', 'neri', 'nere', 'black', 'corvino', 'corvina', 'corvini', 'corvine', 'jet black'],
+  black: ['nero', 'nera', 'neri', 'nere', 'black', 'dark', 'scuro', 'scura', 'scuri', 'scure', 'corvino', 'corvina', 'corvini', 'corvine', 'jet black'],
   white: ['bianco', 'bianca', 'bianchi', 'bianche', 'white', 'platino', 'platinati', 'platinata', 'platinum'],
   grey: ['grigio', 'grigia', 'grigi', 'grigie', 'grey', 'gray', 'argento', 'argentato', 'argentati', 'argentata', 'silver'],
   brown: ['marrone', 'marroni', 'brown', 'beige', 'cammello', 'camel', 'cuoio'],
@@ -276,7 +276,7 @@ export const colors = {
 export const colorNouns = {
   background: ['sfondo', 'background', 'bg'],
   hair: ['capelli', 'chioma', 'hair'],
-  eye: ['occhi', 'eyes'],
+  eye: ['occhi', 'eyes', 'eyed', 'occhio'],
   clothes: ['vestito', 'vestita', 'vestiti', 'dressed', 'clothes', 'outfit', 'maglia', 'top', 'abito', 'gonna', 'dress', 'skirt'],
 };
 
@@ -291,7 +291,7 @@ export const contextual = [
 
 // Phrases that must not be read word by word.
 // Words that are understood but change nothing, so they are not reported as misses.
-export const ignored = ['mad scientist', 'scienziato pazzo', 'uomo', 'maschio', 'man', 'guy', 'male', 'dude', 'persona', 'person', 'tizio', 'tipo', 'dad', 'papà', 'mamma', 'mom', 'rosy cheeks', 'guance rosse', 'guance rosa'];
+export const ignored = ['mad scientist', 'scienziato pazzo', 'uomo', 'maschio', 'man', 'guy', 'male', 'dude', 'persona', 'person', 'tizio', 'tipo', 'from', 'than', 'sorry', 'https', 'describble', 'huge', 'enormous', 'bigger', 'enorme', 'enormi', 'dad', 'papà', 'mamma', 'mom', 'rosy cheeks', 'guance rosse', 'guance rosa'];
 
 export const negations = ['senza', 'no', 'non', 'niente', 'nessun', 'nessuna', 'togli', 'togliere', 'rimuovi', 'leva', 'without', 'not', 'never', 'mai', 'remove', 'drop'];
 export const scopeBreakers = ['ma', 'pero', 'but', 'however', 'solo', 'only'];
