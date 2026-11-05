@@ -6,7 +6,8 @@
     "hair:short": [
       "capelli corti",
       "a spazzola",
-      "npc"
+      "npc",
+      "cortissimi"
     ],
     "hair:long": [
       "capelli lunghi",
@@ -17,12 +18,21 @@
       "elfo",
       "rockstar",
       "metallaro",
-      "metalhead"
+      "metalhead",
+      "capelli lunghissimi",
+      "lunghissimi",
+      "capelli fino alle spalle",
+      "capellone",
+      "capellona"
     ],
     "hair:spiky": [
       "a punte",
       "spettinato a punte",
-      "a punta"
+      "a punta",
+      "capelli a punta",
+      "capelli sparati",
+      "sparati",
+      "capelli dritti"
     ],
     "hair:curly": [
       "permanente",
@@ -32,28 +42,45 @@
       "crespi",
       "pagliaccio",
       "mossi",
-      "angelo"
+      "angelo",
+      "ricciolino",
+      "ricciolina",
+      "riccioli",
+      "capelli ricci",
+      "crespo",
+      "crespa",
+      "ricciolone",
+      "ricciolona"
     ],
     "hair:bald": [
       "calvo",
       "pelato",
       "stempiato",
       "testa rasata",
-      "nonno"
+      "nonno",
+      "testa pelata",
+      "pelatone",
+      "calvizie",
+      "zucca pelata"
     ],
     "hair:ponytail": [
       "coda di cavallo",
       "codino",
-      "coda"
+      "coda",
+      "codina"
     ],
     "hair:bun": [
       "crocchia",
       "nonna",
       "capelli raccolti",
-      "raccolti"
+      "raccolti",
+      "tuppo"
     ],
     "hair:mohawk": [
-      "cresta"
+      "cresta",
+      "cresta punk",
+      "moicano",
+      "cresta alla moicana"
     ],
     "hair:messy": [
       "spettinato",
@@ -62,35 +89,48 @@
       "disordinati",
       "capelli pazzi",
       "scienziato",
-      "zombi"
+      "zombi",
+      "capelli arruffati",
+      "arruffato",
+      "capelli in disordine"
     ],
     "hair:braids": [
       "trecce",
       "treccia",
-      "treccine"
+      "treccine",
+      "capelli intrecciati"
     ],
     "hair:emo": [
       "frangia di lato",
-      "ciuffo sull occhio"
+      "ciuffo sull occhio",
+      "frangia emo",
+      "ciuffo emo"
     ],
     "hair:dreads": [
       "dreadlocks",
       "rasta",
-      "locs"
+      "locs",
+      "dreadlock",
+      "treccine rasta"
     ],
     "hair:afro": [
       "capelli afro",
-      "crespi"
+      "crespi",
+      "afro grande"
     ],
     "hair:bob": [
-      "caschetto"
+      "caschetto",
+      "carré",
+      "caschetto corto"
     ],
     "hair:bangs": [
       "frangia",
-      "frangetta"
+      "frangetta",
+      "frangia dritta"
     ],
     "hair:quiff": [
-      "ciuffo"
+      "ciuffo",
+      "ciuffo alto"
     ],
     "hair:buzz": [
       "rasato",
@@ -98,11 +138,16 @@
       "capelli rasati",
       "a spazzola",
       "soldato",
-      "militare"
+      "militare",
+      "rasatura",
+      "tagliati a zero",
+      "a zero"
     ],
     "hair:pigtails": [
       "codini",
-      "twintails"
+      "twintails",
+      "due codini",
+      "codine"
     ],
     "hair:sidepart": [
       "riga di lato",
@@ -160,7 +205,9 @@
       "viso rotondo",
       "paffuto",
       "paffutello",
-      "cicciottello"
+      "cicciottello",
+      "paffuta",
+      "cicciottella"
     ],
     "face:square": [
       "mascella squadrata",
@@ -191,7 +238,8 @@
     "nose:button": [
       "nasino",
       "naso piccolo",
-      "naso all insu"
+      "naso all insu",
+      "naso alla francese"
     ],
     "nose:long": [
       "naso lungo"
@@ -199,7 +247,8 @@
     "nose:big": [
       "nasone",
       "naso grande",
-      "naso a patata"
+      "naso a patata",
+      "naso grosso"
     ],
     "nose:pointy": [
       "naso a punta",
@@ -223,7 +272,13 @@
       "ridendo",
       "😀",
       "😊",
-      "allegro"
+      "allegro",
+      "contenta",
+      "felicissimo",
+      "felicissima",
+      "allegra",
+      "gioiosa",
+      "di buon umore"
     ],
     "mood:sad": [
       "triste",
@@ -234,7 +289,13 @@
       "piangendo",
       "in lacrime",
       "cries",
-      "😢"
+      "😢",
+      "tristissimo",
+      "tristissima",
+      "giù di morale",
+      "depressa",
+      "abbattuta",
+      "malinconica"
     ],
     "mood:angry": [
       "arrabbiato",
@@ -244,7 +305,14 @@
       "scontroso",
       "guarda male",
       "😠",
-      "furioso"
+      "furioso",
+      "arrabbiata",
+      "incazzata",
+      "furiosa",
+      "nervoso",
+      "nervosa",
+      "scocciato",
+      "scocciata"
     ],
     "mood:tired": [
       "stanco",
@@ -259,31 +327,46 @@
       "occhi mezzi chiusi",
       "😴",
       "stanco morto",
-      "stanca morta"
+      "stanca morta",
+      "assonnata",
+      "esausta",
+      "sfinita"
     ],
     "mood:asleep": [
       "addormentato",
       "dorme",
       "dormendo",
-      "occhi chiusi"
+      "occhi chiusi",
+      "addormentata",
+      "che dorme"
     ],
     "mood:surprised": [
       "sorpreso",
       "stupito",
       "scioccato",
       "sbalordito",
-      "😮"
+      "😮",
+      "sorpresa",
+      "stupita",
+      "scioccata",
+      "sbalordita"
     ],
     "mood:scared": [
       "spaventato",
       "impaurito",
       "terrorizzato",
-      "😱"
+      "😱",
+      "spaventata",
+      "impaurita",
+      "terrorizzata"
     ],
     "mood:bored": [
       "annoiato",
       "apatico",
-      "indifferente"
+      "indifferente",
+      "annoiata",
+      "svogliato",
+      "svogliata"
     ],
     "mood:smug": [
       "sarcastico",
@@ -294,7 +377,12 @@
       "compiaciuto",
       "compiaciuta",
       "soddisfatto",
-      "sornione"
+      "sornione",
+      "spavaldo",
+      "spavalda",
+      "arrogante",
+      "presuntuoso",
+      "presuntuosa"
     ],
     "mood:blank": [
       "sguardo vuoto",
@@ -302,7 +390,10 @@
       "vuoto",
       "inespressivo",
       "morto dentro",
-      "npc"
+      "npc",
+      "inespressiva",
+      "faccia da poker",
+      "impassibile"
     ],
     "mood:despair": [
       "disperato",
@@ -313,7 +404,9 @@
     "mood:disgusted": [
       "schifato",
       "disgustato",
-      "🤢"
+      "🤢",
+      "disgustata",
+      "schifata"
     ],
     "mouth:smile": [
       "sorriso",
@@ -325,22 +418,27 @@
       "rilassato",
       "rilassata",
       "simpatico",
-      "simpatica"
+      "simpatica",
+      "sorrisone"
     ],
     "mouth:smirk": [
       "sorrisetto",
       "ghigno",
       "smorfia",
-      "bocca storta"
+      "bocca storta",
+      "mezzo sorriso"
     ],
     "mouth:frown": [
       "imbronciato",
-      "broncio"
+      "broncio",
+      "imbronciata"
     ],
     "mouth:open": [
       "bocca aperta",
       "urla",
-      "urlando"
+      "urlando",
+      "a bocca aperta",
+      "che urla"
     ],
     "eyes:big": [
       "occhi grandi",
@@ -350,7 +448,8 @@
       "kawaii",
       "luccicanti",
       "brillanti",
-      "carina"
+      "carina",
+      "occhi enormi"
     ],
     "eyes:small": [
       "occhi piccoli",
@@ -767,7 +866,9 @@
       "capelli lunghi mossi",
       "lunghi e mossi",
       "boccoli",
-      "surfista"
+      "surfista",
+      "capelli mossi lunghi",
+      "capelli ondulati"
     ],
     "hair:spaceBuns": [
       "doppio chignon",
@@ -776,7 +877,8 @@
     ],
     "hair:pixie": [
       "capelli cortissimi",
-      "taglio corto"
+      "taglio corto",
+      "taglio pixie"
     ],
     "hair:sidePonytail": [
       "coda laterale",
@@ -1226,7 +1328,8 @@
     ],
     "hair:mullet": [
       "capelli a triglia",
-      "triglia"
+      "triglia",
+      "taglio mullet"
     ],
     "hair:middlePart": [
       "riga in mezzo",
@@ -1236,7 +1339,9 @@
     "hair:shag": [
       "scalato",
       "scalati",
-      "capelli scalati"
+      "capelli scalati",
+      "taglio sfilato",
+      "sfilati"
     ],
     "hair:highPonytail": [
       "coda alta"

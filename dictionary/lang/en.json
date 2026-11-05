@@ -4,7 +4,11 @@
   "name": "English",
   "concepts": {
     "hair:short": [
-      "short hair"
+      "short hair",
+      "short haircut",
+      "short haired",
+      "cropped hair",
+      "short cut"
     ],
     "hair:long": [
       "long hair",
@@ -12,11 +16,21 @@
       "queen",
       "princess",
       "elf",
-      "rocker"
+      "rocker",
+      "long haired",
+      "longhair",
+      "shoulder length hair",
+      "waist length hair",
+      "flowing hair"
     ],
     "hair:spiky": [
       "spiky",
-      "spikes"
+      "spikes",
+      "spiked hair",
+      "spikey",
+      "spikey hair",
+      "anime hair",
+      "gelled spikes"
     ],
     "hair:curly": [
       "perm",
@@ -26,16 +40,28 @@
       "curls",
       "wavy",
       "clown",
-      "angel"
+      "angel",
+      "curly haired",
+      "ringlets",
+      "coily",
+      "coily hair",
+      "frizzy",
+      "frizzy hair"
     ],
     "hair:bald": [
       "bald",
       "shaved head",
       "grandpa",
-      "balding"
+      "balding",
+      "bald head",
+      "hairless",
+      "baldie",
+      "chrome dome"
     ],
     "hair:ponytail": [
-      "ponytail"
+      "ponytail",
+      "pony tail",
+      "ponytailed"
     ],
     "hair:bun": [
       "chignon",
@@ -44,12 +70,17 @@
       "grandma",
       "man bun",
       "top bun",
-      "tied up hair"
+      "tied up hair",
+      "hair bun",
+      "topknot"
     ],
     "hair:mohawk": [
       "mohawk",
       "mohican",
-      "punk"
+      "punk",
+      "fauxhawk",
+      "faux hawk",
+      "punk hair"
     ],
     "hair:messy": [
       "messy",
@@ -57,48 +88,75 @@
       "tousled",
       "crazy hair",
       "zombie",
-      "scientist"
+      "scientist",
+      "bed head",
+      "bedhead",
+      "unkempt hair",
+      "tousled hair",
+      "scruffy hair",
+      "disheveled"
     ],
     "hair:braids": [
       "braids",
-      "braid"
+      "braid",
+      "braided hair",
+      "plaits",
+      "plait",
+      "cornrows",
+      "box braids"
     ],
     "hair:emo": [
       "emo",
       "side fringe",
-      "side bangs"
+      "side bangs",
+      "emo fringe",
+      "scene hair"
     ],
     "hair:dreads": [
       "dread",
       "dreads"
     ],
     "hair:afro": [
-      "afro"
+      "afro",
+      "big afro",
+      "fro"
     ],
     "hair:bob": [
-      "bob"
+      "bob",
+      "bob cut",
+      "bob haircut",
+      "lob",
+      "chin length hair"
     ],
     "hair:bangs": [
       "bangs",
-      "fringe"
+      "fringe",
+      "straight bangs",
+      "blunt bangs"
     ],
     "hair:quiff": [
       "banana",
       "pompadour",
       "quiff",
-      "chad"
+      "chad",
+      "rockabilly hair",
+      "greaser hair"
     ],
     "hair:buzz": [
       "buzz cut",
       "crew cut",
       "buzzcut",
-      "soldier"
+      "soldier",
+      "buzzed",
+      "buzzed hair",
+      "army cut"
     ],
     "hair:pigtails": [
       "due code",
       "pigtails",
       "twin tails",
-      "twin tail"
+      "twin tail",
+      "bunches"
     ],
     "hair:sidepart": [
       "parted hair",
@@ -120,13 +178,19 @@
     ],
     "eyes:almond": [
       "almond eyes",
-      "narrow eyes"
+      "narrow eyes",
+      "almond shaped eyes",
+      "cat eyes"
     ],
     "eyes:round": [
       "round eyes"
     ],
     "ears:big": [
-      "big ears"
+      "big ears",
+      "large ears",
+      "sticking out ears",
+      "jug ears",
+      "protruding ears"
     ],
     "ears:small": [
       "small ears"
@@ -134,11 +198,18 @@
     "ears:elf": [
       "elf ears",
       "pointy ears",
-      "elf"
+      "elf",
+      "elven",
+      "elvish",
+      "pointed ears"
     ],
     "face:round": [
       "round face",
-      "chubby"
+      "chubby",
+      "chubby face",
+      "full face",
+      "baby face",
+      "round cheeks"
     ],
     "face:square": [
       "square jaw",
@@ -147,7 +218,9 @@
       "chad",
       "buff",
       "muscular",
-      "jacked"
+      "jacked",
+      "jawline",
+      "chiseled"
     ],
     "face:long": [
       "skinny",
@@ -163,27 +236,36 @@
     ],
     "nose:button": [
       "button nose",
-      "small nose"
+      "small nose",
+      "cute nose",
+      "tiny nose"
     ],
     "nose:long": [
       "long nose"
     ],
     "nose:big": [
       "big nose",
-      "large nose"
+      "large nose",
+      "huge nose",
+      "schnoz",
+      "schnozz"
     ],
     "nose:pointy": [
       "pointy nose",
-      "hooked nose"
+      "hooked nose",
+      "sharp nose"
     ],
     "brows:thick": [
       "bushy eyebrows",
       "thick eyebrows",
-      "thick brows"
+      "thick brows",
+      "bushy brows",
+      "big eyebrows"
     ],
     "brows:thin": [
       "thin eyebrows",
-      "thin brows"
+      "thin brows",
+      "plucked eyebrows"
     ],
     "mood:happy": [
       "happy",
@@ -193,7 +275,10 @@
       "ride",
       "laughing",
       "laughs",
-      "bloomer"
+      "bloomer",
+      "jolly",
+      "delighted",
+      "in a good mood"
     ],
     "mood:sad": [
       "sad",
@@ -201,7 +286,10 @@
       "gloomy",
       "depressed",
       "melancholic",
-      "miserable"
+      "miserable",
+      "unhappy",
+      "upset",
+      "heartbroken"
     ],
     "mood:angry": [
       "angry",
@@ -209,7 +297,12 @@
       "furious",
       "mean",
       "grumpy",
-      "looks mean"
+      "looks mean",
+      "annoyed",
+      "pissed",
+      "irritated",
+      "raging",
+      "fuming"
     ],
     "mood:tired": [
       "tired",
@@ -220,31 +313,40 @@
       "half closed eyes",
       "half open eyes",
       "stoned",
-      "dead tired"
+      "dead tired",
+      "burnt out",
+      "burned out",
+      "sleep deprived"
     ],
     "mood:asleep": [
       "asleep",
       "sleeping",
       "eyes closed",
-      "closed eyes"
+      "closed eyes",
+      "napping",
+      "dozing"
     ],
     "mood:surprised": [
       "surprised",
       "shocked",
       "astonished",
-      "amazed"
+      "amazed",
+      "stunned"
     ],
     "mood:scared": [
       "scared",
       "afraid",
       "frightened",
-      "terrified"
+      "terrified",
+      "spooked"
     ],
     "mood:bored": [
       "bored",
       "apathetic",
       "unimpressed",
-      "deadpan"
+      "deadpan",
+      "uninterested",
+      "meh"
     ],
     "mood:smug": [
       "smug",
@@ -253,7 +355,8 @@
       "sly",
       "chad",
       "pleased with himself",
-      "self satisfied"
+      "self satisfied",
+      "arrogant"
     ],
     "mood:blank": [
       "thousand yard stare",
@@ -261,17 +364,23 @@
       "blank",
       "dead inside",
       "expressionless",
-      "doomer"
+      "doomer",
+      "poker face",
+      "emotionless"
     ],
     "mood:despair": [
       "despair",
       "desperate",
       "sobbing",
-      "wailing"
+      "wailing",
+      "hopeless",
+      "devastated"
     ],
     "mood:disgusted": [
       "disgusted",
-      "grossed out"
+      "grossed out",
+      "disgust",
+      "eww"
     ],
     "mouth:smile": [
       "ride",
@@ -285,18 +394,23 @@
       "relaxed",
       "friendly",
       "gentile",
-      "kind"
+      "kind",
+      "smiley",
+      "big smile"
     ],
     "mouth:smirk": [
       "smirk",
       "smirking",
-      "crooked smile"
+      "crooked smile",
+      "half smile",
+      "sly smile"
     ],
     "mouth:frown": [
       "frown",
       "frowning",
       "pout",
-      "scowl"
+      "scowl",
+      "pouting"
     ],
     "mouth:open": [
       "open mouth",
@@ -314,11 +428,15 @@
       "cute",
       "anime",
       "sparkly",
-      "sparkling"
+      "sparkling",
+      "huge eyes",
+      "anime eyes",
+      "doe eyes"
     ],
     "eyes:small": [
       "small eyes",
-      "beady eyes"
+      "beady eyes",
+      "tiny eyes"
     ],
     "eyewear:glasses": [
       "thick glasses",
@@ -728,19 +846,24 @@
     "hair:wavyLong": [
       "long wavy hair",
       "wavy long hair",
-      "surfer"
+      "surfer",
+      "beach waves"
     ],
     "hair:spaceBuns": [
       "due chignon",
       "space buns",
-      "double buns"
+      "double buns",
+      "two buns"
     ],
     "hair:pixie": [
       "pixie",
-      "pixie cut"
+      "pixie cut",
+      "pixie haircut"
     ],
     "hair:sidePonytail": [
-      "side ponytail"
+      "side ponytail",
+      "side pony",
+      "ponytail on the side"
     ],
     "hat:pompom": [
       "pon pon",
@@ -1111,7 +1234,9 @@
       "raised eyebrow",
       "eyebrow raised",
       "suspicious",
-      "skeptical"
+      "skeptical",
+      "one eyebrow raised",
+      "sceptical"
     ],
     "detail:doubleChin": [
       "double chin"
@@ -1154,24 +1279,33 @@
     ],
     "hair:mullet": [
       "mullet",
-      "business in front party in the back"
+      "business in front party in the back",
+      "mullet haircut",
+      "business in the front"
     ],
     "hair:middlePart": [
       "middle part",
       "curtain bangs",
-      "curtains"
+      "curtains",
+      "center part",
+      "centre part",
+      "middle parting",
+      "parted in the middle"
     ],
     "hair:shag": [
       "wolf cut",
       "shag",
-      "shaggy"
+      "shaggy",
+      "shaggy hair",
+      "layered hair"
     ],
     "hair:highPonytail": [
       "high ponytail"
     ],
     "hair:afroPuffs": [
       "afro puffs",
-      "puffs"
+      "puffs",
+      "afro buns"
     ],
     "hat:bucket": [
       "bucket hat",
