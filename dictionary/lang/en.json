@@ -448,17 +448,26 @@
       "grandpa",
       "grandma",
       "framed glasses",
-      "prescription glasses"
+      "prescription glasses",
+      "eyeglasses",
+      "nerd glasses",
+      "rimmed glasses",
+      "bespectacled",
+      "four eyes"
     ],
     "eyewear:round": [
       "round glasses",
       "harry potter",
       "hipster",
       "nerd",
-      "nerdy"
+      "nerdy",
+      "circle glasses",
+      "harry potter glasses"
     ],
     "eyewear:monocle": [
-      "monocle"
+      "monocle",
+      "eyeglass",
+      "single lens"
     ],
     "eyewear:sunglasses": [
       "aviator",
@@ -470,14 +479,22 @@
       "rocker",
       "rapper",
       "trapper",
-      "boss"
+      "boss",
+      "sun glasses",
+      "dark glasses",
+      "cool glasses",
+      "aviator glasses",
+      "wayfarers"
     ],
     "facial:beard": [
       "beard",
       "bearded",
       "hipster",
       "lumberjack",
-      "woodcutter"
+      "woodcutter",
+      "full beard",
+      "bearded man",
+      "beardy"
     ],
     "facial:longBeard": [
       "barbone",
@@ -485,22 +502,32 @@
       "big beard",
       "wizard beard",
       "wizard",
-      "santa"
+      "santa",
+      "huge beard",
+      "viking beard"
     ],
     "facial:stubble": [
       "stubble",
       "five o clock shadow",
       "unshaven",
       "chad",
-      "scruffy beard"
+      "scruffy beard",
+      "scruff",
+      "short beard"
     ],
     "facial:moustache": [
       "mustache",
       "grandpa",
-      "big mustache"
+      "big mustache",
+      "mustached",
+      "moustached",
+      "tache",
+      "pornstache"
     ],
     "facial:goatee": [
-      "goatee"
+      "goatee",
+      "goatee beard",
+      "chin beard"
     ],
     "hat:beanie": [
       "thief",
@@ -513,27 +540,43 @@
       "hipster",
       "doomer",
       "lumberjack",
-      "woodcutter"
+      "woodcutter",
+      "toque",
+      "winter hat",
+      "knitted hat",
+      "skull cap",
+      "watch cap"
     ],
     "hat:cap": [
       "cap",
       "baseball cap",
       "flat cap",
       "cop",
-      "police"
+      "police",
+      "baseball hat",
+      "ball cap",
+      "trucker hat",
+      "trucker cap",
+      "snapback",
+      "dad hat"
     ],
     "hat:hood": [
       "hood",
       "hooded",
       "hacker",
-      "mysterious"
+      "mysterious",
+      "hood up",
+      "hooded sweatshirt"
     ],
     "hat:tophat": [
-      "top hat"
+      "top hat",
+      "stovepipe hat",
+      "magician hat"
     ],
     "hat:cowboy": [
       "cowboy hat",
-      "cowboy"
+      "cowboy",
+      "ten gallon hat"
     ],
     "hat:crown": [
       "crown",
@@ -542,7 +585,8 @@
       "princess",
       "re",
       "king",
-      "prince"
+      "prince",
+      "royal crown"
     ],
     "hat:generic": [
       "hat",
@@ -554,31 +598,41 @@
     "hat:santa": [
       "santa hat",
       "santa",
-      "christmas hat"
+      "christmas hat",
+      "xmas hat"
     ],
     "hat:chef": [
       "chef",
-      "chef hat"
+      "chef hat",
+      "toque blanche",
+      "cook hat",
+      "cook"
     ],
     "hat:catEars": [
       "cat ears",
-      "kitty ears"
+      "kitty ears",
+      "cat ear headband"
     ],
     "hat:viking": [
       "viking",
-      "viking helmet"
+      "viking helmet",
+      "horned helmet"
     ],
     "hat:pointy": [
       "pointy hat",
       "witch hat",
       "wizard hat",
       "wizard",
-      "witch"
+      "witch",
+      "pointed hat",
+      "sorcerer"
     ],
     "hat:beret": [
       "beret",
       "painter",
-      "artist"
+      "artist",
+      "french beret",
+      "artist hat"
     ],
     "hat:halo": [
       "halo",
@@ -592,7 +646,10 @@
       "bandana",
       "headband",
       "pirate",
-      "ninja"
+      "ninja",
+      "head bandana",
+      "do rag",
+      "durag"
     ],
     "clothes:hoodie": [
       "hoodie",
@@ -601,7 +658,10 @@
       "coder",
       "programmer",
       "gamer",
-      "doomer"
+      "doomer",
+      "hooded top",
+      "pullover hoodie",
+      "zip hoodie"
     ],
     "clothes:jacket": [
       "jacket",
@@ -611,7 +671,11 @@
       "rocker",
       "studs",
       "leather jacket",
-      "studded"
+      "studded",
+      "biker jacket",
+      "jean jacket",
+      "bomber jacket",
+      "windbreaker"
     ],
     "clothes:suit": [
       "smoking",
@@ -620,7 +684,10 @@
       "gangster",
       "boss",
       "elegant",
-      "classy"
+      "classy",
+      "business suit",
+      "three piece suit",
+      "formal wear"
     ],
     "clothes:tshirt": [
       "t shirt",
@@ -628,14 +695,22 @@
       "footballer",
       "soccer player",
       "jersey",
-      "skater"
+      "skater",
+      "t-shirt",
+      "tshirt",
+      "tee shirt",
+      "graphic tee"
     ],
     "clothes:tank": [
       "tank top",
       "sleeveless",
       "buff",
       "muscular",
-      "jacked"
+      "jacked",
+      "sleeveless shirt",
+      "wife beater",
+      "singlet",
+      "muscle shirt"
     ],
     "pattern:stripes": [
       "thief",
@@ -646,17 +721,23 @@
       "pjs",
       "striped",
       "stripes",
-      "stripy"
+      "stripy",
+      "pinstripes",
+      "pinstriped"
     ],
     "pattern:dots": [
       "polka dots",
       "polka dot",
-      "dotted"
+      "dotted",
+      "polka dotted",
+      "spotty"
     ],
     "pattern:flowers": [
       "floral",
       "flowers",
-      "hawaiian"
+      "hawaiian",
+      "flowery",
+      "flower print"
     ],
     "pattern:plaid": [
       "checked",
@@ -667,7 +748,8 @@
       "tartan",
       "farmer",
       "lumberjack",
-      "woodcutter"
+      "woodcutter",
+      "gingham"
     ],
     "clothes:shirt": [
       "blouse",
@@ -687,7 +769,8 @@
       "sweater",
       "jumper",
       "cardigan",
-      "wool sweater"
+      "wool sweater",
+      "knit sweater"
     ],
     "clothes:coat": [
       "trench",
@@ -695,7 +778,11 @@
       "overcoat",
       "raincoat",
       "detective",
-      "sherlock"
+      "sherlock",
+      "trench coat",
+      "trenchcoat",
+      "winter coat",
+      "peacoat"
     ],
     "clothes:uniform": [
       "uniform",
@@ -710,7 +797,8 @@
       "nurse",
       "cop",
       "police",
-      "soldier"
+      "soldier",
+      "medical uniform"
     ],
     "detail:cigarette": [
       "cigarette",
@@ -718,12 +806,20 @@
       "smoking a",
       "smokes",
       "doomer",
-      "gangster"
+      "gangster",
+      "smoker",
+      "ciggy",
+      "cig",
+      "fag in mouth",
+      "vape"
     ],
     "detail:pipe": [
       "pipe",
       "detective",
-      "sherlock"
+      "sherlock",
+      "tobacco pipe",
+      "smoking pipe",
+      "pipe smoker"
     ],
     "detail:earring": [
       "earring",
@@ -742,55 +838,78 @@
     "detail:scar": [
       "cicatrice",
       "scar",
-      "scarred"
+      "scarred",
+      "battle scar",
+      "facial scar"
     ],
     "detail:freckles": [
       "freckles",
       "freckled",
-      "bloomer"
+      "bloomer",
+      "freckly",
+      "sun spots"
     ],
     "detail:headphones": [
       "headphones",
-      "headset"
+      "headset",
+      "over ear headphones",
+      "big headphones",
+      "cans"
     ],
     "detail:tattoo": [
       "tattoo",
       "tattoos",
       "tattooed",
-      "trapper"
+      "trapper",
+      "tatted",
+      "inked",
+      "neck tattoo"
     ],
     "detail:bags": [
       "bags under",
       "dark circles",
       "eye bags",
       "zombie",
-      "doomer"
+      "doomer",
+      "bags under the eyes",
+      "baggy eyes"
     ],
     "detail:mask": [
       "mask",
       "dentist",
       "dottore",
-      "doctor"
+      "doctor",
+      "face mask",
+      "surgical mask",
+      "medical mask"
     ],
     "detail:eyepatch": [
       "eye patch"
     ],
     "detail:wrinkles": [
       "wrinkles",
-      "wrinkled"
+      "wrinkled",
+      "wrinkly",
+      "crows feet"
     ],
     "detail:scarf": [
-      "scarf"
+      "scarf",
+      "neck scarf",
+      "wool scarf",
+      "muffler"
     ],
     "detail:tears": [
       "sobbing",
       "crying",
-      "tears"
+      "tears",
+      "in tears",
+      "teary"
     ],
     "detail:sweat": [
       "sweating",
       "sweat",
-      "sweaty"
+      "sweaty",
+      "nervous sweat"
     ],
     "detail:bandaid": [
       "band aid",
@@ -802,32 +921,39 @@
     ],
     "detail:tie": [
       "tie",
-      "necktie"
+      "necktie",
+      "neck tie"
     ],
     "detail:sideburns": [
       "sideburns"
     ],
     "detail:acne": [
       "acne",
-      "pimples"
+      "pimples",
+      "spots"
     ],
     "detail:unibrow": [
-      "unibrow"
+      "unibrow",
+      "monobrow",
+      "one eyebrow"
     ],
     "detail:lipstick": [
       "full lips",
       "lipstick",
-      "red lips"
+      "red lips",
+      "lip gloss"
     ],
     "detail:necklace": [
-      "gold chain",
       "necklace",
       "chain",
       "rapper",
       "trapper",
       "perle",
       "pearls",
-      "pearl necklace"
+      "pearl necklace",
+      "chain necklace",
+      "pendant",
+      "bling"
     ],
     "gender:female": [
       "feminine",
@@ -841,7 +967,12 @@
       "witch",
       "queen",
       "princess",
-      "grandma"
+      "grandma",
+      "gal",
+      "girly",
+      "femme",
+      "chick",
+      "cowgirl"
     ],
     "hair:wavyLong": [
       "long wavy hair",
@@ -876,7 +1007,10 @@
       "backwards cap",
       "rapper",
       "trapper",
-      "skater"
+      "skater",
+      "backwards hat",
+      "cap backwards",
+      "reversed cap"
     ],
     "hat:turban": [
       "turban"
@@ -899,24 +1033,36 @@
     ],
     "eyewear:pixel": [
       "thug life",
-      "deal with it"
+      "deal with it",
+      "deal with it glasses",
+      "8 bit glasses"
     ],
     "eyewear:vr": [
       "vr",
       "vr headset",
-      "oculus"
+      "oculus",
+      "virtual reality headset",
+      "vr goggles"
     ],
     "eyewear:visor": [
       "visor",
-      "cyberpunk"
+      "cyberpunk",
+      "futuristic visor",
+      "goggles"
     ],
     "clothes:dress": [
       "dress",
-      "gown"
+      "gown",
+      "evening dress",
+      "sundress",
+      "frock"
     ],
     "clothes:armor": [
       "armor",
-      "knight"
+      "knight",
+      "plate armor",
+      "chainmail",
+      "knight armor"
     ],
     "print:code": [
       "code",
@@ -927,24 +1073,31 @@
       "coding shirt"
     ],
     "print:heart": [
-      "heart"
+      "heart",
+      "heart print"
     ],
     "print:star": [
-      "star"
+      "star",
+      "star print"
     ],
     "print:skull": [
-      "skull"
+      "skull",
+      "skull print"
     ],
     "print:lightning": [
       "fulmine",
       "lightning",
-      "bolt"
+      "bolt",
+      "lightning bolt",
+      "lightning print"
     ],
     "detail:headset": [
       "headset",
       "gaming headset",
       "gamer",
-      "streamer"
+      "streamer",
+      "headset with mic",
+      "microphone headset"
     ],
     "detail:cyborg": [
       "robot",
@@ -1077,7 +1230,9 @@
       "helmet",
       "hard hat",
       "builder",
-      "construction worker"
+      "construction worker",
+      "construction helmet",
+      "safety helmet"
     ],
     "hat:bowler": [
       "bowler",
@@ -1111,7 +1266,8 @@
     ],
     "detail:hoops": [
       "hoop earrings",
-      "hoops"
+      "hoops",
+      "big hoops"
     ],
     "detail:bow": [
       "bow",
@@ -1125,28 +1281,34 @@
     "detail:cape": [
       "cape",
       "cloak",
-      "vampire"
+      "vampire",
+      "superhero cape"
     ],
     "detail:lashes": [
       "lashes",
       "eyelashes",
-      "long lashes"
+      "long lashes",
+      "long eyelashes"
     ],
     "detail:eyeshadow": [
       "make up",
       "goth",
-      "eyeshadow"
+      "eyeshadow",
+      "eye shadow",
+      "smoky eyes"
     ],
     "detail:fangs": [
       "fangs",
       "vampire teeth",
-      "vampire"
+      "vampire",
+      "sharp teeth"
     ],
     "skin:green": [
       "goblin",
       "green skin",
       "alien",
-      "orc"
+      "orc",
+      "green skinned"
     ],
     "skin:blue": [
       "blue skin"
@@ -1160,7 +1322,8 @@
       "purple skin"
     ],
     "eyewear:eyepatch": [
-      "pirate"
+      "pirate",
+      "pirate patch"
     ],
     "hairColor:white": [
       "santa",
@@ -1195,7 +1358,9 @@
       "papillon",
       "bow tie",
       "waiter",
-      "waitress"
+      "waitress",
+      "bow-tie",
+      "dickie bow"
     ],
     "detail:badge": [
       "badge",
@@ -1219,7 +1384,8 @@
     ],
     "detail:earbuds": [
       "earbuds",
-      "earphones"
+      "earphones",
+      "in ear headphones"
     ],
     "face:heart": [
       "heart shaped face",
@@ -1244,7 +1410,8 @@
     "detail:dimples": [
       "fossette",
       "dimples",
-      "dimple"
+      "dimple",
+      "dimpled"
     ],
     "detail:cheekbones": [
       "cheekbones",
@@ -1309,22 +1476,29 @@
     ],
     "hat:bucket": [
       "bucket hat",
-      "bucket"
+      "bucket",
+      "fishing hat",
+      "fisherman hat"
     ],
     "hat:party": [
       "party hat",
-      "birthday"
+      "birthday",
+      "birthday hat",
+      "party cone"
     ],
     "hat:fedora": [
       "fedora",
       "trilby",
       "italian hat",
-      "gangster hat"
+      "gangster hat",
+      "detective hat",
+      "noir hat"
     ],
     "eyewear:hearts": [
       "heart glasses",
       "heart shaped glasses",
-      "heart sunglasses"
+      "heart sunglasses",
+      "love glasses"
     ],
     "facial:handlebar": [
       "curly mustache"
@@ -1332,12 +1506,15 @@
     "clothes:overalls": [
       "overalls",
       "dungarees",
-      "mechanic"
+      "mechanic",
+      "bib overalls"
     ],
     "clothes:puffer": [
       "puffer",
       "puffer jacket",
-      "down jacket"
+      "down jacket",
+      "puffy jacket",
+      "quilted jacket"
     ],
     "clothes:polo": [
       "polo",
@@ -1350,12 +1527,15 @@
     "clothes:apron": [
       "apron",
       "chef",
-      "baker"
+      "baker",
+      "kitchen apron",
+      "barista apron"
     ],
     "clothes:varsity": [
       "college jacket",
       "varsity",
-      "varsity jacket"
+      "varsity jacket",
+      "baseball jacket"
     ],
     "clothes:openShirt": [
       "open shirt",
@@ -1373,41 +1553,65 @@
       "kid",
       "child",
       "little boy",
-      "little girl"
+      "little girl",
+      "little kid",
+      "toddler",
+      "young kid",
+      "tween"
     ],
     "age:young": [
       "young",
       "teen",
       "youth",
       "girl",
-      "boy"
+      "boy",
+      "young adult",
+      "youngster"
     ],
     "age:old": [
       "old",
       "elderly",
       "grandpa",
-      "grandma"
+      "grandma",
+      "old man",
+      "senior",
+      "aged",
+      "elderly man",
+      "pensioner",
+      "boomer"
     ],
     "skin:dark": [
       "dark skin",
       "dark skinned",
-      "black skin"
+      "black skin",
+      "brown skin",
+      "dark complexion"
     ],
     "skin:tan": [
       "tan",
       "tanned",
       "olive skin",
-      "surfer"
+      "surfer",
+      "tan skin",
+      "suntanned",
+      "olive skinned"
     ],
     "skin:pale": [
       "pale",
       "fair skin",
       "pale skin",
       "vampire",
-      "goth"
+      "goth",
+      "pale skinned",
+      "very pale",
+      "light skin",
+      "ghostly"
     ],
     "clothes:turtleneck": [
-      "turtleneck"
+      "turtleneck",
+      "turtle neck",
+      "roll neck",
+      "polo neck"
     ]
   },
   "colors": {

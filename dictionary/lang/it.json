@@ -466,7 +466,10 @@
       "scienziata",
       "nonno",
       "nonna",
-      "occhiali da vista"
+      "occhiali da vista",
+      "occhialuto",
+      "occhialuta",
+      "quattrocchi"
     ],
     "eyewear:round": [
       "occhiali tondi",
@@ -481,21 +484,27 @@
       "occhiali da aviatore",
       "occhiali a goccia",
       "occhiali scuri",
-      "rockstar"
+      "rockstar",
+      "occhiali scuri da sole",
+      "occhiali a specchio"
     ],
     "facial:beard": [
       "barba",
       "barbuto",
       "boscaiolo",
       "woodchopper",
-      "taglialegna"
+      "taglialegna",
+      "barba folta",
+      "con la barba",
+      "barba piena"
     ],
     "facial:longBeard": [
       "barba lunga",
       "barbona",
       "barba da mago",
       "mago",
-      "babbo natale"
+      "babbo natale",
+      "barba lunghissima"
     ],
     "facial:stubble": [
       "barba di tre giorni",
@@ -503,7 +512,9 @@
       "barba incolta",
       "barbetta",
       "barba sfatta",
-      "barba trascurata"
+      "barba trascurata",
+      "barba corta",
+      "mal rasato"
     ],
     "facial:moustache": [
       "baffi",
@@ -512,10 +523,13 @@
       "stache",
       "nonno",
       "baffoni",
-      "big moustache"
+      "big moustache",
+      "baffuto",
+      "baffone"
     ],
     "facial:goatee": [
-      "pizzetto"
+      "pizzetto",
+      "barbetta sul mento"
     ],
     "hat:beanie": [
       "berretto",
@@ -527,24 +541,32 @@
       "cuffia di lana",
       "boscaiolo",
       "woodchopper",
-      "taglialegna"
+      "taglialegna",
+      "cuffia",
+      "berretto di lana",
+      "cappello di lana",
+      "zuccotto"
     ],
     "hat:cap": [
       "cappellino",
       "visiera",
       "coppola",
       "poliziotto",
-      "poliziotta"
+      "poliziotta",
+      "cappello con visiera",
+      "cappellino da baseball"
     ],
     "hat:hood": [
       "cappuccio",
       "incappucciato",
       "incappucciata",
       "misterioso",
-      "misteriosa"
+      "misteriosa",
+      "con il cappuccio"
     ],
     "hat:tophat": [
-      "cilindro"
+      "cilindro",
+      "cappello a cilindro"
     ],
     "hat:cowboy": [
       "cappello da cowboy",
@@ -571,16 +593,20 @@
     ],
     "hat:chef": [
       "cappello da cuoco",
-      "cuoco"
+      "cuoco",
+      "cuoca"
     ],
     "hat:catEars": [
       "orecchie da gatto",
       "orecchie da gattino",
-      "neko"
+      "neko",
+      "orecchie di gatto",
+      "cerchietto da gatto"
     ],
     "hat:viking": [
       "vichingo",
-      "elmo vichingo"
+      "elmo vichingo",
+      "vichinga"
     ],
     "hat:pointy": [
       "cappello a punta",
@@ -594,7 +620,8 @@
       "berretto basco",
       "pittore",
       "pittrice",
-      "artista"
+      "artista",
+      "basco francese"
     ],
     "hat:horns": [
       "corna",
@@ -616,7 +643,10 @@
       "sviluppatore",
       "videogiocatore",
       "studente",
-      "studentessa"
+      "studentessa",
+      "felpa con cappuccio",
+      "felpona",
+      "felpa con zip"
     ],
     "clothes:jacket": [
       "giacca",
@@ -627,13 +657,18 @@
       "chiodo",
       "rockstar",
       "borchie",
-      "giacca di pelle"
+      "giacca di pelle",
+      "giubbotto di pelle",
+      "chiodo di pelle"
     ],
     "clothes:suit": [
       "completo",
       "in giacca e cravatta",
       "mafioso",
-      "elegante"
+      "elegante",
+      "abito elegante",
+      "vestito elegante",
+      "completo elegante"
     ],
     "clothes:tshirt": [
       "maglietta",
@@ -642,7 +677,8 @@
       "calciatrice",
       "metallaro",
       "metalhead",
-      "skateboarder"
+      "skateboarder",
+      "maglietta a maniche corte"
     ],
     "clothes:tank": [
       "canottiera",
@@ -653,7 +689,8 @@
     ],
     "clothes:turtleneck": [
       "dolcevita",
-      "collo alto"
+      "collo alto",
+      "maglione a collo alto"
     ],
     "pattern:stripes": [
       "a righe",
@@ -664,7 +701,8 @@
       "in pigiama",
       "righe",
       "rigato",
-      "rigata"
+      "rigata",
+      "a strisce"
     ],
     "pattern:flowers": [
       "a fiori",
@@ -683,7 +721,8 @@
       "contadino",
       "boscaiolo",
       "woodchopper",
-      "taglialegna"
+      "taglialegna",
+      "a scacchi"
     ],
     "clothes:shirt": [
       "camicia",
@@ -698,12 +737,15 @@
     "clothes:sweater": [
       "maglione",
       "pullover",
-      "maglione di lana"
+      "maglione di lana",
+      "golf"
     ],
     "clothes:coat": [
       "cappotto",
       "impermeabile",
-      "investigatore"
+      "investigatore",
+      "cappotto lungo",
+      "giaccone"
     ],
     "clothes:uniform": [
       "uniforme",
@@ -729,11 +771,19 @@
       "sigaro",
       "fuma",
       "fumando",
-      "mafioso"
+      "mafioso",
+      "che fuma",
+      "fumatore",
+      "fumatrice",
+      "sigaretta in bocca",
+      "paglia",
+      "svapo"
     ],
     "detail:pipe": [
       "investigatore",
-      "pipa"
+      "pipa",
+      "pipa in bocca",
+      "con la pipa"
     ],
     "detail:earring": [
       "orecchino",
@@ -747,19 +797,28 @@
       "piercing ovunque"
     ],
     "detail:scar": [
-      "sfregio"
+      "sfregio",
+      "cicatrice sul viso",
+      "sfregiato",
+      "sfregiata"
     ],
     "detail:freckles": [
       "lentiggini",
-      "efelidi"
+      "efelidi",
+      "lentigginoso",
+      "lentigginosa"
     ],
     "detail:headphones": [
-      "cuffie"
+      "cuffie",
+      "cuffie grandi",
+      "cuffione"
     ],
     "detail:tattoo": [
       "tatuaggio",
       "tatuaggi",
-      "tatuato"
+      "tatuato",
+      "tatuata",
+      "tatuaggio sul collo"
     ],
     "detail:bags": [
       "occhiaie",
@@ -771,7 +830,9 @@
       "maschera",
       "dentista",
       "dottoressa",
-      "medico"
+      "medico",
+      "mascherina chirurgica",
+      "mascherina ffp2"
     ],
     "detail:eyepatch": [
       "benda sull occhio",
@@ -780,10 +841,14 @@
     ],
     "detail:wrinkles": [
       "rughe",
-      "rugoso"
+      "rugoso",
+      "rugosa",
+      "zampe di gallina"
     ],
     "detail:scarf": [
-      "sciarpa"
+      "sciarpa",
+      "sciarpa di lana",
+      "sciarpone"
     ],
     "detail:tears": [
       "disperato",
@@ -794,13 +859,15 @@
       "piange",
       "piangendo",
       "in lacrime",
-      "cries"
+      "cries",
+      "che piange"
     ],
     "detail:sweat": [
       "sudato",
       "suda",
       "goccia di sudore",
-      "sudore"
+      "sudore",
+      "sudata"
     ],
     "detail:bandaid": [
       "cerotto",
@@ -819,7 +886,9 @@
     ],
     "detail:acne": [
       "brufoli",
-      "zits"
+      "zits",
+      "brufoloso",
+      "brufolosa"
     ],
     "detail:unibrow": [
       "monociglio"
@@ -828,7 +897,8 @@
       "rossetto",
       "labbra rosse",
       "labbra rifatte",
-      "labbra carnose"
+      "labbra carnose",
+      "lucidalabbra"
     ],
     "detail:necklace": [
       "collana",
@@ -838,7 +908,8 @@
       "tamarro",
       "tamarra",
       "collana di perle",
-      "catena"
+      "catena",
+      "ciondolo"
     ],
     "gender:female": [
       "ragazza",
@@ -860,7 +931,34 @@
       "poliziotta",
       "nonna",
       "studentessa",
-      "donna"
+      "donna",
+      "donna giovane",
+      "bimba",
+      "piccola",
+      "ragazzina",
+      "anziana",
+      "vecchia",
+      "vecchietta",
+      "nonnina",
+      "pensionata",
+      "cuoca",
+      "vichinga",
+      "fumatrice",
+      "tatuata",
+      "sudata",
+      "truccata",
+      "lentigginosa",
+      "sfregiata",
+      "brufolosa",
+      "occhialuta",
+      "pallida",
+      "abbronzata",
+      "olivastra",
+      "paffuta",
+      "cicciottella",
+      "ricciolina",
+      "capellona",
+      "ricciolona"
     ],
     "hair:wavyLong": [
       "capelli lunghi mossi",
@@ -894,7 +992,9 @@
       "tamarra",
       "cappellino al contrario",
       "girato",
-      "skateboarder"
+      "skateboarder",
+      "cappello al contrario",
+      "visiera dietro"
     ],
     "hat:hijab": [
       "hijab",
@@ -933,7 +1033,8 @@
     "eyewear:vr": [
       "visore",
       "visore vr",
-      "realta virtuale"
+      "realta virtuale",
+      "visore per la realtà virtuale"
     ],
     "eyewear:visor": [
       "visiera cyber",
@@ -943,13 +1044,15 @@
     "clothes:dress": [
       "vestitino",
       "abito da sera",
-      "abitino"
+      "abitino",
+      "vestito lungo"
     ],
     "clothes:armor": [
       "armatura",
       "corazza",
       "armour",
-      "cavaliere"
+      "cavaliere",
+      "cotta di maglia"
     ],
     "print:code": [
       "codice",
@@ -979,7 +1082,8 @@
       "cuffie da gaming",
       "microfono",
       "mic",
-      "videogiocatore"
+      "videogiocatore",
+      "cuffie da gamer"
     ],
     "detail:cyborg": [
       "cyborg",
@@ -1108,7 +1212,8 @@
       "muratore",
       "operaio",
       "hardhat",
-      "casco"
+      "casco",
+      "elmetto da cantiere"
     ],
     "hat:bowler": [
       "bombetta"
@@ -1163,12 +1268,14 @@
       "colletto alto",
       "vampiro",
       "vampira",
-      "dracula"
+      "dracula",
+      "mantellina"
     ],
     "detail:lashes": [
       "ciglia",
       "ciglia lunghe",
-      "ciglione"
+      "ciglione",
+      "ciglia finte"
     ],
     "detail:eyeshadow": [
       "ombretto",
@@ -1205,7 +1312,8 @@
       "pelle viola"
     ],
     "eyewear:eyepatch": [
-      "pirata"
+      "pirata",
+      "benda da pirata"
     ],
     "hairColor:white": [
       "babbo natale",
@@ -1351,7 +1459,8 @@
     ],
     "hat:bucket": [
       "cappello da pescatore",
-      "pescatora"
+      "pescatora",
+      "cappellino da pescatore"
     ],
     "hat:party": [
       "cappellino da festa",
@@ -1366,7 +1475,8 @@
     ],
     "eyewear:hearts": [
       "occhiali a cuore",
-      "occhiali cuore"
+      "occhiali cuore",
+      "occhiali a forma di cuore"
     ],
     "detail:earmuffs": [
       "paraorecchie",
@@ -1388,7 +1498,8 @@
     ],
     "clothes:puffer": [
       "piumino",
-      "piumino imbottito"
+      "piumino imbottito",
+      "giubbotto imbottito"
     ],
     "clothes:polo": [
       "maglia polo"
@@ -1402,7 +1513,8 @@
       "grembiulino",
       "cuoco",
       "barista",
-      "fornaio"
+      "fornaio",
+      "grembiule da cucina"
     ],
     "clothes:varsity": [
       "giubbotto college",
@@ -1425,7 +1537,11 @@
       "bambina",
       "bimbo",
       "ragazzino",
-      "bambino"
+      "bambino",
+      "bimba",
+      "piccola",
+      "ragazzina",
+      "bambino piccolo"
     ],
     "age:young": [
       "giovane",
@@ -1434,24 +1550,38 @@
       "adolescente",
       "studente",
       "studentessa",
-      "teenager"
+      "teenager",
+      "giovanotto",
+      "ragazzo giovane"
     ],
     "age:old": [
       "vecchio",
       "anziano",
       "nonno",
       "nonna",
-      "vecchietto"
+      "vecchietto",
+      "anziana",
+      "vecchia",
+      "vecchietta",
+      "nonnino",
+      "nonnina",
+      "pensionato",
+      "pensionata",
+      "signore anziano"
     ],
     "skin:dark": [
       "pelle scura",
       "carnagione scura",
-      "pelle nera"
+      "pelle nera",
+      "di colore"
     ],
     "skin:tan": [
       "abbronzato",
       "olivastro",
-      "surfista"
+      "surfista",
+      "abbronzata",
+      "pelle abbronzata",
+      "olivastra"
     ],
     "skin:pale": [
       "pallido",
@@ -1459,7 +1589,10 @@
       "carnagione chiara",
       "vampiro",
       "vampira",
-      "dracula"
+      "dracula",
+      "pallida",
+      "pelle chiarissima",
+      "cadaverico"
     ],
     "hat:halo": [
       "aureola",
@@ -1467,7 +1600,8 @@
     ],
     "pattern:dots": [
       "a pois",
-      "pois"
+      "pois",
+      "a pallini"
     ]
   },
   "colors": {
