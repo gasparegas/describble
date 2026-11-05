@@ -31,10 +31,11 @@ Most contributions are here, and they need no code. The words live in [`dictiona
 
 ## Adding a language
 
-1. Copy `dictionary/lang/en.json` to `dictionary/lang/<code>.json` (two letters, e.g. `pt.json`), set `language` and `name`, and replace the English words with yours. You don't need every concept at once.
-2. Add the file to the two lists of languages: the `import` lines in `app/src/lexicon.js` (and `dictionaryLanguages` there).
+1. Copy `dictionary/lang/en.json` to `dictionary/lang/<code>.json` (two letters, e.g. `es.json`), set `language` and `name`, and replace the English words with yours. You don't need every concept at once. `dictionary/lang/pt.json` is a good example of a recent language.
+2. Import the file in `app/src/lexicon.js` and add it to `dictionaryLanguages` there.
 3. `node scripts/dictionary.mjs missing <code>` lists the concepts still without words, with the English ones as a hint.
-4. The website copy (`app/src/site.js`) and the replies (`app/src/dialogue.js`) can come later, in another pull request.
+4. Watch out for words that already mean something else in another language: every language shares one parser, which also forgives one-letter typos. Portuguese "bravo" (angry) would turn the Italian "bravo" (good) angry, so it was left out. Run the tests, and try a few sentences in the other languages too.
+5. The website copy (`app/src/site.js`) and the replies (`app/src/dialogue.js`) can come later, in another pull request.
 
 ## The word backlog
 

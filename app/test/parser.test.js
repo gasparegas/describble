@@ -116,3 +116,22 @@ test('words people typed on launch day', () => {
   assert.ok(!parse('dark skin').found.includes('hairColor:black'));
   assert.deepEqual(parse('glasses from describble').unknown, []);
 });
+
+test('Portuguese descriptions', () => {
+  const cases = {
+    'menina ruiva com sardas e óculos redondos': ['gender:female', 'hairColor:red', 'detail:freckles', 'eyewear:round'],
+    'cara careca de barba e boné vermelho': ['hair:bald', 'facial:beard', 'hat:cap', 'hatColor:red'],
+    'programador cansado com moletom cinza': ['clothes:hoodie', 'print:code', 'mood:tired', 'clothesColor:grey'],
+    'velhinha de óculos com coque grisalho': ['age:old', 'eyewear:glasses', 'hair:bun', 'hairColor:grey'],
+    'fundo azul, cabelo rosa curto': ['backgroundColor:blue', 'hairColor:pink', 'hair:short'],
+    'rapaz com piercing no nariz e alargadores': ['detail:piercing', 'detail:gauges'],
+  };
+  for (const [text, traits] of Object.entries(cases)) {
+    for (const trait of traits) assert.ok(parse(text).found.includes(trait), `${text}: ${parse(text).found}`);
+  }
+  assert.deepEqual(parse('sem óculos').removed, ['eyewear:glasses']);
+  assert.deepEqual(parse('rapaz com piercing no nariz e alargadores').removed, []);
+  // English "no" still negates, and Portuguese words that look like Italian or English ones stay out.
+  assert.deepEqual(parse('no glasses').removed, ['eyewear:glasses']);
+  for (const word of ['sembra', 'bravo', 'mascara']) assert.ok(!parse(word).found.some((t) => /eyeshadow|angry|mask/.test(t)), word);
+});

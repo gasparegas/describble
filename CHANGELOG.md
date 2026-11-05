@@ -2,6 +2,16 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.2.0 (2026-11-05)
+
+A real dictionary, and a third language.
+
+- Words now live in `dictionary/`, one file per language, separate from the code, with a checker (`node scripts/dictionary.mjs check | stats | missing <code>`).
+- About 550 new Italian and English words and phrases for hair, faces, moods, hats, glasses, beards, clothes and details.
+- Understands Portuguese: "menina ruiva com sardas", "cara careca de boné vermelho", "sem óculos". The page itself stays in English and Italian.
+- A negation word inside a known phrase no longer negates what follows, so "piercing no nariz e alargadores" keeps both.
+- "mascara" means lashes, and "cappello di paglia" is a straw hat, not a cigarette.
+
 ## 0.1.1 (2026-11-05)
 
 Words people typed on launch day.

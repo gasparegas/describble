@@ -11,7 +11,7 @@ text → parser → dialogue state → scene → stage → SVG on screen
 
 | Module (`app/src/`) | Responsibility |
 |---|---|
-| `lexicon.js` (built from `dictionary/`) | Words and phrases (Italian and English) mapped to traits such as `hair:spiky` or `detail:scarf`. A word that appears in several lists turns on several traits. |
+| `lexicon.js` (built from `dictionary/`) | Words and phrases (Italian, English and Portuguese) mapped to traits such as `hair:spiky` or `detail:scarf`. A word that appears in several lists turns on several traits. |
 | `parser.js` | Tokenises the text and matches the longest phrase first, exact form before stem. Handles one typo, negations and colour words attached to the nearest noun. Returns found traits, removed traits and unknown words. |
 | `dialogue.js` | Pure state machine with no DOM access. Applies traits, detects intents (`ok`, `download`, `undo`, `start over`), picks the reply language, invents brand names, and turns the state into a **scene**: which variant goes in each slot, with which colours and confidence. |
 | `pieces.js` | The catalog: `catalog[slot][variant]` is a list of parts. Each part has a `layer` and shapes, lines, dots or text with colour keys resolved at render time. |

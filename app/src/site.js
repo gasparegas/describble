@@ -58,7 +58,7 @@ export const siteCopy = {
     faqQ5: 'Is what I write private?',
     faqA5: 'Your sentence never leaves your browser. To learn new words, single words it did not understand can be counted anonymously, never the sentence, and one click turns that off.',
     faqQ6: 'Which languages does it understand?',
-    faqA6: 'English and Italian, mixed freely. More languages are on the way, and you can help add them on GitHub.',
+    faqA6: 'English, Italian and Portuguese, mixed freely. More languages are on the way, and you can help add them on GitHub.',
     noscript: 'Describble draws with JavaScript. Turn it on to describe your character.',
   },
   it: {
@@ -112,7 +112,7 @@ export const siteCopy = {
     faqQ5: 'Quello che scrivo resta privato?',
     faqA5: 'La tua frase non lascia mai il tuo browser. Per imparare parole nuove, le singole parole che non ha capito possono essere contate in forma anonima, mai la frase, e un clic disattiva tutto.',
     faqQ6: 'Che lingue capisce?',
-    faqA6: 'Italiano e inglese, anche mescolati. Altre lingue sono in arrivo, e puoi aiutare ad aggiungerle su GitHub.',
+    faqA6: 'Italiano, inglese e portoghese, anche mescolati. Altre lingue sono in arrivo, e puoi aiutare ad aggiungerle su GitHub.',
     noscript: 'Describble disegna con JavaScript. Attivalo per descrivere il tuo personaggio.',
   },
 };

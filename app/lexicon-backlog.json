@@ -120,6 +120,18 @@
       "lang": "en",
       "status": "skip",
       "note": "not drawn on purpose"
+    },
+    {
+      "word": "piscando",
+      "lang": "pt",
+      "status": "todo",
+      "note": "needs a wink expression"
+    },
+    {
+      "word": "cachorro",
+      "lang": "pt",
+      "status": "todo",
+      "note": "needs a pet piece"
     }
   ]
 }

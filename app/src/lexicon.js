@@ -7,9 +7,10 @@ import conceptsFile from '../../dictionary/concepts.json' with { type: 'json' };
 import brandsFile from '../../dictionary/brands.json' with { type: 'json' };
 import dictionaryIt from '../../dictionary/lang/it.json' with { type: 'json' };
 import dictionaryEn from '../../dictionary/lang/en.json' with { type: 'json' };
+import dictionaryPt from '../../dictionary/lang/pt.json' with { type: 'json' };
 
-// Every language the parser understands; a new language is a new file listed here and in build.mjs.
-export const dictionaryLanguages = [dictionaryIt, dictionaryEn];
+// Every language the parser understands; a new language is a new file imported here.
+export const dictionaryLanguages = [dictionaryIt, dictionaryEn, dictionaryPt];
 
 const uniqueWords = (words) => [...new Set(words)];
 // All the words every language gives for one key of one section, in language order.

@@ -134,7 +134,8 @@ export function parse(text) {
 
   const negated = new Set();
   tokens.forEach((token, i) => {
-    if (!negations.includes(token)) return;
+    // A negation word inside a known phrase belongs to it: Portuguese "piercing no nariz" negates nothing.
+    if (!negations.includes(token) || consumed[i]) return;
     for (let j = i + 1; j < Math.min(tokens.length, i + 7); j++) {
       if (isBreak(tokens[j]) || scopeBreakers.includes(tokens[j])) break;
       negated.add(j);
