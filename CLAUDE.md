@@ -28,11 +28,11 @@ Single test: `node --test --test-name-pattern="brand" test/`. Debug pages: `dist
 
 ## Architecture
 
-See `docs/ARCHITECTURE.md` for the full description and `docs/ROADMAP.md` for the planned TypeScript monorepo. In short: `parser.js` (text → traits, using `lexicon.js`) → `dialogue.js` (pure state, intents, replies, `sceneFor`) → `stage.js` (slots in fixed SVG layers, redraw and morph animations) → `pen.js` (hand-drawn strokes). Pieces are `catalog[slot][variant]` in `pieces.js`; eyes and mouth are a blendable rig in `rig.js`.
+See `docs/ARCHITECTURE.md` for the full description and `docs/ROADMAP.md` for the planned TypeScript monorepo. In short: `parser.js` (text → traits, using `lexicon.js`, which builds its tables from the data in `dictionary/`: `concepts.json` for what can be drawn, `lang/<code>.json` for each language's words, `brands.json`; `build.mjs` inlines those JSON files, and `app/scripts/dictionary.mjs check|stats|missing <code>` validates and reports on them) → `dialogue.js` (pure state, intents, replies, `sceneFor`) → `stage.js` (slots in fixed SVG layers, redraw and morph animations) → `pen.js` (hand-drawn strokes). Pieces are `catalog[slot][variant]` in `pieces.js`; eyes and mouth are a blendable rig in `rig.js`.
 
 Things that are not obvious from a single file:
 - `build.mjs` concatenates `src/` into one script, so top-level names must be unique across files.
-- Adding a word is not enough: the trait needs a branch in `applyTrait` and a variant in the catalog. Tests fail when a lexicon word leads to a missing piece or slot.
+- Words go in `dictionary/lang/<code>.json`, never in code; a new concept also needs an entry in `dictionary/concepts.json`, a branch in `applyTrait` and a variant in the catalog. Tests fail when a lexicon word leads to a missing piece or slot.
 - A word listed under several traits turns all of them on; that is how archetypes ("vampire", "developer") work.
 - The parser tries the exact form before the stem; when different words share a stem ("ragazzo"/"ragazza"), the stem keeps only the traits they share.
 - Colour words attach to the nearest noun: hair, eyes, clothes, hat, background, beard (`beardColor`) or a colourable accessory (`itemColor:scarf.green`).

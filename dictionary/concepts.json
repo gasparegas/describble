@@ -1,0 +1,1427 @@
+{
+  "$schema": "./schema/concepts.schema.json",
+  "about": "What Describble can draw. Each concept is a trait (slot:variant) backed by a piece in app/src/pieces.js; the words for it live in lang/<language>.json. label.it is the word Italian replies use.",
+  "concepts": [
+    {
+      "id": "hair:short",
+      "label": {
+        "it": "capelli corti"
+      }
+    },
+    {
+      "id": "hair:long",
+      "label": {
+        "it": "capelli lunghi"
+      }
+    },
+    {
+      "id": "hair:spiky",
+      "label": {
+        "it": "a punta"
+      }
+    },
+    {
+      "id": "hair:curly",
+      "label": {
+        "it": "permanente"
+      }
+    },
+    {
+      "id": "hair:bald",
+      "label": {
+        "it": "calvo"
+      }
+    },
+    {
+      "id": "hair:ponytail",
+      "label": {
+        "it": "coda di cavallo"
+      }
+    },
+    {
+      "id": "hair:bun",
+      "label": {
+        "it": "chignon"
+      }
+    },
+    {
+      "id": "hair:mohawk",
+      "label": {
+        "it": "cresta"
+      }
+    },
+    {
+      "id": "hair:messy",
+      "label": {
+        "it": "spettinato"
+      }
+    },
+    {
+      "id": "hair:braids",
+      "label": {
+        "it": "trecce"
+      }
+    },
+    {
+      "id": "hair:emo",
+      "label": {
+        "it": "emo"
+      }
+    },
+    {
+      "id": "hair:dreads",
+      "label": {
+        "it": "dreadlocks"
+      }
+    },
+    {
+      "id": "hair:afro",
+      "label": {
+        "it": "afro"
+      }
+    },
+    {
+      "id": "hair:bob",
+      "label": {
+        "it": "caschetto"
+      }
+    },
+    {
+      "id": "hair:bangs",
+      "label": {
+        "it": "frangia"
+      }
+    },
+    {
+      "id": "hair:quiff",
+      "label": {
+        "it": "ciuffo"
+      }
+    },
+    {
+      "id": "hair:buzz",
+      "label": {
+        "it": "rasato"
+      }
+    },
+    {
+      "id": "hair:pigtails",
+      "label": {
+        "it": "codini"
+      }
+    },
+    {
+      "id": "hair:sidepart",
+      "label": {
+        "it": "riga di lato"
+      }
+    },
+    {
+      "id": "hair:undercut",
+      "label": {
+        "it": "undercut"
+      }
+    },
+    {
+      "id": "eyes:almond",
+      "label": {
+        "it": "occhi a mandorla"
+      }
+    },
+    {
+      "id": "eyes:round",
+      "label": {
+        "it": "occhi tondi"
+      }
+    },
+    {
+      "id": "ears:big",
+      "label": {
+        "it": "orecchie a sventola"
+      }
+    },
+    {
+      "id": "ears:small",
+      "label": {
+        "it": "orecchie piccole"
+      }
+    },
+    {
+      "id": "ears:elf",
+      "label": {
+        "it": "orecchie a punta"
+      }
+    },
+    {
+      "id": "face:round",
+      "label": {
+        "it": "viso tondo"
+      }
+    },
+    {
+      "id": "face:square",
+      "label": {
+        "it": "mascella squadrata"
+      }
+    },
+    {
+      "id": "face:long",
+      "label": {
+        "it": "viso lungo"
+      }
+    },
+    {
+      "id": "face:pointy",
+      "label": {
+        "it": "mento a punta"
+      }
+    },
+    {
+      "id": "nose:button",
+      "label": {
+        "it": "nasino"
+      }
+    },
+    {
+      "id": "nose:long",
+      "label": {
+        "it": "naso lungo"
+      }
+    },
+    {
+      "id": "nose:big",
+      "label": {
+        "it": "nasone"
+      }
+    },
+    {
+      "id": "nose:pointy",
+      "label": {
+        "it": "naso a punta"
+      }
+    },
+    {
+      "id": "brows:thick",
+      "label": {
+        "it": "sopracciglia folte"
+      }
+    },
+    {
+      "id": "brows:thin",
+      "label": {
+        "it": "sopracciglia sottili"
+      }
+    },
+    {
+      "id": "mood:happy",
+      "label": {
+        "it": "felice"
+      }
+    },
+    {
+      "id": "mood:sad",
+      "label": {
+        "it": "triste"
+      }
+    },
+    {
+      "id": "mood:angry",
+      "label": {
+        "it": "arrabbiato"
+      }
+    },
+    {
+      "id": "mood:tired",
+      "label": {
+        "it": "stanco"
+      }
+    },
+    {
+      "id": "mood:asleep",
+      "label": {
+        "it": "addormentato"
+      }
+    },
+    {
+      "id": "mood:surprised",
+      "label": {
+        "it": "sorpreso"
+      }
+    },
+    {
+      "id": "mood:scared",
+      "label": {
+        "it": "spaventato"
+      }
+    },
+    {
+      "id": "mood:bored",
+      "label": {
+        "it": "annoiato"
+      }
+    },
+    {
+      "id": "mood:smug",
+      "label": {
+        "it": "sarcastico"
+      }
+    },
+    {
+      "id": "mood:blank",
+      "label": {
+        "it": "sguardo vuoto"
+      }
+    },
+    {
+      "id": "mood:despair",
+      "label": {
+        "it": "disperato"
+      }
+    },
+    {
+      "id": "mood:disgusted",
+      "label": {
+        "it": "schifato"
+      }
+    },
+    {
+      "id": "mouth:smile",
+      "label": {
+        "it": "sorriso"
+      }
+    },
+    {
+      "id": "mouth:smirk",
+      "label": {
+        "it": "sorrisetto"
+      }
+    },
+    {
+      "id": "mouth:frown",
+      "label": {
+        "it": "imbronciato"
+      }
+    },
+    {
+      "id": "mouth:open",
+      "label": {
+        "it": "bocca aperta"
+      }
+    },
+    {
+      "id": "eyes:big",
+      "label": {
+        "it": "occhi grandi"
+      }
+    },
+    {
+      "id": "eyes:small",
+      "label": {
+        "it": "occhi piccoli"
+      }
+    },
+    {
+      "id": "eyewear:glasses",
+      "label": {
+        "it": "occhiali"
+      }
+    },
+    {
+      "id": "eyewear:round",
+      "label": {
+        "it": "occhiali tondi"
+      }
+    },
+    {
+      "id": "eyewear:monocle",
+      "label": {
+        "it": "monocolo"
+      }
+    },
+    {
+      "id": "eyewear:sunglasses",
+      "label": {
+        "it": "occhiali da sole"
+      }
+    },
+    {
+      "id": "facial:beard",
+      "label": {
+        "it": "barba"
+      }
+    },
+    {
+      "id": "facial:longBeard",
+      "label": {
+        "it": "barba lunga"
+      }
+    },
+    {
+      "id": "facial:stubble",
+      "label": {
+        "it": "barba di tre giorni"
+      }
+    },
+    {
+      "id": "facial:moustache",
+      "label": {
+        "it": "baffi"
+      }
+    },
+    {
+      "id": "facial:goatee",
+      "label": {
+        "it": "pizzetto"
+      }
+    },
+    {
+      "id": "hat:beanie",
+      "label": {
+        "it": "berretto"
+      }
+    },
+    {
+      "id": "hat:cap",
+      "label": {
+        "it": "cappellino"
+      }
+    },
+    {
+      "id": "hat:hood",
+      "label": {
+        "it": "cappuccio"
+      }
+    },
+    {
+      "id": "hat:tophat",
+      "label": {
+        "it": "cilindro"
+      }
+    },
+    {
+      "id": "hat:cowboy",
+      "label": {
+        "it": "cappello da cowboy"
+      }
+    },
+    {
+      "id": "hat:crown",
+      "label": {
+        "it": "corona"
+      }
+    },
+    {
+      "id": "hat:generic",
+      "label": {
+        "it": "cappello"
+      }
+    },
+    {
+      "id": "hat:santa",
+      "label": {
+        "it": "cappello di babbo natale"
+      }
+    },
+    {
+      "id": "hat:chef",
+      "label": {
+        "it": "cappello da cuoco"
+      }
+    },
+    {
+      "id": "hat:catEars",
+      "label": {
+        "it": "orecchie da gatto"
+      }
+    },
+    {
+      "id": "hat:viking",
+      "label": {
+        "it": "vichingo"
+      }
+    },
+    {
+      "id": "hat:pointy",
+      "label": {
+        "it": "cappello a punta"
+      }
+    },
+    {
+      "id": "hat:beret",
+      "label": {
+        "it": "basco"
+      }
+    },
+    {
+      "id": "hat:halo",
+      "label": {
+        "it": "aureola"
+      }
+    },
+    {
+      "id": "hat:horns",
+      "label": {
+        "it": "corna"
+      }
+    },
+    {
+      "id": "hat:bandana",
+      "label": {
+        "it": "bandana"
+      }
+    },
+    {
+      "id": "clothes:hoodie",
+      "label": {
+        "it": "felpa"
+      }
+    },
+    {
+      "id": "clothes:jacket",
+      "label": {
+        "it": "giacca"
+      }
+    },
+    {
+      "id": "clothes:suit",
+      "label": {
+        "it": "completo"
+      }
+    },
+    {
+      "id": "clothes:tshirt",
+      "label": {
+        "it": "maglietta"
+      }
+    },
+    {
+      "id": "clothes:tank",
+      "label": {
+        "it": "canottiera"
+      }
+    },
+    {
+      "id": "clothes:turtleneck",
+      "label": {
+        "it": "dolcevita"
+      }
+    },
+    {
+      "id": "pattern:stripes",
+      "label": {
+        "it": "a righe"
+      }
+    },
+    {
+      "id": "pattern:dots",
+      "label": {
+        "it": "a pois"
+      }
+    },
+    {
+      "id": "pattern:flowers",
+      "label": {
+        "it": "a fiori"
+      }
+    },
+    {
+      "id": "pattern:plaid",
+      "label": {
+        "it": "a quadri"
+      }
+    },
+    {
+      "id": "clothes:shirt",
+      "label": {
+        "it": "camicia"
+      }
+    },
+    {
+      "id": "clothes:sweater",
+      "label": {
+        "it": "maglione"
+      }
+    },
+    {
+      "id": "clothes:coat",
+      "label": {
+        "it": "cappotto"
+      }
+    },
+    {
+      "id": "clothes:uniform",
+      "label": {
+        "it": "uniforme"
+      }
+    },
+    {
+      "id": "detail:cigarette",
+      "label": {
+        "it": "sigaretta"
+      }
+    },
+    {
+      "id": "detail:pipe",
+      "label": {
+        "it": "pipa"
+      }
+    },
+    {
+      "id": "detail:earring",
+      "label": {
+        "it": "orecchino"
+      }
+    },
+    {
+      "id": "detail:piercing",
+      "label": {
+        "it": "piercing"
+      }
+    },
+    {
+      "id": "detail:scar",
+      "label": {
+        "it": "cicatrice"
+      }
+    },
+    {
+      "id": "detail:freckles",
+      "label": {
+        "it": "lentiggini"
+      }
+    },
+    {
+      "id": "detail:headphones",
+      "label": {
+        "it": "cuffie"
+      }
+    },
+    {
+      "id": "detail:tattoo",
+      "label": {
+        "it": "tatuaggio"
+      }
+    },
+    {
+      "id": "detail:bags",
+      "label": {
+        "it": "occhiaie"
+      }
+    },
+    {
+      "id": "detail:mask",
+      "label": {
+        "it": "mascherina"
+      }
+    },
+    {
+      "id": "detail:eyepatch",
+      "label": {
+        "it": "benda"
+      }
+    },
+    {
+      "id": "detail:wrinkles",
+      "label": {
+        "it": "rughe"
+      }
+    },
+    {
+      "id": "detail:scarf",
+      "label": {
+        "it": "sciarpa"
+      }
+    },
+    {
+      "id": "detail:tears",
+      "label": {
+        "it": "disperato"
+      }
+    },
+    {
+      "id": "detail:sweat",
+      "label": {
+        "it": "sudato"
+      }
+    },
+    {
+      "id": "detail:bandaid",
+      "label": {
+        "it": "cerotto"
+      }
+    },
+    {
+      "id": "detail:clownNose",
+      "label": {
+        "it": "naso rosso"
+      }
+    },
+    {
+      "id": "detail:tie",
+      "label": {
+        "it": "cravatta"
+      }
+    },
+    {
+      "id": "detail:sideburns",
+      "label": {
+        "it": "basette"
+      }
+    },
+    {
+      "id": "detail:acne",
+      "label": {
+        "it": "brufoli"
+      }
+    },
+    {
+      "id": "detail:unibrow",
+      "label": {
+        "it": "monociglio"
+      }
+    },
+    {
+      "id": "detail:lipstick",
+      "label": {
+        "it": "rossetto"
+      }
+    },
+    {
+      "id": "detail:necklace",
+      "label": {
+        "it": "collana"
+      }
+    },
+    {
+      "id": "gender:female",
+      "label": {
+        "it": "ragazza"
+      }
+    },
+    {
+      "id": "hair:wavyLong",
+      "label": {
+        "it": "capelli lunghi mossi"
+      }
+    },
+    {
+      "id": "hair:spaceBuns",
+      "label": {
+        "it": "due chignon"
+      }
+    },
+    {
+      "id": "hair:pixie",
+      "label": {
+        "it": "pixie"
+      }
+    },
+    {
+      "id": "hair:sidePonytail",
+      "label": {
+        "it": "coda laterale"
+      }
+    },
+    {
+      "id": "hat:pompom",
+      "label": {
+        "it": "pon pon"
+      }
+    },
+    {
+      "id": "hat:capBack",
+      "label": {
+        "it": "al contrario"
+      }
+    },
+    {
+      "id": "hat:hijab",
+      "label": {
+        "it": "hijab"
+      }
+    },
+    {
+      "id": "hat:turban",
+      "label": {
+        "it": "turbante"
+      }
+    },
+    {
+      "id": "hat:bunnyEars",
+      "label": {
+        "it": "orecchie da coniglio"
+      }
+    },
+    {
+      "id": "hat:foxEars",
+      "label": {
+        "it": "orecchie da volpe"
+      }
+    },
+    {
+      "id": "hat:flowers",
+      "label": {
+        "it": "coroncina di fiori"
+      }
+    },
+    {
+      "id": "hat:alice",
+      "label": {
+        "it": "cerchietto"
+      }
+    },
+    {
+      "id": "eyewear:pixel",
+      "label": {
+        "it": "occhiali pixel"
+      }
+    },
+    {
+      "id": "eyewear:vr",
+      "label": {
+        "it": "visore"
+      }
+    },
+    {
+      "id": "eyewear:visor",
+      "label": {
+        "it": "visiera cyber"
+      }
+    },
+    {
+      "id": "clothes:dress",
+      "label": {
+        "it": "vestitino"
+      }
+    },
+    {
+      "id": "clothes:armor",
+      "label": {
+        "it": "armatura"
+      }
+    },
+    {
+      "id": "print:code",
+      "label": {
+        "it": "codice"
+      }
+    },
+    {
+      "id": "print:heart",
+      "label": {
+        "it": "cuore"
+      }
+    },
+    {
+      "id": "print:star",
+      "label": {
+        "it": "stella"
+      }
+    },
+    {
+      "id": "print:skull",
+      "label": {
+        "it": "teschio"
+      }
+    },
+    {
+      "id": "print:lightning",
+      "label": {
+        "it": "fulmine"
+      }
+    },
+    {
+      "id": "detail:headset",
+      "label": {
+        "it": "cuffie con microfono"
+      }
+    },
+    {
+      "id": "detail:cyborg",
+      "label": {
+        "it": "cyborg"
+      }
+    },
+    {
+      "id": "detail:ninja",
+      "label": {
+        "it": "ninja"
+      }
+    },
+    {
+      "id": "detail:warpaint",
+      "label": {
+        "it": "pittura di guerra"
+      }
+    },
+    {
+      "id": "detail:beautyMark",
+      "label": {
+        "it": "neo"
+      }
+    },
+    {
+      "id": "detail:choker",
+      "label": {
+        "it": "girocollo"
+      }
+    },
+    {
+      "id": "detail:gauges",
+      "label": {
+        "it": "dilatatori"
+      }
+    },
+    {
+      "id": "detail:helix",
+      "label": {
+        "it": "helix"
+      }
+    },
+    {
+      "id": "detail:industrial",
+      "label": {
+        "it": "industrial"
+      }
+    },
+    {
+      "id": "detail:septum",
+      "label": {
+        "it": "anello al setto"
+      }
+    },
+    {
+      "id": "detail:browPiercing",
+      "label": {
+        "it": "piercing al sopracciglio"
+      }
+    },
+    {
+      "id": "detail:bridgePiercing",
+      "label": {
+        "it": "bridge"
+      }
+    },
+    {
+      "id": "detail:lipRing",
+      "label": {
+        "it": "anello al labbro"
+      }
+    },
+    {
+      "id": "detail:labret",
+      "label": {
+        "it": "labret"
+      }
+    },
+    {
+      "id": "detail:monroe",
+      "label": {
+        "it": "monroe"
+      }
+    },
+    {
+      "id": "detail:nostril",
+      "label": {
+        "it": "brillantino al naso"
+      }
+    },
+    {
+      "id": "clothes:tracksuit",
+      "label": {
+        "it": "tuta"
+      }
+    },
+    {
+      "id": "eyewear:reading",
+      "label": {
+        "it": "occhiali a mezzaluna"
+      }
+    },
+    {
+      "id": "detail:curlers",
+      "label": {
+        "it": "bigodini"
+      }
+    },
+    {
+      "id": "clothes:clerical",
+      "label": {
+        "it": "prete"
+      }
+    },
+    {
+      "id": "hat:helmet",
+      "label": {
+        "it": "elmetto"
+      }
+    },
+    {
+      "id": "hat:bowler",
+      "label": {
+        "it": "bombetta"
+      }
+    },
+    {
+      "id": "hat:graduation",
+      "label": {
+        "it": "tocco"
+      }
+    },
+    {
+      "id": "hat:veil",
+      "label": {
+        "it": "suora"
+      }
+    },
+    {
+      "id": "detail:braces",
+      "label": {
+        "it": "apparecchio"
+      }
+    },
+    {
+      "id": "detail:backpack",
+      "label": {
+        "it": "zaino"
+      }
+    },
+    {
+      "id": "detail:stethoscope",
+      "label": {
+        "it": "stetoscopio"
+      }
+    },
+    {
+      "id": "detail:hoops",
+      "label": {
+        "it": "orecchini a cerchio"
+      }
+    },
+    {
+      "id": "detail:bow",
+      "label": {
+        "it": "fiocco"
+      }
+    },
+    {
+      "id": "detail:hairclip",
+      "label": {
+        "it": "elastico per capelli"
+      }
+    },
+    {
+      "id": "detail:cape",
+      "label": {
+        "it": "mantello"
+      }
+    },
+    {
+      "id": "detail:lashes",
+      "label": {
+        "it": "ciglia"
+      }
+    },
+    {
+      "id": "detail:eyeshadow",
+      "label": {
+        "it": "ombretto"
+      }
+    },
+    {
+      "id": "detail:fangs",
+      "label": {
+        "it": "canini"
+      }
+    },
+    {
+      "id": "skin:green",
+      "label": {
+        "it": "pelle verde"
+      }
+    },
+    {
+      "id": "skin:blue",
+      "label": {
+        "it": "pelle blu"
+      }
+    },
+    {
+      "id": "skin:grey",
+      "label": {
+        "it": "pelle grigia"
+      }
+    },
+    {
+      "id": "skin:purple",
+      "label": {
+        "it": "pelle viola"
+      }
+    },
+    {
+      "id": "eyewear:eyepatch",
+      "label": {
+        "it": "pirata"
+      }
+    },
+    {
+      "id": "hairColor:white",
+      "label": {
+        "it": "babbo natale"
+      }
+    },
+    {
+      "id": "hatColor:black",
+      "label": {
+        "it": "doomer"
+      }
+    },
+    {
+      "id": "clothesColor:black",
+      "label": {
+        "it": "doomer"
+      }
+    },
+    {
+      "id": "detail:gum",
+      "label": {
+        "it": "gomma da masticare"
+      }
+    },
+    {
+      "id": "detail:lollipop",
+      "label": {
+        "it": "lecca lecca"
+      }
+    },
+    {
+      "id": "detail:toothpick",
+      "label": {
+        "it": "stuzzicadenti"
+      }
+    },
+    {
+      "id": "detail:rose",
+      "label": {
+        "it": "rosa in bocca"
+      }
+    },
+    {
+      "id": "detail:bowtie",
+      "label": {
+        "it": "papillon"
+      }
+    },
+    {
+      "id": "detail:badge",
+      "label": {
+        "it": "badge"
+      }
+    },
+    {
+      "id": "detail:pencilEar",
+      "label": {
+        "it": "matita dietro l orecchio"
+      }
+    },
+    {
+      "id": "detail:flowerEar",
+      "label": {
+        "it": "fiore dietro l orecchio"
+      }
+    },
+    {
+      "id": "detail:sunglassesHead",
+      "label": {
+        "it": "occhiali in testa"
+      }
+    },
+    {
+      "id": "detail:earbuds",
+      "label": {
+        "it": "auricolari"
+      }
+    },
+    {
+      "id": "face:heart",
+      "label": {
+        "it": "viso a cuore"
+      }
+    },
+    {
+      "id": "face:wide",
+      "label": {
+        "it": "viso largo"
+      }
+    },
+    {
+      "id": "brows:raised",
+      "label": {
+        "it": "sopracciglio alzato"
+      }
+    },
+    {
+      "id": "detail:doubleChin",
+      "label": {
+        "it": "doppio mento"
+      }
+    },
+    {
+      "id": "detail:dimples",
+      "label": {
+        "it": "fossette"
+      }
+    },
+    {
+      "id": "detail:cheekbones",
+      "label": {
+        "it": "zigomi"
+      }
+    },
+    {
+      "id": "clothesColor:blue",
+      "label": {
+        "it": "poliziotto"
+      }
+    },
+    {
+      "id": "hatColor:blue",
+      "label": {
+        "it": "poliziotto"
+      }
+    },
+    {
+      "id": "hairColor:black",
+      "label": {
+        "it": "metallaro"
+      }
+    },
+    {
+      "id": "hairColor:blond",
+      "label": {
+        "it": "surfer"
+      }
+    },
+    {
+      "id": "clothesColor:green",
+      "label": {
+        "it": "soldato"
+      }
+    },
+    {
+      "id": "hatColor:yellow",
+      "label": {
+        "it": "contadino"
+      }
+    },
+    {
+      "id": "clothesColor:red",
+      "label": {
+        "it": "boscaiolo"
+      }
+    },
+    {
+      "id": "hairColor:grey",
+      "label": {
+        "it": "nonna"
+      }
+    },
+    {
+      "id": "hair:mullet",
+      "label": {
+        "it": "mullet"
+      }
+    },
+    {
+      "id": "hair:middlePart",
+      "label": {
+        "it": "riga in mezzo"
+      }
+    },
+    {
+      "id": "hair:shag",
+      "label": {
+        "it": "wolf cut"
+      }
+    },
+    {
+      "id": "hair:highPonytail",
+      "label": {
+        "it": "coda alta"
+      }
+    },
+    {
+      "id": "hair:afroPuffs",
+      "label": {
+        "it": "afro puffs"
+      }
+    },
+    {
+      "id": "hat:bucket",
+      "label": {
+        "it": "cappello da pescatore"
+      }
+    },
+    {
+      "id": "hat:party",
+      "label": {
+        "it": "cappellino da festa"
+      }
+    },
+    {
+      "id": "hat:fedora",
+      "label": {
+        "it": "fedora"
+      }
+    },
+    {
+      "id": "eyewear:hearts",
+      "label": {
+        "it": "occhiali a cuore"
+      }
+    },
+    {
+      "id": "detail:earmuffs",
+      "label": {
+        "it": "paraorecchie"
+      }
+    },
+    {
+      "id": "facial:handlebar",
+      "label": {
+        "it": "baffi a manubrio"
+      }
+    },
+    {
+      "id": "clothes:overalls",
+      "label": {
+        "it": "salopette"
+      }
+    },
+    {
+      "id": "clothes:puffer",
+      "label": {
+        "it": "piumino"
+      }
+    },
+    {
+      "id": "clothes:polo",
+      "label": {
+        "it": "polo"
+      }
+    },
+    {
+      "id": "clothes:vest",
+      "label": {
+        "it": "gilet"
+      }
+    },
+    {
+      "id": "clothes:apron",
+      "label": {
+        "it": "grembiule"
+      }
+    },
+    {
+      "id": "clothes:varsity",
+      "label": {
+        "it": "giubbotto college"
+      }
+    },
+    {
+      "id": "clothes:openShirt",
+      "label": {
+        "it": "camicia aperta"
+      }
+    },
+    {
+      "id": "eyewear:slim",
+      "label": {
+        "it": "occhiali da matrix"
+      }
+    },
+    {
+      "id": "age:child",
+      "label": {
+        "it": "bambino"
+      }
+    },
+    {
+      "id": "age:young",
+      "label": {
+        "it": "giovane"
+      }
+    },
+    {
+      "id": "age:old",
+      "label": {
+        "it": "vecchio"
+      }
+    },
+    {
+      "id": "skin:dark",
+      "label": {
+        "it": "pelle scura"
+      }
+    },
+    {
+      "id": "skin:tan",
+      "label": {
+        "it": "abbronzato"
+      }
+    },
+    {
+      "id": "skin:pale",
+      "label": {
+        "it": "pallido"
+      }
+    }
+  ],
+  "colors": [
+    "black",
+    "white",
+    "grey",
+    "brown",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "purple",
+    "pink"
+  ],
+  "hairOnlyColors": [
+    "blond",
+    "brown",
+    "grey",
+    "red"
+  ],
+  "colorNouns": [
+    "background",
+    "hair",
+    "eye",
+    "clothes"
+  ],
+  "contextual": [
+    {
+      "trait": "hair:long",
+      "near": "hair"
+    },
+    {
+      "trait": "clothes:openShirt",
+      "near": "clothes:shirt"
+    },
+    {
+      "trait": "hair:short",
+      "near": "hair"
+    },
+    {
+      "trait": "eyes:big",
+      "near": "eye"
+    },
+    {
+      "trait": "eyes:small",
+      "near": "eye"
+    }
+  ]
+}

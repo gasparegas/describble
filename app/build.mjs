@@ -11,6 +11,8 @@ const here = dirname(fileURLToPath(import.meta.url));
 const engine = ['geometry', 'lexicon', 'parser', 'pen', 'pieces', 'rig', 'stage', 'dialogue', 'export', 'misses'];
 const bundle = (entry, extra = []) => [...engine, ...extra, entry]
   .map((name) => readFileSync(join(here, 'src', `${name}.js`), 'utf8')
+    // JSON imports (the dictionary) become inline constants: the page loads nothing else.
+    .replace(/^import (\w+) from '(.+\.json)' with \{ type: 'json' \};$/gm, (line, binding, path) => `const ${binding} = ${JSON.stringify(JSON.parse(readFileSync(join(here, 'src', path), 'utf8')))};`)
     .replace(/^import .*$/gm, '')
     .replace(/^export \{[^}]*\};?$/gm, '')
     .replace(/^export /gm, ''))

@@ -1,0 +1,1575 @@
+{
+  "$schema": "../schema/language.schema.json",
+  "language": "it",
+  "name": "Italiano",
+  "concepts": {
+    "hair:short": [
+      "capelli corti",
+      "a spazzola",
+      "npc"
+    ],
+    "hair:long": [
+      "capelli lunghi",
+      "chioma lunga",
+      "strega",
+      "regina",
+      "principessa",
+      "elfo",
+      "rockstar",
+      "metallaro",
+      "metalhead"
+    ],
+    "hair:spiky": [
+      "a punte",
+      "spettinato a punte",
+      "a punta"
+    ],
+    "hair:curly": [
+      "permanente",
+      "ricci",
+      "riccio",
+      "ricciolo",
+      "crespi",
+      "pagliaccio",
+      "mossi",
+      "angelo"
+    ],
+    "hair:bald": [
+      "calvo",
+      "pelato",
+      "stempiato",
+      "testa rasata",
+      "nonno"
+    ],
+    "hair:ponytail": [
+      "coda di cavallo",
+      "codino",
+      "coda"
+    ],
+    "hair:bun": [
+      "crocchia",
+      "nonna",
+      "capelli raccolti",
+      "raccolti"
+    ],
+    "hair:mohawk": [
+      "cresta"
+    ],
+    "hair:messy": [
+      "spettinato",
+      "scompigliati",
+      "arruffati",
+      "disordinati",
+      "capelli pazzi",
+      "scienziato",
+      "zombi"
+    ],
+    "hair:braids": [
+      "trecce",
+      "treccia",
+      "treccine"
+    ],
+    "hair:emo": [
+      "frangia di lato",
+      "ciuffo sull occhio"
+    ],
+    "hair:dreads": [
+      "dreadlocks",
+      "rasta",
+      "locs"
+    ],
+    "hair:afro": [
+      "capelli afro",
+      "crespi"
+    ],
+    "hair:bob": [
+      "caschetto"
+    ],
+    "hair:bangs": [
+      "frangia",
+      "frangetta"
+    ],
+    "hair:quiff": [
+      "ciuffo"
+    ],
+    "hair:buzz": [
+      "rasato",
+      "rasati",
+      "capelli rasati",
+      "a spazzola",
+      "soldato",
+      "militare"
+    ],
+    "hair:pigtails": [
+      "codini",
+      "twintails"
+    ],
+    "hair:sidepart": [
+      "riga di lato",
+      "con la riga",
+      "capelli con la riga",
+      "riga laterale",
+      "pettinato",
+      "leccato",
+      "gelatina",
+      "vampiro",
+      "dracula"
+    ],
+    "hair:undercut": [
+      "rasato ai lati",
+      "lati rasati",
+      "rasati ai lati",
+      "rasata ai lati",
+      "capelli rasati ai lati",
+      "capelli rasato ai lati",
+      "rasati di lato",
+      "capelli rasati di lato",
+      "capelli rasati da un lato",
+      "rasata di lato",
+      "rasato di lato",
+      "rasati da un lato",
+      "sidecut"
+    ],
+    "eyes:almond": [
+      "occhi a mandorla",
+      "occhi sottili"
+    ],
+    "eyes:round": [
+      "occhi tondi",
+      "occhi rotondi"
+    ],
+    "ears:big": [
+      "orecchie a sventola",
+      "orecchie grandi",
+      "orecchione",
+      "orecchioni",
+      "dumbo ears"
+    ],
+    "ears:small": [
+      "orecchie piccole"
+    ],
+    "ears:elf": [
+      "orecchie a punta",
+      "orecchie da elfo",
+      "elfo",
+      "elfa"
+    ],
+    "face:round": [
+      "viso tondo",
+      "faccia tonda",
+      "viso rotondo",
+      "paffuto",
+      "paffutello",
+      "cicciottello"
+    ],
+    "face:square": [
+      "mascella squadrata",
+      "viso squadrato",
+      "mascellone",
+      "mascella forte",
+      "muscoloso",
+      "muscolosa",
+      "palestrato",
+      "palestrata"
+    ],
+    "face:long": [
+      "viso lungo",
+      "magro",
+      "magra",
+      "magri",
+      "magre",
+      "smilzo",
+      "smilza",
+      "faccia lunga",
+      "viso allungato"
+    ],
+    "face:pointy": [
+      "mento a punta",
+      "viso affilato",
+      "mento appuntito"
+    ],
+    "nose:button": [
+      "nasino",
+      "naso piccolo",
+      "naso all insu"
+    ],
+    "nose:long": [
+      "naso lungo"
+    ],
+    "nose:big": [
+      "nasone",
+      "naso grande",
+      "naso a patata"
+    ],
+    "nose:pointy": [
+      "naso a punta",
+      "naso appuntito",
+      "naso aquilino"
+    ],
+    "brows:thick": [
+      "sopracciglia folte",
+      "sopraccigliona",
+      "sopracciglioni",
+      "sopracciglia spesse"
+    ],
+    "brows:thin": [
+      "sopracciglia sottili"
+    ],
+    "mood:happy": [
+      "felice",
+      "contento",
+      "gioioso",
+      "sereno",
+      "ridendo",
+      "😀",
+      "😊",
+      "allegro"
+    ],
+    "mood:sad": [
+      "triste",
+      "malinconico",
+      "depresso",
+      "abbattuto",
+      "piange",
+      "piangendo",
+      "in lacrime",
+      "cries",
+      "😢"
+    ],
+    "mood:angry": [
+      "arrabbiato",
+      "incazzato",
+      "cattivo",
+      "minaccioso",
+      "scontroso",
+      "guarda male",
+      "😠",
+      "furioso"
+    ],
+    "mood:tired": [
+      "stanco",
+      "stanchi",
+      "stanche",
+      "assonnato",
+      "esausto",
+      "sfinito",
+      "appena sveglio",
+      "sguardo spento",
+      "occhi socchiusi",
+      "occhi mezzi chiusi",
+      "😴",
+      "stanco morto",
+      "stanca morta"
+    ],
+    "mood:asleep": [
+      "addormentato",
+      "dorme",
+      "dormendo",
+      "occhi chiusi"
+    ],
+    "mood:surprised": [
+      "sorpreso",
+      "stupito",
+      "scioccato",
+      "sbalordito",
+      "😮"
+    ],
+    "mood:scared": [
+      "spaventato",
+      "impaurito",
+      "terrorizzato",
+      "😱"
+    ],
+    "mood:bored": [
+      "annoiato",
+      "apatico",
+      "indifferente"
+    ],
+    "mood:smug": [
+      "sarcastico",
+      "ironico",
+      "beffardo",
+      "furbo",
+      "😏",
+      "compiaciuto",
+      "compiaciuta",
+      "soddisfatto",
+      "sornione"
+    ],
+    "mood:blank": [
+      "sguardo vuoto",
+      "sguardo perso",
+      "vuoto",
+      "inespressivo",
+      "morto dentro",
+      "npc"
+    ],
+    "mood:despair": [
+      "disperato",
+      "disperata",
+      "piange a dirotto",
+      "singhiozza"
+    ],
+    "mood:disgusted": [
+      "schifato",
+      "disgustato",
+      "🤢"
+    ],
+    "mouth:smile": [
+      "sorriso",
+      "sorride",
+      "sorridente",
+      "ridendo",
+      "tranquillo",
+      "tranquilla",
+      "rilassato",
+      "rilassata",
+      "simpatico",
+      "simpatica"
+    ],
+    "mouth:smirk": [
+      "sorrisetto",
+      "ghigno",
+      "smorfia",
+      "bocca storta"
+    ],
+    "mouth:frown": [
+      "imbronciato",
+      "broncio"
+    ],
+    "mouth:open": [
+      "bocca aperta",
+      "urla",
+      "urlando"
+    ],
+    "eyes:big": [
+      "occhi grandi",
+      "occhioni",
+      "alieno",
+      "carino",
+      "kawaii",
+      "luccicanti",
+      "brillanti",
+      "carina"
+    ],
+    "eyes:small": [
+      "occhi piccoli",
+      "occhietti"
+    ],
+    "eyewear:glasses": [
+      "occhiali",
+      "occhialini",
+      "occhiali spessi",
+      "occhiali grossi",
+      "programmatore",
+      "programmatrice",
+      "scienziato",
+      "scienziata",
+      "nonno",
+      "nonna",
+      "occhiali da vista"
+    ],
+    "eyewear:round": [
+      "occhiali tondi",
+      "occhiali rotondi",
+      "secchione"
+    ],
+    "eyewear:monocle": [
+      "monocolo"
+    ],
+    "eyewear:sunglasses": [
+      "occhiali da sole",
+      "occhiali da aviatore",
+      "occhiali a goccia",
+      "occhiali scuri",
+      "rockstar"
+    ],
+    "facial:beard": [
+      "barba",
+      "barbuto",
+      "boscaiolo",
+      "woodchopper",
+      "taglialegna"
+    ],
+    "facial:longBeard": [
+      "barba lunga",
+      "barbona",
+      "barba da mago",
+      "mago",
+      "babbo natale"
+    ],
+    "facial:stubble": [
+      "barba di tre giorni",
+      "barba di 3 giorni",
+      "barba incolta",
+      "barbetta",
+      "barba sfatta",
+      "barba trascurata"
+    ],
+    "facial:moustache": [
+      "baffi",
+      "baffetti",
+      "moustache",
+      "stache",
+      "nonno",
+      "baffoni",
+      "big moustache"
+    ],
+    "facial:goatee": [
+      "pizzetto"
+    ],
+    "hat:beanie": [
+      "berretto",
+      "berretta",
+      "ladro",
+      "ladra",
+      "marinaio",
+      "pescatore",
+      "cuffia di lana",
+      "boscaiolo",
+      "woodchopper",
+      "taglialegna"
+    ],
+    "hat:cap": [
+      "cappellino",
+      "visiera",
+      "coppola",
+      "poliziotto",
+      "poliziotta"
+    ],
+    "hat:hood": [
+      "cappuccio",
+      "incappucciato",
+      "incappucciata",
+      "misterioso",
+      "misteriosa"
+    ],
+    "hat:tophat": [
+      "cilindro"
+    ],
+    "hat:cowboy": [
+      "cappello da cowboy",
+      "stetson",
+      "cowgirl"
+    ],
+    "hat:crown": [
+      "regina",
+      "principessa",
+      "principe",
+      "corona",
+      "diadema"
+    ],
+    "hat:generic": [
+      "cappello",
+      "investigatore",
+      "mafioso",
+      "contadino"
+    ],
+    "hat:santa": [
+      "cappello di babbo natale",
+      "babbo natale",
+      "cappello natalizio"
+    ],
+    "hat:chef": [
+      "cappello da cuoco",
+      "cuoco"
+    ],
+    "hat:catEars": [
+      "orecchie da gatto",
+      "orecchie da gattino",
+      "neko"
+    ],
+    "hat:viking": [
+      "vichingo",
+      "elmo vichingo"
+    ],
+    "hat:pointy": [
+      "cappello a punta",
+      "cappello da strega",
+      "cappello da mago",
+      "mago",
+      "strega"
+    ],
+    "hat:beret": [
+      "basco",
+      "berretto basco",
+      "pittore",
+      "pittrice",
+      "artista"
+    ],
+    "hat:horns": [
+      "corna",
+      "cornetti",
+      "diavolo",
+      "diavoletto"
+    ],
+    "hat:bandana": [
+      "biker",
+      "motociclista",
+      "pirata",
+      "fascia in testa"
+    ],
+    "clothes:hoodie": [
+      "felpa",
+      "sweatshirt",
+      "programmatore",
+      "programmatrice",
+      "sviluppatore",
+      "videogiocatore",
+      "studente",
+      "studentessa"
+    ],
+    "clothes:jacket": [
+      "giacca",
+      "biker",
+      "motociclista",
+      "giubbotto",
+      "giubbino",
+      "chiodo",
+      "rockstar",
+      "borchie",
+      "giacca di pelle"
+    ],
+    "clothes:suit": [
+      "completo",
+      "in giacca e cravatta",
+      "mafioso",
+      "elegante"
+    ],
+    "clothes:tshirt": [
+      "maglietta",
+      "maglia da calcio",
+      "calciatore",
+      "calciatrice",
+      "metallaro",
+      "metalhead",
+      "skateboarder"
+    ],
+    "clothes:tank": [
+      "canottiera",
+      "canotta",
+      "smanicato",
+      "muscoloso",
+      "palestrato"
+    ],
+    "clothes:turtleneck": [
+      "dolcevita",
+      "collo alto"
+    ],
+    "pattern:stripes": [
+      "a righe",
+      "ladro",
+      "ladra",
+      "marinaio",
+      "pigiama",
+      "in pigiama",
+      "righe",
+      "rigato",
+      "rigata"
+    ],
+    "pattern:flowers": [
+      "a fiori",
+      "fiori",
+      "fiorata",
+      "floreale",
+      "hawaiana",
+      "hawaiano"
+    ],
+    "pattern:plaid": [
+      "a quadri",
+      "quadri",
+      "quadretti",
+      "scozzese",
+      "flanella",
+      "contadino",
+      "boscaiolo",
+      "woodchopper",
+      "taglialegna"
+    ],
+    "clothes:shirt": [
+      "camicia",
+      "camicetta",
+      "pigiama",
+      "in pigiama",
+      "contadino",
+      "boscaiolo",
+      "woodchopper",
+      "taglialegna"
+    ],
+    "clothes:sweater": [
+      "maglione",
+      "pullover",
+      "maglione di lana"
+    ],
+    "clothes:coat": [
+      "cappotto",
+      "impermeabile",
+      "investigatore"
+    ],
+    "clothes:uniform": [
+      "uniforme",
+      "divisa",
+      "camice",
+      "pompiere",
+      "vigile del fuoco",
+      "firefighter",
+      "pilota",
+      "dentista",
+      "scienziato",
+      "scienziata",
+      "dottoressa",
+      "infermiera",
+      "poliziotto",
+      "poliziotta",
+      "soldato",
+      "militare",
+      "medico"
+    ],
+    "detail:cigarette": [
+      "sigaretta",
+      "sigaro",
+      "fuma",
+      "fumando",
+      "mafioso"
+    ],
+    "detail:pipe": [
+      "investigatore",
+      "pipa"
+    ],
+    "detail:earring": [
+      "orecchino",
+      "orecchini"
+    ],
+    "detail:piercing": [
+      "anello al naso",
+      "pieno di piercing",
+      "piena di piercing",
+      "tantissimi piercing",
+      "piercing ovunque"
+    ],
+    "detail:scar": [
+      "sfregio"
+    ],
+    "detail:freckles": [
+      "lentiggini",
+      "efelidi"
+    ],
+    "detail:headphones": [
+      "cuffie"
+    ],
+    "detail:tattoo": [
+      "tatuaggio",
+      "tatuaggi",
+      "tatuato"
+    ],
+    "detail:bags": [
+      "occhiaie",
+      "borse sotto gli occhi",
+      "zombi"
+    ],
+    "detail:mask": [
+      "mascherina",
+      "maschera",
+      "dentista",
+      "dottoressa",
+      "medico"
+    ],
+    "detail:eyepatch": [
+      "benda sull occhio",
+      "eyepatch",
+      "benda"
+    ],
+    "detail:wrinkles": [
+      "rughe",
+      "rugoso"
+    ],
+    "detail:scarf": [
+      "sciarpa"
+    ],
+    "detail:tears": [
+      "disperato",
+      "disperata",
+      "piange a dirotto",
+      "singhiozza",
+      "lacrime",
+      "piange",
+      "piangendo",
+      "in lacrime",
+      "cries"
+    ],
+    "detail:sweat": [
+      "sudato",
+      "suda",
+      "goccia di sudore",
+      "sudore"
+    ],
+    "detail:bandaid": [
+      "cerotto",
+      "bandaid"
+    ],
+    "detail:clownNose": [
+      "naso rosso",
+      "naso da clown",
+      "pagliaccio"
+    ],
+    "detail:tie": [
+      "cravatta"
+    ],
+    "detail:sideburns": [
+      "basette"
+    ],
+    "detail:acne": [
+      "brufoli",
+      "zits"
+    ],
+    "detail:unibrow": [
+      "monociglio"
+    ],
+    "detail:lipstick": [
+      "rossetto",
+      "labbra rosse",
+      "labbra rifatte",
+      "labbra carnose"
+    ],
+    "detail:necklace": [
+      "collana",
+      "catenina",
+      "catena d oro",
+      "catenona",
+      "tamarro",
+      "tamarra",
+      "collana di perle",
+      "catena"
+    ],
+    "gender:female": [
+      "ragazza",
+      "femminile",
+      "suora",
+      "monaca",
+      "signora",
+      "signorina",
+      "tipa",
+      "femmina",
+      "programmatrice",
+      "strega",
+      "vampira",
+      "regina",
+      "principessa",
+      "scienziata",
+      "dottoressa",
+      "infermiera",
+      "poliziotta",
+      "nonna",
+      "studentessa",
+      "donna"
+    ],
+    "hair:wavyLong": [
+      "capelli lunghi mossi",
+      "lunghi e mossi",
+      "boccoli",
+      "surfista"
+    ],
+    "hair:spaceBuns": [
+      "doppio chignon",
+      "codini a palla",
+      "odango"
+    ],
+    "hair:pixie": [
+      "capelli cortissimi",
+      "taglio corto"
+    ],
+    "hair:sidePonytail": [
+      "coda laterale",
+      "coda di lato"
+    ],
+    "hat:pompom": [
+      "pompom",
+      "berretto con pon pon"
+    ],
+    "hat:capBack": [
+      "al contrario",
+      "tamarro",
+      "tamarra",
+      "cappellino al contrario",
+      "girato",
+      "skateboarder"
+    ],
+    "hat:hijab": [
+      "hijab",
+      "velo islamico",
+      "headscarf",
+      "velo"
+    ],
+    "hat:turban": [
+      "turbante"
+    ],
+    "hat:bunnyEars": [
+      "orecchie da coniglio",
+      "coniglietta",
+      "coniglietto"
+    ],
+    "hat:foxEars": [
+      "orecchie da volpe",
+      "volpe",
+      "kitsune"
+    ],
+    "hat:flowers": [
+      "coroncina di fiori",
+      "corona di fiori",
+      "fiori in testa"
+    ],
+    "hat:alice": [
+      "cerchietto",
+      "fascia per capelli"
+    ],
+    "eyewear:pixel": [
+      "occhiali pixel",
+      "occhiali pixelati",
+      "pixel glasses",
+      "pixel shades"
+    ],
+    "eyewear:vr": [
+      "visore",
+      "visore vr",
+      "realta virtuale"
+    ],
+    "eyewear:visor": [
+      "visiera cyber",
+      "occhiali cyber",
+      "cyber visor"
+    ],
+    "clothes:dress": [
+      "vestitino",
+      "abito da sera",
+      "abitino"
+    ],
+    "clothes:armor": [
+      "armatura",
+      "corazza",
+      "armour",
+      "cavaliere"
+    ],
+    "print:code": [
+      "codice",
+      "logo del codice",
+      "programmatore",
+      "programmatrice",
+      "sviluppatore"
+    ],
+    "print:heart": [
+      "cuore",
+      "cuoricino"
+    ],
+    "print:star": [
+      "stellina",
+      "stella"
+    ],
+    "print:skull": [
+      "teschio",
+      "metallaro",
+      "metalhead"
+    ],
+    "print:lightning": [
+      "saetta"
+    ],
+    "detail:headset": [
+      "cuffie con microfono",
+      "cuffie da gaming",
+      "microfono",
+      "mic",
+      "videogiocatore"
+    ],
+    "detail:cyborg": [
+      "cyborg",
+      "occhio bionico",
+      "occhio robotico",
+      "androide",
+      "bionic eye"
+    ],
+    "detail:ninja": [
+      "passamontagna",
+      "maschera da ninja"
+    ],
+    "detail:warpaint": [
+      "pittura di guerra",
+      "pittura facciale"
+    ],
+    "detail:beautyMark": [
+      "neo sulla guancia"
+    ],
+    "detail:choker": [
+      "girocollo",
+      "collarino"
+    ],
+    "detail:gauges": [
+      "dilatatori",
+      "dilatatore",
+      "dilatatori al lobo",
+      "tunnel alle orecchie",
+      "lobi dilatati",
+      "pieno di piercing",
+      "piena di piercing",
+      "tantissimi piercing",
+      "piercing ovunque"
+    ],
+    "detail:helix": [
+      "piercing all orecchio",
+      "piercing all elice",
+      "orecchie piene di piercing",
+      "pieno di piercing",
+      "piena di piercing",
+      "tantissimi piercing",
+      "piercing ovunque"
+    ],
+    "detail:industrial": [
+      "barra all orecchio"
+    ],
+    "detail:septum": [
+      "anello al setto",
+      "setto",
+      "piercing al setto",
+      "anello da toro",
+      "pieno di piercing",
+      "piena di piercing",
+      "tantissimi piercing",
+      "piercing ovunque"
+    ],
+    "detail:browPiercing": [
+      "piercing al sopracciglio",
+      "sopracciglio forato",
+      "pieno di piercing",
+      "piena di piercing",
+      "tantissimi piercing",
+      "piercing ovunque"
+    ],
+    "detail:bridgePiercing": [
+      "piercing al ponte",
+      "piercing tra gli occhi"
+    ],
+    "detail:lipRing": [
+      "anello al labbro",
+      "piercing al labbro",
+      "labbro forato",
+      "pieno di piercing",
+      "piena di piercing",
+      "tantissimi piercing",
+      "piercing ovunque"
+    ],
+    "detail:labret": [
+      "piercing al mento",
+      "piercing sotto il labbro"
+    ],
+    "detail:monroe": [
+      "monroe",
+      "piercing sopra il labbro"
+    ],
+    "detail:nostril": [
+      "brillantino al naso",
+      "brillantino",
+      "punto luce al naso",
+      "piercing alla narice",
+      "narice"
+    ],
+    "clothes:tracksuit": [
+      "tuta",
+      "tuta da ginnastica",
+      "tuta acetata",
+      "tuta sportiva",
+      "giacca della tuta",
+      "tracksuit"
+    ],
+    "eyewear:reading": [
+      "occhiali a mezzaluna",
+      "occhiali da lettura",
+      "occhiali da presbite",
+      "occhiali da nonna",
+      "occhiali da nonno"
+    ],
+    "detail:curlers": [
+      "bigodini",
+      "bigodino",
+      "bigodi"
+    ],
+    "clothes:clerical": [
+      "prete",
+      "sacerdote",
+      "parroco",
+      "collarino da prete"
+    ],
+    "hat:helmet": [
+      "elmetto",
+      "pompiere",
+      "vigile del fuoco",
+      "firefighter",
+      "casco da cantiere",
+      "caschetto giallo",
+      "muratore",
+      "operaio",
+      "hardhat",
+      "casco"
+    ],
+    "hat:bowler": [
+      "bombetta"
+    ],
+    "hat:graduation": [
+      "tocco",
+      "cappello da laurea",
+      "laurea",
+      "laureato",
+      "laureata"
+    ],
+    "hat:veil": [
+      "suora",
+      "monaca",
+      "velo da suora"
+    ],
+    "detail:braces": [
+      "apparecchio",
+      "apparecchio ai denti",
+      "apparecchio dentale"
+    ],
+    "detail:backpack": [
+      "zaino",
+      "zainetto",
+      "cartella",
+      "studente",
+      "studentessa"
+    ],
+    "detail:stethoscope": [
+      "stetoscopio",
+      "fonendoscopio",
+      "dottoressa",
+      "medico"
+    ],
+    "detail:hoops": [
+      "orecchini a cerchio",
+      "cerchi alle orecchie"
+    ],
+    "detail:bow": [
+      "fiocco",
+      "fiocchetto"
+    ],
+    "detail:hairclip": [
+      "elastico per capelli",
+      "fermaglio",
+      "mollettina",
+      "molletta",
+      "hairclip"
+    ],
+    "detail:cape": [
+      "mantello",
+      "colletto alto",
+      "vampiro",
+      "vampira",
+      "dracula"
+    ],
+    "detail:lashes": [
+      "ciglia",
+      "ciglia lunghe",
+      "ciglione"
+    ],
+    "detail:eyeshadow": [
+      "ombretto",
+      "trucco",
+      "truccata",
+      "makeup",
+      "eyeliner",
+      "matita nera"
+    ],
+    "detail:fangs": [
+      "canini",
+      "zanne",
+      "denti da vampiro",
+      "vampiro",
+      "vampira",
+      "dracula"
+    ],
+    "skin:green": [
+      "pelle verde",
+      "alieno",
+      "aliena",
+      "orco"
+    ],
+    "skin:blue": [
+      "pelle blu",
+      "pelle azzurra"
+    ],
+    "skin:grey": [
+      "pelle grigia",
+      "npc",
+      "zombi"
+    ],
+    "skin:purple": [
+      "pelle viola"
+    ],
+    "eyewear:eyepatch": [
+      "pirata"
+    ],
+    "hairColor:white": [
+      "babbo natale",
+      "scienziato"
+    ],
+    "clothesColor:black": [
+      "rockstar",
+      "metallaro",
+      "metalhead"
+    ],
+    "detail:gum": [
+      "gomma da masticare",
+      "bolla di gomma",
+      "palloncino di gomma",
+      "cicca"
+    ],
+    "detail:lollipop": [
+      "lecca lecca",
+      "leccalecca",
+      "chupa chups"
+    ],
+    "detail:toothpick": [
+      "stuzzicadenti",
+      "filo d erba",
+      "filo di paglia"
+    ],
+    "detail:rose": [
+      "rosa tra i denti",
+      "rosa in bocca"
+    ],
+    "detail:bowtie": [
+      "farfallino",
+      "bowtie",
+      "cameriere",
+      "cameriera"
+    ],
+    "detail:badge": [
+      "cartellino",
+      "tesserino",
+      "programmatore",
+      "programmatrice",
+      "sviluppatore"
+    ],
+    "detail:pencilEar": [
+      "matita dietro l orecchio",
+      "matita"
+    ],
+    "detail:flowerEar": [
+      "fiore dietro l orecchio",
+      "fiore nei capelli",
+      "fiore all orecchio"
+    ],
+    "detail:sunglassesHead": [
+      "occhiali in testa",
+      "occhiali sulla testa",
+      "occhiali da sole in testa"
+    ],
+    "detail:earbuds": [
+      "auricolari",
+      "airpods",
+      "cuffiette"
+    ],
+    "face:heart": [
+      "viso a cuore",
+      "faccia a cuore"
+    ],
+    "face:wide": [
+      "viso largo",
+      "faccia larga",
+      "faccione"
+    ],
+    "brows:raised": [
+      "sopracciglio alzato",
+      "un sopracciglio alzato",
+      "sospettoso",
+      "sospettosa",
+      "scettico",
+      "scettica"
+    ],
+    "detail:doubleChin": [
+      "doppio mento"
+    ],
+    "detail:dimples": [
+      "fossetta"
+    ],
+    "detail:cheekbones": [
+      "zigomi",
+      "zigomi alti",
+      "zigomi pronunciati"
+    ],
+    "clothesColor:blue": [
+      "poliziotto",
+      "poliziotta"
+    ],
+    "hatColor:blue": [
+      "poliziotto",
+      "poliziotta"
+    ],
+    "hairColor:black": [
+      "metallaro",
+      "metalhead"
+    ],
+    "hairColor:blond": [
+      "surfista"
+    ],
+    "clothesColor:green": [
+      "soldato",
+      "militare"
+    ],
+    "hatColor:yellow": [
+      "contadino"
+    ],
+    "clothesColor:red": [
+      "boscaiolo",
+      "woodchopper",
+      "taglialegna"
+    ],
+    "hairColor:grey": [
+      "nonna"
+    ],
+    "hair:mullet": [
+      "capelli a triglia",
+      "triglia"
+    ],
+    "hair:middlePart": [
+      "riga in mezzo",
+      "riga centrale",
+      "frangia a tendina"
+    ],
+    "hair:shag": [
+      "scalato",
+      "scalati",
+      "capelli scalati"
+    ],
+    "hair:highPonytail": [
+      "coda alta"
+    ],
+    "hair:afroPuffs": [
+      "due palle afro"
+    ],
+    "hat:bucket": [
+      "cappello da pescatore",
+      "pescatora"
+    ],
+    "hat:party": [
+      "cappellino da festa",
+      "cappello da festa",
+      "compleanno",
+      "festa"
+    ],
+    "hat:fedora": [
+      "borsalino",
+      "cappello italiano",
+      "capello italiano"
+    ],
+    "eyewear:hearts": [
+      "occhiali a cuore",
+      "occhiali cuore"
+    ],
+    "detail:earmuffs": [
+      "paraorecchie",
+      "scaldaorecchie",
+      "earmuffs"
+    ],
+    "facial:handlebar": [
+      "baffi a manubrio",
+      "baffoni a manubrio",
+      "baffi arricciati",
+      "handlebar mustache",
+      "handlebar moustache"
+    ],
+    "clothes:overalls": [
+      "salopette",
+      "tuta da lavoro",
+      "meccanico",
+      "meccanica"
+    ],
+    "clothes:puffer": [
+      "piumino",
+      "piumino imbottito"
+    ],
+    "clothes:polo": [
+      "maglia polo"
+    ],
+    "clothes:vest": [
+      "gilet",
+      "panciotto"
+    ],
+    "clothes:apron": [
+      "grembiule",
+      "grembiulino",
+      "cuoco",
+      "barista",
+      "fornaio"
+    ],
+    "clothes:varsity": [
+      "giubbotto college",
+      "giacca college",
+      "letterman jacket"
+    ],
+    "clothes:openShirt": [
+      "camicia aperta",
+      "camicia sbottonata",
+      "camicia slacciata"
+    ],
+    "eyewear:slim": [
+      "occhiali da matrix",
+      "occhiali alla matrix",
+      "occhiali sottili",
+      "occhialini da sole",
+      "occhiali da sole sottili"
+    ],
+    "age:child": [
+      "bambina",
+      "bimbo",
+      "ragazzino",
+      "bambino"
+    ],
+    "age:young": [
+      "giovane",
+      "ragazzo",
+      "ragazza",
+      "adolescente",
+      "studente",
+      "studentessa",
+      "teenager"
+    ],
+    "age:old": [
+      "vecchio",
+      "anziano",
+      "nonno",
+      "nonna",
+      "vecchietto"
+    ],
+    "skin:dark": [
+      "pelle scura",
+      "carnagione scura",
+      "pelle nera"
+    ],
+    "skin:tan": [
+      "abbronzato",
+      "olivastro",
+      "surfista"
+    ],
+    "skin:pale": [
+      "pallido",
+      "pelle chiara",
+      "carnagione chiara",
+      "vampiro",
+      "vampira",
+      "dracula"
+    ],
+    "hat:halo": [
+      "aureola",
+      "angelo"
+    ],
+    "pattern:dots": [
+      "a pois",
+      "pois"
+    ]
+  },
+  "colors": {
+    "black": [
+      "nero",
+      "nera",
+      "nere",
+      "scuro",
+      "scura",
+      "scuri",
+      "scure",
+      "corvino",
+      "corvini",
+      "neri",
+      "corvina"
+    ],
+    "white": [
+      "bianche",
+      "platino",
+      "platinati",
+      "platinata",
+      "bianco",
+      "bianca",
+      "bianchi"
+    ],
+    "grey": [
+      "grigio",
+      "grigia",
+      "grigi",
+      "grigie",
+      "argento",
+      "argentato",
+      "argentati",
+      "argentata"
+    ],
+    "brown": [
+      "marrone",
+      "marroni",
+      "cammello",
+      "cuoio"
+    ],
+    "red": [
+      "rosso",
+      "rossa",
+      "rossi",
+      "rosse",
+      "bordò",
+      "borgogna",
+      "cremisi"
+    ],
+    "orange": [
+      "arancione",
+      "arancioni"
+    ],
+    "yellow": [
+      "giallo",
+      "gialla",
+      "gialli",
+      "gialle",
+      "oro",
+      "dorato",
+      "dorata",
+      "dorati"
+    ],
+    "green": [
+      "verde",
+      "verdi",
+      "verde militare",
+      "verde oliva",
+      "cachi",
+      "verde fluo",
+      "verde neon",
+      "smeraldo",
+      "kaki"
+    ],
+    "blue": [
+      "blu",
+      "azzurro",
+      "azzurra",
+      "azzurri",
+      "azzurre",
+      "turchese",
+      "turchesi",
+      "ciano",
+      "petrolio",
+      "blu scuro"
+    ],
+    "purple": [
+      "lilla",
+      "lavanda",
+      "viola",
+      "malva"
+    ],
+    "pink": [
+      "fucsia",
+      "fuxia",
+      "rosa fluo",
+      "rosa"
+    ]
+  },
+  "hairOnlyColors": {
+    "blond": [
+      "biondo",
+      "bionda",
+      "biondi",
+      "blond",
+      "biondo platino",
+      "bionda platino",
+      "biondi platino",
+      "platinum blond"
+    ],
+    "brown": [
+      "castano",
+      "castana",
+      "castani",
+      "bruna",
+      "moro",
+      "mora"
+    ],
+    "grey": [
+      "brizzolato",
+      "grigiastro"
+    ],
+    "red": [
+      "rosso di capelli",
+      "rossiccio"
+    ]
+  },
+  "colorNouns": {
+    "background": [
+      "sfondo"
+    ],
+    "hair": [
+      "capelli",
+      "chioma"
+    ],
+    "eye": [
+      "occhi",
+      "occhio"
+    ],
+    "clothes": [
+      "vestito",
+      "vestita",
+      "vestiti",
+      "maglia",
+      "abito",
+      "gonna"
+    ]
+  },
+  "contextual": {
+    "hair:long": [
+      "lungo",
+      "lunga",
+      "lunghi",
+      "lunghe"
+    ],
+    "clothes:openShirt": [
+      "aperta",
+      "aperte",
+      "sbottonata"
+    ],
+    "hair:short": [
+      "corto",
+      "corti",
+      "corte",
+      "corta"
+    ],
+    "eyes:big": [
+      "grande",
+      "grandi"
+    ],
+    "eyes:small": [
+      "piccoli",
+      "piccolo"
+    ]
+  },
+  "ignored": [
+    "scienziato pazzo",
+    "uomo",
+    "maschio",
+    "tizio",
+    "tipo",
+    "https",
+    "describble",
+    "enorme",
+    "enormi",
+    "papà",
+    "mom",
+    "guance rosse",
+    "guance rosa",
+    "persona",
+    "mamma"
+  ],
+  "negations": [
+    "senza",
+    "niente",
+    "nessun",
+    "nessuna",
+    "togli",
+    "togliere",
+    "rimuovi",
+    "leva",
+    "mai"
+  ],
+  "scopeBreakers": [
+    "pero",
+    "ma",
+    "solo"
+  ]
+}

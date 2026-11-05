@@ -1,297 +1,36 @@
-// Traits and their Italian/English synonyms. Multi-word phrases take precedence.
-// Real brands are recognised only to replace them with an invented one (see dialogue.js).
-const brands = ['nike', 'adidas', 'puma', 'reebok', 'fila', 'kappa', 'champion', 'supreme', 'gucci', 'prada', 'versace', 'armani', 'dior', 'chanel',
-  'balenciaga', 'louis vuitton', 'lacoste', 'levis', 'vans', 'converse', 'zara', 'diesel', 'the north face', 'north face', 'stussy', 'carhartt',
-  'patagonia', 'uniqlo', 'off white', 'apple', 'google', 'microsoft', 'github', 'amazon', 'tesla', 'ferrari', 'starbucks', 'coca cola', 'pepsi',
-  'mcdonalds', 'nintendo', 'playstation', 'xbox', 'spotify', 'netflix', 'twitch', 'discord', 'linux', 'nasa'];
+// The words live in dictionary/ at the repository root: concepts.json lists what can be drawn,
+// lang/<language>.json gives the words for each concept, brands.json the real brands to replace.
+// This module merges every language into the tables the parser reads. Multi-word phrases take
+// precedence; real brands are recognised only to replace them with an invented one (see dialogue.js).
+// build.mjs inlines these JSON files, since the published page loads nothing else.
+import conceptsFile from '../../dictionary/concepts.json' with { type: 'json' };
+import brandsFile from '../../dictionary/brands.json' with { type: 'json' };
+import dictionaryIt from '../../dictionary/lang/it.json' with { type: 'json' };
+import dictionaryEn from '../../dictionary/lang/en.json' with { type: 'json' };
+
+// Every language the parser understands; a new language is a new file listed here and in build.mjs.
+export const dictionaryLanguages = [dictionaryIt, dictionaryEn];
+
+const uniqueWords = (words) => [...new Set(words)];
+// All the words every language gives for one key of one section, in language order.
+const wordsFor = (section, key) => uniqueWords(dictionaryLanguages.flatMap((language) => language[section]?.[key] ?? []));
+const tableFor = (section, keys) => Object.fromEntries(keys.map((key) => [key, wordsFor(section, key)]));
+const listFor = (section) => uniqueWords(dictionaryLanguages.flatMap((language) => language[section] ?? []));
 
 export const traits = {
-  ...Object.fromEntries(brands.map((brand) => [`brand:${brand.replace(/ /g, '')}`, [brand]])),
-  'hair:short': ['capelli corti', 'a spazzola', 'short hair', 'npc'],
-  'hair:long': ['capelli lunghi', 'chioma lunga', 'long hair', 'strega', 'witch', 'regina', 'queen', 'principessa', 'princess', 'elfo', 'elf', 'rocker', 'rockstar', 'metallaro', 'metalhead'],
-  'hair:spiky': ['a punta', 'a punte', 'spettinato a punte', 'spiky', 'spikes'],
-  'hair:curly': ['permanente', 'perm', 'permed', 'ricci', 'riccio', 'ricciolo', 'mossi', 'afro', 'crespi', 'curly', 'curls', 'wavy', 'pagliaccio', 'clown', 'angelo', 'angel'],
-  'hair:bald': ['calvo', 'pelato', 'stempiato', 'bald', 'balding', 'shaved head', 'testa rasata', 'nonno', 'grandpa'],
-  'hair:ponytail': ['coda di cavallo', 'coda', 'codino', 'ponytail'],
-  'hair:bun': ['chignon', 'crocchia', 'bun', 'top knot', 'nonna', 'grandma', 'man bun', 'top bun', 'capelli raccolti', 'raccolti', 'tied up hair'],
-  'hair:mohawk': ['cresta', 'mohawk', 'mohican', 'punk'],
-  'hair:messy': ['spettinato', 'scompigliati', 'arruffati', 'disordinati', 'messy', 'unkempt', 'tousled', 'crazy hair', 'capelli pazzi', 'zombie', 'zombi', 'scienziato', 'scientist'],
-  'hair:braids': ['trecce', 'treccia', 'treccine', 'braids', 'braid'],
-
-  'hair:emo': ['emo', 'frangia di lato', 'ciuffo sull occhio', 'side fringe', 'side bangs'],
-  'hair:dreads': ['dreadlocks', 'dread', 'dreads', 'rasta', 'locs'],
-  'hair:afro': ['afro', 'capelli afro', 'crespi'],
-  'hair:bob': ['caschetto', 'bob'],
-  'hair:bangs': ['frangia', 'frangetta', 'bangs', 'fringe'],
-  'hair:quiff': ['ciuffo', 'banana', 'pompadour', 'quiff', 'chad'],
-  'hair:buzz': ['rasato', 'rasati', 'capelli rasati', 'a spazzola', 'buzz cut', 'crew cut', 'buzzcut', 'soldato', 'soldier', 'militare'],
-  'hair:pigtails': ['codini', 'due code', 'pigtails', 'twin tails', 'twintails', 'twin tail'],
-  'hair:sidepart': ['riga di lato', 'con la riga', 'capelli con la riga', 'parted hair', 'parted on the side', 'riga laterale', 'pettinato', 'leccato', 'gelatina', 'side part', 'slicked', 'combed', 'vampiro', 'vampire', 'dracula'],
-  'hair:undercut': ['undercut', 'rasato ai lati', 'lati rasati', 'shaved sides', 'cyberpunk', 'rasati ai lati', 'rasata ai lati', 'capelli rasati ai lati', 'capelli rasato ai lati', 'rasati di lato', 'capelli rasati di lato', 'capelli rasati da un lato', 'rasata di lato', 'rasato di lato', 'rasati da un lato', 'half shaved', 'half shaved head', 'half-shaved', 'shaved on one side', 'side shave', 'sidecut'],
-
-  'eyes:almond': ['occhi a mandorla', 'occhi sottili', 'almond eyes', 'narrow eyes'],
-  'eyes:round': ['occhi tondi', 'occhi rotondi', 'round eyes'],
-  'ears:big': ['orecchie a sventola', 'orecchie grandi', 'orecchione', 'orecchioni', 'big ears', 'dumbo ears'],
-  'ears:small': ['orecchie piccole', 'small ears'],
-  'ears:elf': ['orecchie a punta', 'orecchie da elfo', 'elfo', 'elfa', 'elf ears', 'pointy ears', 'elf'],
-  'face:round': ['viso tondo', 'faccia tonda', 'viso rotondo', 'paffuto', 'paffutello', 'cicciottello', 'round face', 'chubby'],
-  'face:square': ['mascella squadrata', 'viso squadrato', 'mascellone', 'mascella forte', 'square jaw', 'square face', 'strong jaw', 'chad', 'buff', 'muscoloso', 'muscolosa', 'palestrato', 'palestrata', 'muscular', 'jacked'],
-  'face:long': ['viso lungo', 'magro', 'magra', 'magri', 'magre', 'smilzo', 'smilza', 'skinny', 'slim', 'thin', 'thin face', 'faccia lunga', 'viso allungato', 'long face'],
-  'face:pointy': ['mento a punta', 'viso affilato', 'mento appuntito', 'pointy chin', 'sharp chin', 'pointed chin'],
-  'nose:button': ['nasino', 'naso piccolo', 'naso all insu', 'button nose', 'small nose'],
-  'nose:long': ['naso lungo', 'long nose'],
-  'nose:big': ['nasone', 'naso grande', 'naso a patata', 'big nose', 'large nose'],
-  'nose:pointy': ['naso a punta', 'naso appuntito', 'naso aquilino', 'pointy nose', 'hooked nose'],
-  'brows:thick': ['sopracciglia folte', 'sopraccigliona', 'sopracciglioni', 'sopracciglia spesse', 'bushy eyebrows', 'thick eyebrows', 'thick brows'],
-  'brows:thin': ['sopracciglia sottili', 'thin eyebrows', 'thin brows'],
-
-  'mood:happy': ['felice', 'contento', 'allegro', 'gioioso', 'sereno', 'happy', 'cheerful', 'joyful', 'glad', 'ride', 'ridendo', 'laughing', 'laughs', '😀', '😊', 'bloomer'],
-  'mood:sad': ['triste', 'malinconico', 'depresso', 'abbattuto', 'piange', 'piangendo', 'in lacrime', 'sad', 'crying', 'cries', 'gloomy', 'depressed', 'melancholic', 'miserable', '😢'],
-  'mood:angry': ['arrabbiato', 'incazzato', 'furioso', 'cattivo', 'minaccioso', 'angry', 'mad', 'furious', 'mean', 'grumpy', 'scontroso', 'guarda male', 'looks mean', '😠'],
-  'mood:tired': ['stanco', 'stanchi', 'stanche', 'assonnato', 'esausto', 'sfinito', 'tired', 'sleepy', 'exhausted', 'worn out', 'drowsy', 'appena sveglio', 'sguardo spento', 'occhi socchiusi', 'occhi mezzi chiusi', 'half closed eyes', 'half open eyes', 'stoned', '😴', 'stanco morto', 'stanca morta', 'dead tired'],
-  'mood:asleep': ['addormentato', 'dorme', 'dormendo', 'occhi chiusi', 'asleep', 'sleeping', 'eyes closed', 'closed eyes'],
-  'mood:surprised': ['sorpreso', 'stupito', 'scioccato', 'sbalordito', 'surprised', 'shocked', 'astonished', 'amazed', '😮'],
-  'mood:scared': ['spaventato', 'impaurito', 'terrorizzato', 'scared', 'afraid', 'terrified', 'frightened', '😱'],
-  'mood:bored': ['annoiato', 'apatico', 'indifferente', 'bored', 'apathetic', 'unimpressed', 'deadpan'],
-  'mood:smug': ['sarcastico', 'ironico', 'beffardo', 'furbo', 'smug', 'sarcastic', 'cocky', 'sly', '😏', 'chad', 'smug', 'compiaciuto', 'compiaciuta', 'soddisfatto', 'sornione', 'pleased with himself', 'self satisfied'],
-  'mood:blank': ['sguardo vuoto', 'sguardo perso', 'vuoto', 'inespressivo', 'morto dentro', 'thousand yard stare', 'blank stare', 'blank', 'dead inside', 'expressionless', 'doomer', 'npc'],
-  'mood:despair': ['disperato', 'disperata', 'piange a dirotto', 'singhiozza', 'despair', 'desperate', 'sobbing', 'wailing'],
-  'mood:disgusted': ['schifato', 'disgustato', 'disgusted', 'grossed out', '🤢'],
-
-  'mouth:smile': ['sorriso', 'sorride', 'sorridente', 'ride', 'ridendo', 'smile', 'smiling', 'grin', 'grinning', 'laughing', 'laughs', 'chill', 'tranquillo', 'tranquilla', 'rilassato', 'rilassata', 'relaxed', 'simpatico', 'simpatica', 'friendly', 'gentile', 'kind'],
-  'mouth:smirk': ['sorrisetto', 'ghigno', 'smorfia', 'bocca storta', 'smirk', 'smirking', 'crooked smile'],
-  'mouth:frown': ['imbronciato', 'broncio', 'frown', 'frowning', 'pout', 'scowl'],
-  'mouth:open': ['bocca aperta', 'urla', 'urlando', 'open mouth', 'mouth open', 'wide open', 'screaming', 'yelling', 'shouting'],
-
-  'eyes:big': ['occhi grandi', 'occhioni', 'big eyes', 'large eyes', 'wide eyes', 'alieno', 'alien', 'cute', 'carino', 'carina', 'kawaii', 'anime', 'sparkly', 'luccicanti', 'brillanti', 'sparkling'],
-  'eyes:small': ['occhi piccoli', 'occhietti', 'small eyes', 'beady eyes'],
-  'eyewear:glasses': ['occhiali', 'occhialini', 'occhiali spessi', 'occhiali grossi', 'thick glasses', 'glasses', 'spectacles', 'specs', 'programmatore', 'programmatrice', 'programmer', 'scienziato', 'scienziata', 'scientist', 'nonno', 'grandpa', 'nonna', 'grandma', 'occhiali da vista', 'framed glasses', 'prescription glasses'],
-  'eyewear:round': ['occhiali tondi', 'occhiali rotondi', 'round glasses', 'harry potter', 'hipster', 'nerd', 'secchione', 'nerdy'],
-  'eyewear:monocle': ['monocolo', 'monocle'],
-  'eyewear:sunglasses': ['occhiali da sole', 'occhiali da aviatore', 'occhiali a goccia', 'aviator', 'aviators', 'aviator sunglasses', 'occhiali scuri', 'sunglasses', 'shades', 'hacker', 'rocker', 'rockstar', 'rapper', 'trapper', 'boss'],
-
-  'facial:beard': ['barba', 'barbuto', 'beard', 'bearded', 'hipster', 'boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
-  'facial:longBeard': ['barba lunga', 'barbone', 'barbona', 'barba da mago', 'long beard', 'big beard', 'wizard beard', 'mago', 'wizard', 'babbo natale', 'santa'],
-  'facial:stubble': ['barba di tre giorni', 'barba di 3 giorni', 'barba incolta', 'barbetta', 'stubble', 'five o clock shadow', 'unshaven', 'chad', 'barba sfatta', 'barba trascurata', 'scruffy beard'],
-  'facial:moustache': ['baffi', 'baffetti', 'moustache', 'mustache', 'stache', 'nonno', 'grandpa', 'baffoni', 'big mustache', 'big moustache'],
-  'facial:goatee': ['pizzetto', 'goatee'],
-
-  'hat:beanie': ['berretto', 'berretta', 'ladro', 'ladra', 'thief', 'burglar', 'marinaio', 'sailor', 'pescatore', 'fisherman', 'cuffia di lana', 'beanie', 'wool hat', 'knit hat', 'hipster', 'doomer', 'boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
-  'hat:cap': ['cappellino', 'visiera', 'coppola', 'cap', 'baseball cap', 'flat cap', 'poliziotto', 'poliziotta', 'cop', 'police'],
-  'hat:hood': ['cappuccio', 'incappucciato', 'incappucciata', 'hood', 'hooded', 'hacker', 'misterioso', 'misteriosa', 'mysterious'],
-  'hat:tophat': ['cilindro', 'top hat'],
-  'hat:cowboy': ['cappello da cowboy', 'cowboy hat', 'stetson', 'cowboy', 'cowgirl'],
-  'hat:crown': ['corona', 'crown', 'tiara', 'regina', 'queen', 'principessa', 'princess', 're', 'king', 'diadema', 'principe', 'prince'],
-  'hat:generic': ['cappello', 'hat', 'detective', 'investigatore', 'sherlock', 'gangster', 'mafioso', 'contadino', 'farmer'],
-  'hat:santa': ['cappello di babbo natale', 'babbo natale', 'cappello natalizio', 'santa hat', 'santa', 'christmas hat'],
-  'hat:chef': ['cappello da cuoco', 'cuoco', 'chef', 'chef hat'],
-  'hat:catEars': ['orecchie da gatto', 'orecchie da gattino', 'cat ears', 'kitty ears', 'neko'],
-  'hat:viking': ['vichingo', 'elmo vichingo', 'viking', 'viking helmet'],
-  'hat:pointy': ['cappello a punta', 'cappello da strega', 'cappello da mago', 'pointy hat', 'witch hat', 'wizard hat', 'mago', 'wizard', 'strega', 'witch'],
-  'hat:beret': ['basco', 'berretto basco', 'beret', 'pittore', 'pittrice', 'painter', 'artista', 'artist'],
-  'hat:halo': ['aureola', 'angelo', 'halo', 'angel'],
-  'hat:horns': ['corna', 'cornetti', 'diavolo', 'diavoletto', 'horns', 'devil'],
-  'hat:bandana': ['bandana', 'biker', 'motociclista', 'fascia in testa', 'headband', 'pirata', 'pirate', 'ninja'],
-
-  'clothes:hoodie': ['felpa', 'hoodie', 'sweatshirt', 'programmatore', 'programmatrice', 'sviluppatore', 'developer', 'dev', 'coder', 'programmer', 'gamer', 'videogiocatore', 'doomer', 'studente', 'studentessa'],
-  'clothes:jacket': ['giacca', 'biker', 'motociclista', 'giubbotto', 'giubbino', 'chiodo', 'jacket', 'blazer', 'bomber', 'punk', 'rocker', 'rockstar', 'borchie', 'studs', 'studded', 'leather jacket', 'giacca di pelle'],
-  'clothes:suit': ['completo', 'in giacca e cravatta', 'smoking', 'suit', 'tuxedo', 'gangster', 'mafioso', 'boss', 'elegante', 'elegant', 'classy'],
-  'clothes:tshirt': ['maglietta', 't shirt', 'tee', 'maglia da calcio', 'calciatore', 'calciatrice', 'footballer', 'soccer player', 'jersey', 'metallaro', 'metalhead', 'skater', 'skateboarder'],
-  'clothes:tank': ['canottiera', 'canotta', 'tank top', 'smanicato', 'sleeveless', 'buff', 'muscoloso', 'palestrato', 'muscular', 'jacked'],
-  'clothes:turtleneck': ['dolcevita', 'collo alto', 'turtleneck'],
-  'pattern:stripes': ['a righe', 'ladro', 'ladra', 'thief', 'burglar', 'marinaio', 'sailor', 'pigiama', 'in pigiama', 'pajamas', 'pyjamas', 'pjs', 'righe', 'rigato', 'rigata', 'striped', 'stripes', 'stripy'],
-  'pattern:dots': ['a pois', 'pois', 'polka dots', 'polka dot', 'dotted'],
-  'pattern:flowers': ['a fiori', 'fiori', 'fiorata', 'floreale', 'hawaiana', 'hawaiano', 'floral', 'flowers', 'hawaiian'],
-  'pattern:plaid': ['a quadri', 'checked', 'check shirt', 'quadri', 'quadretti', 'scozzese', 'flanella', 'plaid', 'checkered', 'flannel', 'tartan', 'contadino', 'farmer', 'boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
-  'clothes:shirt': ['camicia', 'camicetta', 'blouse', 'blouses', 'buttonup', 'button-up', 'pigiama', 'in pigiama', 'pajamas', 'pyjamas', 'pjs', 'shirt', 'button up', 'contadino', 'farmer', 'boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
-  'clothes:sweater': ['maglione', 'pullover', 'sweater', 'jumper', 'cardigan', 'maglione di lana', 'wool sweater'],
-  'clothes:coat': ['cappotto', 'impermeabile', 'trench', 'coat', 'overcoat', 'raincoat', 'detective', 'investigatore', 'sherlock'],
-  'clothes:uniform': ['uniforme', 'divisa', 'camice', 'uniform', 'lab coat', 'scrubs', 'pompiere', 'vigile del fuoco', 'firefighter', 'fireman', 'pilota', 'pilot', 'dentista', 'dentist', 'scienziato', 'scienziata', 'scientist', 'dottore', 'dottoressa', 'medico', 'doctor', 'infermiera', 'nurse', 'poliziotto', 'poliziotta', 'cop', 'police', 'soldato', 'soldier', 'militare'],
-
-  'detail:cigarette': ['sigaretta', 'sigaro', 'fuma', 'fumando', 'cigarette', 'cigar', 'smoking a', 'smokes', 'doomer', 'gangster', 'mafioso'],
-  'detail:pipe': ['pipa', 'pipe', 'detective', 'investigatore', 'sherlock'],
-  'detail:earring': ['orecchino', 'orecchini', 'earring', 'earrings'],
-  'detail:piercing': ['piercing', 'nose ring', 'anello al naso', 'punk', 'pieno di piercing', 'piena di piercing', 'tanti piercing', 'tantissimi piercing', 'piercing ovunque', 'pierced', 'lots of piercings', 'many piercings', 'heavily pierced'],
-  'detail:scar': ['cicatrice', 'sfregio', 'scar', 'scarred'],
-  'detail:freckles': ['lentiggini', 'efelidi', 'freckles', 'freckled', 'bloomer'],
-  'detail:headphones': ['cuffie', 'headphones', 'headset'],
-  'detail:tattoo': ['tatuaggio', 'tatuaggi', 'tatuato', 'tattoo', 'tattoos', 'tattooed', 'trapper'],
-  'detail:bags': ['occhiaie', 'borse sotto gli occhi', 'bags under', 'dark circles', 'eye bags', 'zombie', 'zombi', 'doomer'],
-  'detail:mask': ['mascherina', 'maschera', 'mask', 'dentista', 'dentist', 'dottore', 'dottoressa', 'medico', 'doctor'],
-  'detail:eyepatch': ['benda', 'benda sull occhio', 'eyepatch', 'eye patch'],
-  'detail:wrinkles': ['rughe', 'rugoso', 'wrinkles', 'wrinkled'],
-  'detail:scarf': ['sciarpa', 'scarf'],
-  'detail:tears': ['disperato', 'disperata', 'piange a dirotto', 'singhiozza', 'sobbing', 'lacrime', 'piange', 'piangendo', 'in lacrime', 'crying', 'tears', 'cries'],
-  'detail:sweat': ['sudato', 'suda', 'goccia di sudore', 'sudore', 'sweating', 'sweat', 'sweaty'],
-  'detail:bandaid': ['cerotto', 'band aid', 'bandaid', 'plaster'],
-  'detail:clownNose': ['naso rosso', 'naso da clown', 'pagliaccio', 'clown', 'clown nose'],
-  'detail:tie': ['cravatta', 'tie', 'necktie'],
-  'detail:sideburns': ['basette', 'sideburns'],
-  'detail:acne': ['brufoli', 'acne', 'pimples', 'zits'],
-  'detail:unibrow': ['monociglio', 'unibrow'],
-  'detail:lipstick': ['rossetto', 'labbra rosse', 'labbra rifatte', 'labbra carnose', 'full lips', 'lipstick', 'red lips'],
-  'detail:necklace': ['collana', 'catenina', 'catena', 'catena d oro', 'catenona', 'gold chain', 'tamarro', 'tamarra', 'necklace', 'chain', 'rapper', 'trapper', 'perle', 'collana di perle', 'pearls', 'pearl necklace'],
-
-  'gender:female': ['ragazza', 'feminine', 'femminile', 'donna', 'suora', 'monaca', 'nun', 'signora', 'signorina', 'tipa', 'femmina', 'girl', 'woman', 'lady', 'female', 'she', 'her', 'programmatrice', 'strega', 'witch', 'vampira', 'regina', 'queen', 'principessa', 'princess', 'scienziata', 'dottoressa', 'infermiera', 'poliziotta', 'nonna', 'grandma', 'studentessa'],
-  'hair:wavyLong': ['capelli lunghi mossi', 'lunghi e mossi', 'boccoli', 'long wavy hair', 'wavy long hair', 'surfer', 'surfista'],
-  'hair:spaceBuns': ['due chignon', 'doppio chignon', 'codini a palla', 'space buns', 'double buns', 'odango'],
-  'hair:pixie': ['pixie', 'capelli cortissimi', 'taglio corto', 'pixie cut'],
-  'hair:sidePonytail': ['coda laterale', 'coda di lato', 'side ponytail'],
-  'hat:pompom': ['pon pon', 'pompon', 'pompom', 'berretto con pon pon', 'pom pom', 'bobble hat'],
-  'hat:capBack': ['al contrario', 'tamarro', 'tamarra', 'cappellino al contrario', 'girato', 'backwards', 'backwards cap', 'rapper', 'trapper', 'skater', 'skateboarder'],
-  'hat:hijab': ['hijab', 'velo', 'velo islamico', 'headscarf'],
-  'hat:turban': ['turbante', 'turban'],
-  'hat:bunnyEars': ['orecchie da coniglio', 'coniglietta', 'coniglietto', 'bunny ears', 'bunny', 'rabbit ears'],
-  'hat:foxEars': ['orecchie da volpe', 'volpe', 'fox ears', 'fox', 'kitsune'],
-  'hat:flowers': ['coroncina di fiori', 'corona di fiori', 'fiori in testa', 'flower crown'],
-  'hat:alice': ['cerchietto', 'fascia per capelli', 'hairband', 'alice band'],
-  'eyewear:pixel': ['occhiali pixel', 'occhiali pixelati', 'thug life', 'deal with it', 'pixel glasses', 'pixel shades'],
-  'eyewear:vr': ['visore', 'visore vr', 'realta virtuale', 'vr', 'vr headset', 'oculus'],
-  'eyewear:visor': ['visiera cyber', 'occhiali cyber', 'cyber visor', 'visor', 'cyberpunk'],
-  'clothes:dress': ['vestitino', 'abito da sera', 'abitino', 'dress', 'gown'],
-  'clothes:armor': ['armatura', 'corazza', 'armor', 'armour', 'cavaliere', 'knight'],
-  'print:code': ['codice', 'logo del codice', 'code', 'coding shirt', 'programmatore', 'programmatrice', 'sviluppatore', 'developer', 'dev', 'coder', 'programmer'],
-  'print:heart': ['cuore', 'cuoricino', 'heart'],
-  'print:star': ['stella', 'stellina', 'star'],
-  'print:skull': ['teschio', 'skull', 'metallaro', 'metalhead'],
-  'print:lightning': ['fulmine', 'saetta', 'lightning', 'bolt'],
-  'detail:headset': ['cuffie con microfono', 'headset', 'gaming headset', 'cuffie da gaming', 'microfono', 'mic', 'gamer', 'videogiocatore', 'streamer'],
-  'detail:cyborg': ['cyborg', 'occhio bionico', 'occhio robotico', 'robot', 'androide', 'bionic eye', 'android'],
-  'detail:ninja': ['ninja', 'passamontagna', 'maschera da ninja', 'balaclava', 'ninja mask'],
-  'detail:warpaint': ['pittura di guerra', 'pittura facciale', 'war paint', 'face paint'],
-  'detail:beautyMark': ['neo', 'neo sulla guancia', 'beauty mark', 'mole'],
-  'detail:choker': ['girocollo', 'choker', 'collarino'],
-  'detail:gauges': ['dilatatori', 'dilatatore', 'dilatatori al lobo', 'tunnel alle orecchie', 'lobi dilatati', 'plug', 'gauges', 'ear gauges', 'stretched ears', 'stretched lobes', 'ear tunnels', 'plugs', 'pieno di piercing', 'piena di piercing', 'tanti piercing', 'tantissimi piercing', 'piercing ovunque', 'pierced', 'lots of piercings', 'many piercings', 'heavily pierced'],
-  'detail:helix': ['helix', 'piercing all orecchio', 'piercing all elice', 'helix piercing', 'ear piercings', 'cartilage piercing', 'orecchie piene di piercing', 'pieno di piercing', 'piena di piercing', 'tanti piercing', 'tantissimi piercing', 'piercing ovunque', 'pierced', 'lots of piercings', 'many piercings', 'heavily pierced'],
-  'detail:industrial': ['industrial', 'piercing industrial', 'industrial piercing', 'barra all orecchio', 'ear bar'],
-  'detail:septum': ['anello al setto', 'septum', 'setto', 'piercing al setto', 'anello da toro', 'septum ring', 'septum piercing', 'bull ring', 'punk', 'pieno di piercing', 'piena di piercing', 'tanti piercing', 'tantissimi piercing', 'piercing ovunque', 'pierced', 'lots of piercings', 'many piercings', 'heavily pierced'],
-  'detail:browPiercing': ['piercing al sopracciglio', 'sopracciglio forato', 'eyebrow piercing', 'brow piercing', 'pierced eyebrow', 'pieno di piercing', 'piena di piercing', 'tanti piercing', 'tantissimi piercing', 'piercing ovunque', 'pierced', 'lots of piercings', 'many piercings', 'heavily pierced'],
-  'detail:bridgePiercing': ['bridge', 'piercing al ponte', 'piercing tra gli occhi', 'bridge piercing'],
-  'detail:lipRing': ['anello al labbro', 'piercing al labbro', 'labbro forato', 'lip ring', 'lip piercing', 'snake bites', 'snakebites', 'pieno di piercing', 'piena di piercing', 'tanti piercing', 'tantissimi piercing', 'piercing ovunque', 'pierced', 'lots of piercings', 'many piercings', 'heavily pierced'],
-  'detail:labret': ['labret', 'piercing al mento', 'piercing sotto il labbro', 'chin piercing', 'labret piercing'],
-  'detail:monroe': ['monroe', 'madonna piercing', 'piercing sopra il labbro', 'monroe piercing'],
-  'detail:nostril': ['brillantino al naso', 'brillantino', 'punto luce al naso', 'piercing alla narice', 'narice', 'nose stud', 'nostril piercing', 'nostril stud'],
-  'clothes:tracksuit': ['tuta', 'tuta da ginnastica', 'tuta acetata', 'tuta sportiva', 'giacca della tuta', 'tracksuit', 'track jacket', 'track suit', 'zip up', 'zip-up'],
-  'eyewear:reading': ['occhiali a mezzaluna', 'occhiali da lettura', 'occhiali da presbite', 'occhiali da nonna', 'occhiali da nonno', 'reading glasses', 'half moon glasses', 'half-moon glasses', 'granny glasses'],
-  'detail:curlers': ['bigodini', 'bigodino', 'bigodi', 'curlers', 'hair curlers', 'hair rollers', 'rollers'],
-  'clothes:clerical': ['prete', 'sacerdote', 'parroco', 'priest', 'vicar', 'clerical collar', 'collarino da prete'],
-  'hat:helmet': ['elmetto', 'casco', 'pompiere', 'vigile del fuoco', 'firefighter', 'fireman', 'casco da cantiere', 'caschetto giallo', 'muratore', 'operaio', 'helmet', 'hard hat', 'hardhat', 'builder', 'construction worker'],
-  'hat:bowler': ['bombetta', 'bowler', 'bowler hat', 'derby hat'],
-  'hat:graduation': ['tocco', 'cappello da laurea', 'laurea', 'laureato', 'laureata', 'graduation cap', 'mortarboard', 'graduate', 'graduation'],
-  'hat:veil': ['suora', 'monaca', 'velo da suora', 'nun', 'nun veil'],
-  'detail:braces': ['apparecchio', 'apparecchio ai denti', 'apparecchio dentale', 'braces', 'dental braces'],
-  'detail:backpack': ['zaino', 'zainetto', 'cartella', 'backpack', 'rucksack', 'school bag', 'studente', 'studentessa', 'student'],
-  'detail:stethoscope': ['stetoscopio', 'fonendoscopio', 'stethoscope', 'medico', 'dottore', 'dottoressa', 'doctor'],
-  'detail:hoops': ['orecchini a cerchio', 'cerchi alle orecchie', 'hoop earrings', 'hoops'],
-  'detail:bow': ['fiocco', 'fiocchetto', 'bow', 'hair bow'],
-  'detail:hairclip': ['elastico per capelli', 'scrunchie', 'fermaglio', 'mollettina', 'molletta', 'hairclip', 'hair clip', 'barrette'],
-  'detail:cape': ['mantello', 'colletto alto', 'cape', 'cloak', 'vampiro', 'vampira', 'vampire', 'dracula'],
-  'detail:lashes': ['ciglia', 'ciglia lunghe', 'ciglione', 'lashes', 'eyelashes', 'long lashes'],
-  'detail:eyeshadow': ['ombretto', 'trucco', 'truccata', 'make up', 'makeup', 'eyeshadow', 'goth', 'eyeliner', 'matita nera'],
-  'detail:fangs': ['canini', 'zanne', 'denti da vampiro', 'fangs', 'vampire teeth', 'vampiro', 'vampira', 'vampire', 'dracula'],
-  'skin:green': ['pelle verde', 'alieno', 'aliena', 'orco', 'goblin', 'green skin', 'alien', 'orc'],
-  'skin:blue': ['pelle blu', 'pelle azzurra', 'blue skin'],
-  'skin:grey': ['pelle grigia', 'zombie', 'zombi', 'grey skin', 'gray skin', 'npc'],
-  'skin:purple': ['pelle viola', 'purple skin'],
-  'eyewear:eyepatch': ['pirata', 'pirate'],
-  'hairColor:white': ['babbo natale', 'santa', 'scienziato', 'scientist'],
-
-  'hatColor:black': ['doomer'],
-  'clothesColor:black': ['doomer', 'rocker', 'rockstar', 'metallaro', 'metalhead', 'goth'],
-  'detail:gum': ['gomma da masticare', 'chewing gum', 'bolla di gomma', 'palloncino di gomma', 'bubble gum', 'gum', 'cicca'],
-  'detail:lollipop': ['lecca lecca', 'leccalecca', 'lollipop', 'lolly', 'chupa chups'],
-  'detail:toothpick': ['stuzzicadenti', 'filo d erba', 'filo di paglia', 'toothpick', 'straw in mouth'],
-  'detail:rose': ['rosa in bocca', 'rosa tra i denti', 'rose in mouth', 'rose between teeth'],
-  'detail:bowtie': ['papillon', 'farfallino', 'bow tie', 'bowtie', 'cameriere', 'cameriera', 'waiter', 'waitress'],
-  'detail:badge': ['badge', 'cartellino', 'tesserino', 'lanyard', 'id badge', 'programmatore', 'programmatrice', 'sviluppatore', 'developer', 'dev', 'programmer'],
-  'detail:pencilEar': ['matita dietro l orecchio', 'matita', 'pencil behind ear', 'pencil'],
-  'detail:flowerEar': ['fiore dietro l orecchio', 'fiore nei capelli', 'fiore all orecchio', 'flower behind ear', 'flower in hair'],
-  'detail:sunglassesHead': ['occhiali in testa', 'occhiali sulla testa', 'occhiali da sole in testa', 'sunglasses on head', 'shades on head'],
-  'detail:earbuds': ['auricolari', 'airpods', 'earbuds', 'earphones', 'cuffiette'],
-  'face:heart': ['viso a cuore', 'faccia a cuore', 'heart shaped face', 'heart face'],
-  'face:wide': ['viso largo', 'faccia larga', 'faccione', 'testone', 'wide face', 'broad face'],
-  'brows:raised': ['sopracciglio alzato', 'un sopracciglio alzato', 'sospettoso', 'sospettosa', 'scettico', 'scettica', 'raised eyebrow', 'eyebrow raised', 'suspicious', 'skeptical'],
-  'detail:doubleChin': ['doppio mento', 'double chin'],
-  'detail:dimples': ['fossette', 'fossetta', 'dimples', 'dimple'],
-  'detail:cheekbones': ['zigomi', 'zigomi alti', 'zigomi pronunciati', 'cheekbones', 'high cheekbones'],
-  'clothesColor:blue': ['poliziotto', 'poliziotta', 'cop', 'police'],
-  'hatColor:blue': ['poliziotto', 'poliziotta', 'cop', 'police'],
-  'hairColor:black': ['metallaro', 'metalhead', 'goth'],
-  'hairColor:blond': ['surfer', 'surfista'],
-  'clothesColor:green': ['soldato', 'soldier', 'militare'],
-  'hatColor:yellow': ['contadino', 'farmer'],
-  'clothesColor:red': ['boscaiolo', 'lumberjack', 'woodchopper', 'woodcutter', 'taglialegna'],
-  'hairColor:grey': ['nonna', 'grandma'],
-  'hair:mullet': ['mullet', 'capelli a triglia', 'triglia', 'business in front party in the back'],
-  'hair:middlePart': ['riga in mezzo', 'riga centrale', 'frangia a tendina', 'middle part', 'curtain bangs', 'curtains'],
-  'hair:shag': ['wolf cut', 'scalato', 'scalati', 'capelli scalati', 'shag', 'shaggy'],
-  'hair:highPonytail': ['coda alta', 'high ponytail'],
-  'hair:afroPuffs': ['afro puffs', 'due palle afro', 'puffs'],
-  'hat:bucket': ['cappello da pescatore', 'pescatora', 'bucket hat', 'bucket'],
-  'hat:party': ['cappellino da festa', 'cappello da festa', 'compleanno', 'festa', 'party hat', 'birthday'],
-  'hat:fedora': ['fedora', 'borsalino', 'trilby', 'cappello italiano', 'capello italiano', 'italian hat', 'gangster hat'],
-  'eyewear:hearts': ['occhiali a cuore', 'occhiali cuore', 'heart glasses', 'heart shaped glasses', 'heart sunglasses'],
-  'detail:earmuffs': ['paraorecchie', 'scaldaorecchie', 'earmuffs'],
-  'facial:handlebar': ['baffi a manubrio', 'baffoni a manubrio', 'baffi arricciati', 'handlebar mustache', 'handlebar moustache', 'curly mustache'],
-  'clothes:overalls': ['salopette', 'tuta da lavoro', 'overalls', 'dungarees', 'meccanico', 'meccanica', 'mechanic'],
-  'clothes:puffer': ['piumino', 'piumino imbottito', 'puffer', 'puffer jacket', 'down jacket'],
-  'clothes:polo': ['polo', 'maglia polo', 'polo shirt'],
-  'clothes:vest': ['gilet', 'panciotto', 'vest', 'waistcoat'],
-  'clothes:apron': ['grembiule', 'grembiulino', 'apron', 'cuoco', 'chef', 'barista', 'fornaio', 'baker'],
-  'clothes:varsity': ['giubbotto college', 'giacca college', 'college jacket', 'varsity', 'varsity jacket', 'letterman jacket'],
-  'clothes:openShirt': ['camicia aperta', 'camicia sbottonata', 'camicia slacciata', 'open shirt', 'unbuttoned shirt'],
-  'eyewear:slim': ['occhiali da matrix', 'occhiali alla matrix', 'matrix glasses', 'matrix sunglasses', 'matrix', 'occhiali sottili', 'occhialini da sole', 'occhiali da sole sottili', 'slim sunglasses', 'narrow sunglasses', 'tiny sunglasses'],
-  'age:child': ['bambino', 'bambina', 'bimbo', 'ragazzino', 'kid', 'child', 'little boy', 'little girl'],
-  'age:young': ['giovane', 'ragazzo', 'ragazza', 'adolescente', 'studente', 'studentessa', 'young', 'teen', 'teenager', 'youth', 'girl', 'boy'],
-  'age:old': ['vecchio', 'anziano', 'nonno', 'nonna', 'vecchietto', 'old', 'elderly', 'grandpa', 'grandma'],
-
-  'skin:dark': ['pelle scura', 'carnagione scura', 'pelle nera', 'dark skin', 'dark skinned', 'black skin'],
-  'skin:tan': ['abbronzato', 'olivastro', 'tan', 'tanned', 'olive skin', 'surfer', 'surfista'],
-  'skin:pale': ['pallido', 'pelle chiara', 'carnagione chiara', 'pale', 'fair skin', 'pale skin', 'vampiro', 'vampira', 'vampire', 'dracula', 'goth'],
+  ...Object.fromEntries(brandsFile.brands.map((brand) => [`brand:${brand.replace(/ /g, '')}`, [brand]])),
+  // The Italian label comes first: Italian replies name a trait by its first word.
+  ...Object.fromEntries(conceptsFile.concepts.map(({ id, label }) => [id, uniqueWords([label.it, ...wordsFor('concepts', id)])])),
 };
 
 // Words that already are a hair colour, even without mentioning hair.
-export const hairOnlyColors = {
-  blond: ['biondo', 'bionda', 'biondi', 'blond', 'blonde', 'biondo platino', 'bionda platino', 'biondi platino', 'platinum blond', 'platinum blonde'],
-  brown: ['castano', 'castana', 'castani', 'moro', 'mora', 'bruna', 'brunette'],
-  grey: ['brizzolato', 'grigiastro'],
-  red: ['rosso di capelli', 'ginger', 'redhead', 'rossiccio'],
-};
-
-export const colors = {
-  black: ['nero', 'nera', 'neri', 'nere', 'black', 'dark', 'scuro', 'scura', 'scuri', 'scure', 'corvino', 'corvina', 'corvini', 'corvine', 'jet black'],
-  white: ['bianco', 'bianca', 'bianchi', 'bianche', 'white', 'platino', 'platinati', 'platinata', 'platinum'],
-  grey: ['grigio', 'grigia', 'grigi', 'grigie', 'grey', 'gray', 'argento', 'argentato', 'argentati', 'argentata', 'silver'],
-  brown: ['marrone', 'marroni', 'brown', 'beige', 'cammello', 'camel', 'cuoio'],
-  red: ['rosso', 'rossa', 'rossi', 'rosse', 'red', 'bordeaux', 'bordò', 'borgogna', 'cremisi', 'maroon', 'burgundy', 'crimson'],
-  orange: ['arancione', 'arancioni', 'orange'],
-  yellow: ['giallo', 'gialla', 'gialli', 'gialle', 'yellow', 'oro', 'dorato', 'dorata', 'dorati', 'gold', 'golden'],
-  green: ['verde', 'verdi', 'green', 'verde militare', 'verde oliva', 'kaki', 'cachi', 'khaki', 'olive', 'army green', 'verde fluo', 'verde neon', 'neon green', 'smeraldo', 'emerald'],
-  blue: ['blu', 'azzurro', 'azzurra', 'azzurri', 'azzurre', 'celeste', 'blue', 'turchese', 'turchesi', 'denim', 'di jeans', 'ciano', 'petrolio', 'blu scuro', 'navy', 'turquoise', 'teal', 'cyan'],
-  purple: ['viola', 'purple', 'lilla', 'lavanda', 'malva', 'lilac', 'lavender', 'violet'],
-  pink: ['rosa', 'pink', 'fucsia', 'fuxia', 'magenta', 'fuchsia', 'rosa fluo', 'rosa shocking', 'neon pink', 'hot pink'],
-};
-
+export const hairOnlyColors = tableFor('hairOnlyColors', conceptsFile.hairOnlyColors);
+export const colors = tableFor('colors', conceptsFile.colors);
 // Nouns a nearby colour attaches to. Garments and hats in the catalog already count.
-export const colorNouns = {
-  background: ['sfondo', 'background', 'bg'],
-  hair: ['capelli', 'chioma', 'hair'],
-  eye: ['occhi', 'eyes', 'eyed', 'occhio'],
-  clothes: ['vestito', 'vestita', 'vestiti', 'dressed', 'clothes', 'outfit', 'maglia', 'top', 'abito', 'gonna', 'dress', 'skirt'],
-};
-
+export const colorNouns = tableFor('colorNouns', conceptsFile.colorNouns);
 // Adjectives that only count next to the right noun: "cappotto lungo" (long coat) is not long hair.
-export const contextual = [
-  { trait: 'hair:long', near: 'hair', words: ['lungo', 'lunga', 'lunghi', 'lunghe', 'long'] },
-  { trait: 'clothes:openShirt', near: 'clothes:shirt', words: ['aperta', 'aperte', 'sbottonata', 'open', 'unbuttoned'] },
-  { trait: 'hair:short', near: 'hair', words: ['corto', 'corta', 'corti', 'corte', 'short'] },
-  { trait: 'eyes:big', near: 'eye', words: ['grande', 'grandi', 'big', 'large'] },
-  { trait: 'eyes:small', near: 'eye', words: ['piccolo', 'piccoli', 'small', 'tiny'] },
-];
-
-// Phrases that must not be read word by word.
+export const contextual = conceptsFile.contextual.map(({ trait, near }) => ({ trait, near, words: wordsFor('contextual', trait) }));
 // Words that are understood but change nothing, so they are not reported as misses.
-export const ignored = ['mad scientist', 'scienziato pazzo', 'uomo', 'maschio', 'man', 'guy', 'male', 'dude', 'persona', 'person', 'tizio', 'tipo', 'from', 'than', 'sorry', 'https', 'describble', 'huge', 'enormous', 'bigger', 'enorme', 'enormi', 'dad', 'papà', 'mamma', 'mom', 'rosy cheeks', 'guance rosse', 'guance rosa'];
-
-export const negations = ['senza', 'no', 'non', 'niente', 'nessun', 'nessuna', 'togli', 'togliere', 'rimuovi', 'leva', 'without', 'not', 'never', 'mai', 'remove', 'drop'];
-export const scopeBreakers = ['ma', 'pero', 'but', 'however', 'solo', 'only'];
+export const ignored = listFor('ignored');
+export const negations = listFor('negations');
+export const scopeBreakers = listFor('scopeBreakers');

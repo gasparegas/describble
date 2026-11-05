@@ -12,3 +12,9 @@ test('every backlog word is still unknown; remove it from lexicon-backlog.json o
     assert.ok(missesIn(word).length > 0, `"${word}" is understood now: remove it from lexicon-backlog.json`);
   }
 });
+
+import { check } from '../scripts/dictionary.mjs';
+
+test('the dictionary files are valid', () => {
+  assert.deepEqual(check(), []);
+});

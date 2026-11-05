@@ -16,16 +16,25 @@ Open `dist/index.html` in a browser for the live page. `dist/chat.html?mode=cata
 
 ## Adding a word
 
-Most contributions are here. Open `app/src/lexicon.js`, find the trait and add the word to its list:
+Most contributions are here, and they need no code. The words live in [`dictionary/`](dictionary/), one file per language. Open the file of your language, for example `dictionary/lang/en.json`, find the concept and add the word to its list:
 
-```js
-'hat:beanie': ['berretto', 'beanie', 'knit hat', /* your word */],
+```json
+"hat:beanie": ["beanie", "knit hat", "wool hat", "your word"],
 ```
 
-- Words can be in any language. Multi-word phrases win over single words.
-- A word in several lists turns on several traits at once: that is how archetypes like `vampire` work.
+- Words are lowercase. Multi-word phrases are fine and win over single words.
+- A word listed under several concepts turns all of them on: that is how archetypes like `vampire` work.
+- The concepts themselves (what can be drawn) are listed in `dictionary/concepts.json`; each one is backed by a piece in `app/src/pieces.js`.
+- Run `node scripts/dictionary.mjs check` from `app/`: it tells you if something is off. Then `node --test test/`.
 - Add a case to `app/test/parser.test.js` if the word fixes a real sentence that used to fail.
 - If the word is listed in `app/lexicon-backlog.json`, remove it there: a test checks that the backlog only holds words that are still unknown.
+
+## Adding a language
+
+1. Copy `dictionary/lang/en.json` to `dictionary/lang/<code>.json` (two letters, e.g. `pt.json`), set `language` and `name`, and replace the English words with yours. You don't need every concept at once.
+2. Add the file to the two lists of languages: the `import` lines in `app/src/lexicon.js` (and `dictionaryLanguages` there).
+3. `node scripts/dictionary.mjs missing <code>` lists the concepts still without words, with the English ones as a hint.
+4. The website copy (`app/src/site.js`) and the replies (`app/src/dialogue.js`) can come later, in another pull request.
 
 ## The word backlog
 
