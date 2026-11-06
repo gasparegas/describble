@@ -1,7 +1,5 @@
-// The website around the live drawing: bilingual copy, the clickable gallery and the links
-// configured at build time. English is the main language, Italian the second one.
-import { createStage } from './stage.js';
-import { applyMessage, initialState, sceneFor } from './dialogue.js';
+// The website around the live drawing: its copy (English, Italian, Portuguese), the clickable gallery and the links
+// configured at build time. English is the main language.
 
 // Filled in by build.mjs from DESCRIBBLE_REPO_URL and DESCRIBBLE_SUPPORT_URL; empty links stay hidden.
 export const SITE_LINKS = { repo: '', support: '' };
@@ -26,6 +24,7 @@ export const siteCopy = {
     supportShort: 'Support',
     galleryTitle: 'Avatar ideas to start from',
     galleryNote: 'Tap a face to write its sentence, then change any word.',
+    avatarAlt: 'Hand-drawn avatar',
     howTitle: 'An avatar maker with no AI. Just words and a pencil.',
     how: [
       'Every word you write picks a piece drawn by hand: hair, hats, glasses, piercings, moods. If it does not know a word, it tells you.',
@@ -82,6 +81,7 @@ export const siteCopy = {
     supportShort: 'Sostieni',
     galleryTitle: 'Idee per il tuo avatar',
     galleryNote: 'Tocca una faccia per scriverne la frase, poi cambia quello che vuoi.',
+    avatarAlt: 'Avatar disegnato a mano',
     howTitle: 'Un generatore di avatar senza AI. Solo parole e una matita.',
     how: [
       'Ogni parola che scrivi sceglie un pezzo disegnato a mano: capelli, cappelli, occhiali, piercing, espressioni. Se una parola non la conosce, te lo dice.',
@@ -138,6 +138,7 @@ export const siteCopy = {
     supportShort: 'Apoiar',
     galleryTitle: 'Ideias de avatar para começar',
     galleryNote: 'Toque num rosto para escrever a frase dele, depois mude o que quiser.',
+    avatarAlt: 'Avatar desenhado à mão',
     howTitle: 'Um criador de avatar sem IA. Só palavras e um lápis.',
     how: [
       'Cada palavra que você escreve escolhe uma peça desenhada à mão: cabelo, chapéu, óculos, piercing, expressão. Se não conhece uma palavra, ele avisa.',
@@ -360,7 +361,10 @@ export function applySiteLanguage(lang) {
     }
   }
   for (const button of document.querySelectorAll('[data-lang]')) button.setAttribute('aria-pressed', String(button.dataset.lang === lang));
-  document.querySelectorAll('#gallery figcaption').forEach((caption, i) => { caption.textContent = siteGallery[lang][i]; });
+  document.querySelectorAll('#gallery figure').forEach((figure, i) => {
+    figure.querySelector('figcaption').textContent = siteGallery[lang][i];
+    figure.querySelector('img').alt = `${copy.avatarAlt}: ${siteGallery[lang][i]}`;
+  });
 }
 
 // Links are shown only when configured, so a fork never points at someone else's page.
@@ -377,27 +381,11 @@ export function applySiteLinks() {
   }
 }
 
-// Draws the gallery once, still (no boil), and calls onPick with the sentence and seed a face was made from.
+// The gallery faces are drawn by build.mjs as image files; tapping one writes its sentence
+// in the page's language, with the seed it was drawn with.
 export function buildSiteGallery(lang, onPick) {
-  const list = document.querySelector('#gallery');
-  siteGallery.en.forEach((_, i) => {
-    const item = document.createElement('li');
-    const button = document.createElement('button');
-    button.type = 'button';
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('aria-hidden', 'true');
-    const caption = document.createElement('figcaption');
-    const figure = document.createElement('figure');
-    figure.append(svg, caption);
-    button.append(figure);
-    item.append(button);
-    list.append(item);
-    const state = { ...applyMessage({ ...initialState('en'), seed: 1000 + i * 7 }, siteGallery.en[i]).state, confirmed: true };
-    const stage = createStage(svg, { instant: true });
-    stage.update(sceneFor(state), 0);
-    stage.setPose({ yaw: [-0.3, 0, 0.3][i % 3] });
-    stage.draw(1, 0);
-    button.addEventListener('click', () => onPick((siteGallery[document.documentElement.lang] ?? siteGallery.en)[i], 1000 + i * 7));
+  document.querySelectorAll('#gallery button').forEach((button, i) => {
+    button.addEventListener('click', () => onPick((siteGallery[document.documentElement.lang] ?? siteGallery.en)[i], Number(button.dataset.seed)));
   });
   applySiteLanguage(lang);
 }

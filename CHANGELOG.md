@@ -2,6 +2,10 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.4.1 (2026-11-06)
+
+- The gallery faces are drawn once at build time as SVG files with descriptive names and alt text in the page's language, and the sitemap lists them, so they can show up in image search. The page also no longer draws twelve faces when it opens.
+
 ## 0.4.0 (2026-11-06)
 
 The website speaks Portuguese.

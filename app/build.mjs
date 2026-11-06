@@ -224,7 +224,7 @@ section > p { max-width: 36em; color: var(--muted); margin: 0 0 20px; }
 #gallery { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 28px 22px; grid-template-columns: repeat(auto-fill, minmax(min(150px, 40%), 1fr)); }
 #gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; text-align: center; }
 #gallery figure { margin: 0; }
-#gallery svg { display: block; width: 100%; aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 0 2px var(--rule), 0 18px 50px -24px rgba(0, 0, 0, .9);
+#gallery img { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 0 2px var(--rule), 0 18px 50px -24px rgba(0, 0, 0, .9);
   transition: transform .25s, box-shadow .25s; }
 #gallery button:hover svg { transform: translateY(-3px); box-shadow: 0 0 0 2px var(--muted), 0 24px 60px -24px rgba(0, 0, 0, .9); }
 #gallery button:focus-visible { outline: none; }
@@ -259,7 +259,7 @@ footer p { margin: 0; max-width: 46em; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  #stage, #gallery svg, .button { transition: none; }
+  #stage, #gallery img, .button { transition: none; }
   #gallery button:hover svg { transform: none; }
 }
 </style>
@@ -298,7 +298,7 @@ footer p { margin: 0; max-width: 46em; }
   <section aria-labelledby="gallery-title">
     <h2 id="gallery-title" data-copy="galleryTitle">Start from one of these</h2>
     <p data-copy="galleryNote">Tap a face to write its sentence, then change any word.</p>
-    <ul id="gallery"></ul>
+    <ul id="gallery"><!--gallery--></ul>
   </section>
 
   <section aria-labelledby="how-title">
@@ -366,6 +366,36 @@ ${script}
 const { siteCopy, sitePages, pageCopy } = await import('./src/site.js');
 const SITE_REPO = links.repo.replace(/\/+$/, '');
 const escapeHtml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// The gallery faces are drawn once here, as SVG files with a descriptive name, so search engines
+// can index them and the page does not draw twelve faces on load. The renderer only needs
+// createElementNS, setAttribute, append and remove, so a tiny stand-in for the DOM is enough.
+const { siteGallery } = await import('./src/site.js');
+const { createStage } = await import('./src/stage.js');
+const { applyMessage, initialState, sceneFor } = await import('./src/dialogue.js');
+const svgNode = (name) => ({ name, attrs: {}, children: [], parent: null,
+  setAttribute(key, value) { this.attrs[key] = String(value); },
+  append(...nodes) { for (const node of nodes) { node.parent = this; this.children.push(node); } },
+  remove() { if (this.parent) this.parent.children = this.parent.children.filter((child) => child !== this); } });
+const svgText = (node) => `<${node.name}${Object.entries(node.attrs).map(([key, value]) => ` ${key}="${escapeHtml(value)}"`).join('')}>${node.text ? escapeHtml(node.text) : node.children.map(svgText).join('')}</${node.name}>`;
+const gallerySlug = (sentence) => `avatar-${sentence.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}.svg`;
+const galleryFiles = siteGallery.en.map((sentence, i) => {
+  globalThis.document = { createElementNS: (namespace, name) => svgNode(name) };
+  const svg = svgNode('svg');
+  // Same seed and head turn as the face the page used to draw, so tapping it redraws the same character.
+  const state = { ...applyMessage({ ...initialState('en'), seed: 1000 + i * 7 }, sentence).state, confirmed: true };
+  const stage = createStage(svg, { instant: true });
+  stage.update(sceneFor(state), 0);
+  stage.setPose({ yaw: [-0.3, 0, 0.3][i % 3] });
+  stage.draw(1, 0);
+  delete globalThis.document;
+  Object.assign(svg.attrs, { xmlns: 'http://www.w3.org/2000/svg', width: '512', height: '512' });
+  svg.children.unshift({ ...svgNode('title'), text: `Hand-drawn avatar: ${sentence}` });
+  return { name: gallerySlug(sentence), svg: svgText(svg) };
+});
+const galleryHtml = (lang, depth) => (siteGallery[lang] ?? siteGallery.en).map((sentence, i) => {
+  const alt = `${siteCopy[lang].avatarAlt}: ${sentence}`;
+  return `<li><button type="button" data-seed="${1000 + i * 7}"><figure><img src="${'../'.repeat(depth)}avatars/${galleryFiles[i].name}" alt="${escapeHtml(alt)}" width="512" height="512" loading="lazy" decoding="async"><figcaption>${escapeHtml(sentence)}</figcaption></figure></button></li>`;
+}).join('');
 // The home page of each language: its path, its Open Graph locale and its name in that language.
 const homes = { en: { path: '/', locale: 'en_US', name: 'English' }, it: { path: '/it/', locale: 'it_IT', name: 'Italiano' }, pt: { path: '/pt/', locale: 'pt_BR', name: 'Português' } };
 const fillCopy = (html, copy) => html.replace(/(<(\w+)\b[^>]*\bdata-copy="(\w+)"[^>]*>)([\s\S]*?)(<\/\2>)/g, (whole, open, tag, key, inner, close) => {
@@ -398,6 +428,7 @@ const prerender = (html, lang, page = 'home') => {
   </section>
 ` : '';
   out = out.replace('<!--page-text-->\n', pageText);
+  out = out.replace('<!--gallery-->', galleryHtml(lang, path.split('/').filter(Boolean).length));
   if (sitePages[page]) out = out.replace(/<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n/g, '');
   out = fillCopy(out, copy);
   // The footer points to the other language as a plain link search engines can follow.
@@ -454,6 +485,10 @@ writeFileSync(join(here, 'dist', 'site', 'it', 'index.html'), liveItalian);
 mkdirSync(join(here, 'dist', 'site', 'pt'), { recursive: true });
 writeFileSync(join(here, 'dist', 'site', 'pt', 'index.html'), livePortuguese);
 writeFileSync(join(here, 'dist', 'site', '_headers'), headers);
+for (const dir of [join(here, 'dist', 'site', 'avatars'), join(here, 'dist', 'avatars')]) {
+  mkdirSync(dir, { recursive: true });
+  for (const file of galleryFiles) writeFileSync(join(dir, file.name), file.svg);
+}
 // Pages written for one search, each at its own path (same script and style, so the same CSP).
 for (const [page, { path, lang }] of Object.entries(sitePages)) {
   const dir = join(here, 'dist', 'site', ...path.split('/').filter(Boolean));
@@ -469,9 +504,10 @@ const pageEntry = (loc) => `  <url>
     <xhtml:link rel="alternate" hreflang="it" href="https://describble.com/it/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://describble.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://describble.com/"/>
+${galleryFiles.map((file) => `    <image:image><image:loc>https://describble.com/avatars/${file.name}</image:loc></image:image>`).join('\n')}
   </url>`;
 writeFileSync(join(here, 'dist', 'site', 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${pageEntry('https://describble.com/')}
 ${pageEntry('https://describble.com/it/')}
 ${pageEntry('https://describble.com/pt/')}
