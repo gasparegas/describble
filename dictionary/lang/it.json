@@ -158,7 +158,8 @@
       "leccato",
       "gelatina",
       "vampiro",
-      "dracula"
+      "dracula",
+      "riga"
     ],
     "hair:undercut": [
       "rasato ai lati",
@@ -1794,7 +1795,8 @@
     "guance rosse",
     "guance rosa",
     "persona",
-    "mamma"
+    "mamma",
+    "volto"
   ],
   "negations": [
     "senza",

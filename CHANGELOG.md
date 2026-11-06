@@ -2,6 +2,15 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.2.1 (2026-11-06)
+
+Words people typed after the Portuguese release, and a way to say thanks.
+
+- After a download, a short line invites a star on GitHub (only when the site has a repository link).
+- New words: fair (skin) and fair hair, bold (bald) and bold eyebrows, thick beard, cross necklace, crucifix, cross and triangle earrings, liner, devilish smile, evil grin, windblown hair, drugged, "riga" for a side part.
+- Words that change nothing (extremely, three, outside, blush, thick, volto) are no longer reported as unknown.
+- The backlog now lists full lips, sunburn, medium-length hair, a big forehead, an energetic expression and beach backgrounds.
+
 ## 0.2.0 (2026-11-05)
 
 A real dictionary, and a third language.

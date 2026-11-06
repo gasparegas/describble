@@ -132,6 +132,72 @@
       "lang": "pt",
       "status": "todo",
       "note": "needs a pet piece"
+    },
+    {
+      "word": "lips",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs a full-lips mouth variant"
+    },
+    {
+      "word": "sunburned",
+      "lang": "en",
+      "status": "todo",
+      "note": "sunburn piece, see the sunburn issue"
+    },
+    {
+      "word": "sunburnt",
+      "lang": "en",
+      "status": "todo",
+      "note": "sunburn piece, see the sunburn issue"
+    },
+    {
+      "word": "medium",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs a medium-length hair piece"
+    },
+    {
+      "word": "forehead",
+      "lang": "en",
+      "status": "todo",
+      "note": "big forehead needs a face variant"
+    },
+    {
+      "word": "beach",
+      "lang": "en",
+      "status": "todo",
+      "note": "background scenes"
+    },
+    {
+      "word": "hyper",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs an energetic, wide-awake expression"
+    },
+    {
+      "word": "wired",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs an energetic, wide-awake expression"
+    },
+    {
+      "word": "cavallo",
+      "lang": "it",
+      "status": "skip",
+      "note": "a scene (horse), not a portrait"
+    },
+    {
+      "word": "staccionata",
+      "lang": "it",
+      "status": "skip",
+      "note": "a scene (fence), not a portrait"
+    },
+    {
+      "word": "salta",
+      "lang": "it",
+      "status": "skip",
+      "note": "an action, not a portrait"
     }
   ]
 }

@@ -135,3 +135,14 @@ test('Portuguese descriptions', () => {
   assert.deepEqual(parse('no glasses').removed, ['eyewear:glasses']);
   for (const word of ['sembra', 'bravo', 'mascara']) assert.ok(!parse(word).found.some((t) => /eyeshadow|angry|mask/.test(t)), word);
 });
+
+test('words people typed after the Portuguese release', () => {
+  const cases = {
+    'fair hair': 'hairColor:blond', 'fair, freckles': 'skin:pale', 'bold guy': 'hair:bald', 'bold eyebrows': 'brows:thick',
+    'cross necklace': 'detail:necklace', 'triangle earrings': 'detail:earring', 'liner': 'detail:eyeshadow', 'devilish smile': 'mouth:smirk',
+    'windblown hair': 'hair:messy', 'drugged': 'mood:tired', 'capelli con la riga': 'hair:sidepart',
+  };
+  for (const [text, trait] of Object.entries(cases)) assert.ok(parse(text).found.includes(trait), `${text}: ${parse(text).found}`);
+  assert.deepEqual(parse('extremely tired').unknown, []);
+  assert.ok(!parse('bold eyebrows').found.includes('hair:bald'));
+});

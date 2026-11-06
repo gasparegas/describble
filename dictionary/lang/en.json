@@ -56,7 +56,8 @@
       "bald head",
       "hairless",
       "baldie",
-      "chrome dome"
+      "chrome dome",
+      "bold"
     ],
     "hair:ponytail": [
       "ponytail",
@@ -94,7 +95,11 @@
       "unkempt hair",
       "tousled hair",
       "scruffy hair",
-      "disheveled"
+      "disheveled",
+      "windblown",
+      "windswept",
+      "wind blown hair",
+      "blown hair"
     ],
     "hair:braids": [
       "braids",
@@ -260,7 +265,9 @@
       "thick eyebrows",
       "thick brows",
       "bushy brows",
-      "big eyebrows"
+      "big eyebrows",
+      "bold eyebrows",
+      "bold brows"
     ],
     "brows:thin": [
       "thin eyebrows",
@@ -316,7 +323,8 @@
       "dead tired",
       "burnt out",
       "burned out",
-      "sleep deprived"
+      "sleep deprived",
+      "drugged"
     ],
     "mood:asleep": [
       "asleep",
@@ -403,7 +411,11 @@
       "smirking",
       "crooked smile",
       "half smile",
-      "sly smile"
+      "sly smile",
+      "devilish",
+      "devilish smile",
+      "devilish grin",
+      "evil grin"
     ],
     "mouth:frown": [
       "frown",
@@ -494,7 +506,8 @@
       "woodcutter",
       "full beard",
       "bearded man",
-      "beardy"
+      "beardy",
+      "thick beard"
     ],
     "facial:longBeard": [
       "barbone",
@@ -823,7 +836,11 @@
     ],
     "detail:earring": [
       "earring",
-      "earrings"
+      "earrings",
+      "cross earring",
+      "cross earrings",
+      "triangle earring",
+      "triangle earrings"
     ],
     "detail:piercing": [
       "piercing",
@@ -840,7 +857,9 @@
       "scar",
       "scarred",
       "battle scar",
-      "facial scar"
+      "facial scar",
+      "forehead scar",
+      "scar on forehead"
     ],
     "detail:freckles": [
       "freckles",
@@ -953,7 +972,10 @@
       "pearl necklace",
       "chain necklace",
       "pendant",
-      "bling"
+      "bling",
+      "cross necklace",
+      "cross pendant",
+      "crucifix"
     ],
     "gender:female": [
       "feminine",
@@ -1296,7 +1318,9 @@
       "goth",
       "eyeshadow",
       "eye shadow",
-      "smoky eyes"
+      "smoky eyes",
+      "liner",
+      "eye liner"
     ],
     "detail:fangs": [
       "fangs",
@@ -1606,7 +1630,9 @@
       "pale skinned",
       "very pale",
       "light skin",
-      "ghostly"
+      "ghostly",
+      "fair",
+      "fair skinned"
     ],
     "clothes:turtleneck": [
       "turtleneck",
@@ -1687,7 +1713,9 @@
   "hairOnlyColors": {
     "blond": [
       "blonde",
-      "platinum blonde"
+      "platinum blonde",
+      "fair hair",
+      "fair haired"
     ],
     "brown": [
       "brunette"
@@ -1752,7 +1780,13 @@
     "enormous",
     "bigger",
     "dad",
-    "rosy cheeks"
+    "rosy cheeks",
+    "extremely",
+    "three",
+    "outside",
+    "blush",
+    "blushing",
+    "thick"
   ],
   "negations": [
     "no",
