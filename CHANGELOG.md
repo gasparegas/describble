@@ -2,6 +2,14 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.3.0 (2026-11-06)
+
+Easier to find.
+
+- Pages written for what people search: a pfp maker (`/pfp-maker/`), an avatar maker without AI (`/no-ai-avatar-maker/`) and, in Italian, an avatar without a photo (`/it/avatar-senza-foto/`). Each has the live drawing, its own text and its own questions.
+- Titles and headings now say what Describble is: a free avatar maker with no AI.
+- The footer links every page, and the sitemap lists them all.
+
 ## 0.2.2 (2026-11-06)
 
 - Stretched words are understood: "greeen eyes", "loooong hair", "baaald", "eyees". Only runs of three letters or doubled vowels are shortened, so Italian words like "tutta" stay as typed.

@@ -8,7 +8,8 @@ export const SITE_LINKS = { repo: '', support: '' };
 
 export const siteCopy = {
   en: {
-    title: 'Describble: free avatar maker from a sentence, no AI',
+    title: 'Free Avatar Maker from a Sentence, No AI · Describble',
+    kicker: 'Free avatar maker · no AI, no sign-up',
     description: 'Type a description and get a hand-drawn avatar in seconds. Free pfp maker: no AI, no photo, no sign-up. Download a PNG for Discord, GitHub or WhatsApp.',
     headline: 'Describe someone. Watch them get drawn.',
     lede: 'Hand-drawn avatars from a sentence. No AI, no account, nothing to install.',
@@ -23,15 +24,15 @@ export const siteCopy = {
     github: 'GitHub',
     viewOnGithub: 'View on GitHub',
     supportShort: 'Support',
-    galleryTitle: 'Start from one of these',
+    galleryTitle: 'Avatar ideas to start from',
     galleryNote: 'Tap a face to write its sentence, then change any word.',
-    howTitle: 'No AI. Just words and a pencil.',
+    howTitle: 'An avatar maker with no AI. Just words and a pencil.',
     how: [
       'Every word you write picks a piece drawn by hand: hair, hats, glasses, piercings, moods. If it does not know a word, it tells you.',
       'Change a word and only that piece is redrawn. The lines keep wobbling a little, like a sketch that is still alive.',
       'It runs in your browser and keeps working offline. Your sentence never leaves your device.',
     ],
-    useTitle: 'Use it as your profile picture',
+    useTitle: 'Make your profile picture (pfp)',
     use: ['Describe yourself, or anyone.', 'Download the PNG: 1024 × 1024, ready for a round crop.', 'Upload it on GitHub, Discord, Slack or wherever you have a face.'],
     openTitle: 'Open source, and free to use',
     open: 'The code is MIT and every drawing is CC0: use your avatar anywhere, no credit needed. Missing a word or a hat? Suggest it, or draw it.',
@@ -47,7 +48,7 @@ export const siteCopy = {
     footerPrivacy: 'Privacy',
     footerCode: 'Source code',
     footerIssue: 'Report a problem',
-    faqTitle: 'Questions',
+    faqTitle: 'Questions about the avatar maker',
     faqQ1: 'Is Describble really free?',
     faqA1: 'Yes. No sign-up, no watermark, no paid plan. Describe someone, download the PNG and it is yours.',
     faqQ2: 'Does it use AI?',
@@ -63,7 +64,8 @@ export const siteCopy = {
     noscript: 'Describble draws with JavaScript. Turn it on to describe your character.',
   },
   it: {
-    title: 'Describble: crea il tuo avatar gratis da una frase, senza AI',
+    title: 'Crea il tuo avatar gratis da una frase, senza AI · Describble',
+    kicker: 'Crea avatar gratis · senza AI, senza registrazione',
     description: 'Descrivi qualcuno e ottieni un avatar disegnato a mano in pochi secondi. Gratis: niente AI, niente foto, niente registrazione. Scarica il PNG per WhatsApp, Discord o GitHub.',
     headline: 'Descrivi qualcuno. Guardalo prendere forma.',
     lede: 'Avatar disegnati a mano da una frase. Niente AI, niente account, niente da installare.',
@@ -78,15 +80,15 @@ export const siteCopy = {
     github: 'GitHub',
     viewOnGithub: 'Guarda su GitHub',
     supportShort: 'Sostieni',
-    galleryTitle: 'Parti da uno di questi',
+    galleryTitle: 'Idee per il tuo avatar',
     galleryNote: 'Tocca una faccia per scriverne la frase, poi cambia quello che vuoi.',
-    howTitle: 'Niente AI. Solo parole e una matita.',
+    howTitle: 'Un generatore di avatar senza AI. Solo parole e una matita.',
     how: [
       'Ogni parola che scrivi sceglie un pezzo disegnato a mano: capelli, cappelli, occhiali, piercing, espressioni. Se una parola non la conosce, te lo dice.',
       'Cambi una parola e viene ridisegnato solo quel pezzo. Le linee continuano a tremare un po\', come uno schizzo ancora vivo.',
       'Funziona nel tuo browser, anche offline. La tua frase non lascia mai il tuo dispositivo.',
     ],
-    useTitle: 'Usalo come immagine del profilo',
+    useTitle: 'Crea la tua immagine del profilo',
     use: ['Descrivi te stesso, o chi vuoi.', 'Scarica il PNG: 1024 × 1024, pronto anche per il ritaglio tondo.', 'Caricalo su GitHub, Discord, Slack o dove serve una faccia.'],
     openTitle: 'Open source e gratis',
     open: 'Il codice è MIT e ogni disegno è CC0: usa il tuo avatar dove vuoi, senza citare nessuno. Manca una parola o un cappello? Suggeriscilo, o disegnalo.',
@@ -102,7 +104,7 @@ export const siteCopy = {
     footerPrivacy: 'Privacy',
     footerCode: 'Codice sorgente',
     footerIssue: 'Segnala un problema',
-    faqTitle: 'Domande',
+    faqTitle: 'Domande sul generatore di avatar',
     faqQ1: 'Describble è davvero gratis?',
     faqA1: 'Sì. Niente registrazione, niente filigrana, niente piani a pagamento. Descrivi qualcuno, scarica il PNG ed è tuo.',
     faqQ2: 'Usa l\'intelligenza artificiale?',
@@ -118,6 +120,74 @@ export const siteCopy = {
     noscript: 'Describble disegna con JavaScript. Attivalo per descrivere il tuo personaggio.',
   },
 };
+
+// Pages written for one search: the same live drawing, with their own title, text and questions.
+// Each one is published at its path in its language; keys it leaves out come from siteCopy.
+export const sitePages = {
+  pfp: {
+    path: '/pfp-maker/', lang: 'en',
+    en: {
+      title: 'Free PFP Maker: Draw Your Profile Picture from Text, No AI · Describble',
+      description: 'Make a hand-drawn pfp for Discord, Steam, Twitch or X by typing what you look like. Free, no AI, no photo, no sign-up. Download a PNG.',
+      kicker: 'Free pfp maker · no AI',
+      headline: 'Describe yourself. Get a hand-drawn pfp.',
+      lede: 'Type what you, or your character, look like and a profile picture draws itself. Free, no AI, no account.',
+      pageTitle: 'A pfp that looks like you, not like everyone else\'s',
+      pageText: [
+        'Most pfp makers hand you a random face or a long list of sliders. Here you just write it down: "headset, backwards cap, tired eyes", "pink bob, heart glasses, freckles", "grumpy pirate grandma". Every word picks a piece drawn by hand.',
+        'The PNG is 1024 × 1024 with the face in the middle, so it survives the round crop of Discord, Twitch, X and Steam. Keep the link to redraw the same face later, or change one word for an alt.',
+        'It is free with no watermark, the drawings are CC0, and nothing you type leaves your browser.',
+      ],
+      faqQ1: 'Is this pfp maker really free?',
+      faqA1: 'Yes. No sign-up, no watermark, no credits to buy. Describe your character, download the PNG and it is yours.',
+      faqQ2: 'Will it work on Discord, Steam or Twitch?',
+      faqA2: 'Yes. The PNG is a 1024 × 1024 square with the face centred, so it fits the round and square crops those sites use. Upload it in your profile settings.',
+    },
+  },
+  noai: {
+    path: '/no-ai-avatar-maker/', lang: 'en',
+    en: {
+      title: 'No-AI Avatar Maker: Hand-Drawn Avatars from a Sentence · Describble',
+      description: 'An avatar maker with no AI at all: type a description and pieces drawn by hand are put together while you type. Free, open source, runs in your browser.',
+      kicker: 'Avatar maker without AI',
+      headline: 'An avatar maker with no AI at all.',
+      lede: 'Every line comes from pieces drawn by hand and a dictionary written by people. Type a description and watch it get drawn.',
+      pageTitle: 'Why no AI?',
+      pageText: [
+        'No model was trained on anyone\'s art to make Describble. Every hair style, hat and pair of glasses is an original drawing, released as CC0, and the code that puts them together is open source.',
+        'There is no prompt guessing. Your words are looked up in a dictionary written by hand, so the same sentence always gives the same kind of face, and when it does not know a word it says so instead of making something up.',
+        'Because there is no model, it runs entirely in your browser, works offline and sends nothing anywhere: no photo, no account, no server drawing for you.',
+      ],
+      faqQ1: 'How does it work without AI?',
+      faqA1: 'A rule-based parser matches your words and short phrases against a curated dictionary. Each match turns on a piece drawn by hand, and a small renderer draws the pieces as wobbly pen strokes.',
+      faqQ2: 'Is the result AI art?',
+      faqA2: 'No. Every piece was drawn by a person, and nothing is generated by a model. You can read every line of the code on GitHub.',
+    },
+  },
+  nophoto: {
+    path: '/it/avatar-senza-foto/', lang: 'it',
+    it: {
+      title: 'Crea un avatar senza foto, gratis e senza AI · Describble',
+      description: 'Crea un avatar senza caricare foto: descrivi il personaggio a parole e viene disegnato a mano mentre scrivi. Gratis, senza AI, senza registrazione.',
+      kicker: 'Avatar senza foto · gratis, senza AI',
+      headline: 'Crea il tuo avatar senza caricare foto.',
+      lede: 'Descrivi com\'è il personaggio a parole e lo vedi disegnare a mano. Gratis, senza AI, senza registrazione.',
+      pageTitle: 'Niente foto, niente dati',
+      pageText: [
+        'Molti siti per creare avatar chiedono prima una foto del tuo viso e poi la mandano a un server con l\'intelligenza artificiale. Qui la foto non serve: scrivi "ragazza con il caschetto rosa, occhiali a cuore e lentiggini" oppure "nonno pirata con la benda" e il disegno compare mentre scrivi.',
+        'Tutto succede nel tuo browser: la frase non viene inviata da nessuna parte e non serve nessun account. Funziona anche offline.',
+        'Il PNG è 1024 × 1024 con il viso al centro, quindi va bene come foto profilo su WhatsApp, Telegram, Instagram o Discord, anche con il ritaglio tondo.',
+      ],
+      faqQ1: 'Serve una foto per creare l\'avatar?',
+      faqA1: 'No. Basta descrivere il personaggio a parole: capelli, occhiali, barba, cappello, espressione. Non devi caricare nessuna immagine.',
+      faqQ2: 'Posso usarlo come foto profilo su WhatsApp?',
+      faqA2: 'Sì. Scarica il PNG e, su WhatsApp, vai su Impostazioni, tocca la tua foto e scegli l\'immagine dalla galleria. Il ritaglio tondo non taglia il viso.',
+    },
+  },
+};
+
+// The copy of one page in one language: the page's own keys over the language's defaults.
+export const pageCopy = (page, lang) => ({ ...siteCopy[lang], ...(sitePages[page]?.[lang] ?? {}) });
 
 // Gallery sentences: each one is a real input, so tapping it shows exactly how it was made.
 export const siteGallery = {
@@ -185,6 +255,9 @@ export async function copyText(text) {
 
 // Saved choice first, then the browser language; English for everyone else.
 export function pickSiteLanguage() {
+  // A page written for one search opens in its own language.
+  const page = document.documentElement.dataset.page;
+  if (sitePages[page]) return sitePages[page].lang;
   try {
     const saved = localStorage.getItem('describble-lang');
     if (saved === 'en' || saved === 'it') return saved;
@@ -202,7 +275,7 @@ export function saveSiteLanguage(lang) {
 
 // Writes the copy into every [data-copy] element; list keys fill the element's <li> or <p> children.
 export function applySiteLanguage(lang) {
-  const copy = siteCopy[lang];
+  const copy = pageCopy(document.documentElement.dataset.page, lang);
   document.documentElement.lang = lang;
   document.title = copy.title;
   for (const element of document.querySelectorAll('[data-copy]')) {
