@@ -209,6 +209,10 @@ h1 { margin: 0; font-family: var(--display); font-size: clamp(1.9rem, 4.4vw, 3.7
 .button.primary:hover:not(:disabled) { background: #fffaf0; }
 .button.primary:disabled:hover { border-color: var(--paper); }
 #status { min-height: 1.5em; margin: 0; color: var(--muted); font-size: 15px; }
+#after-save { margin: 12px 0 0; color: var(--muted); font-size: 15px; }
+#after-save a { display: inline-flex; align-items: center; gap: 5px; color: inherit; font-weight: 600; white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
+#after-save a:hover { color: var(--text); }
+#after-save .gh { width: 15px; height: 15px; }
 noscript p { color: var(--muted); }
 
 section { position: relative; z-index: 1; max-width: var(--wide); margin: 0 auto; padding: clamp(64px, 10vw, 120px) var(--gutter) 0; }
@@ -281,6 +285,7 @@ footer p { margin: 0; max-width: 46em; }
         <button class="button" id="share" type="button" data-copy="share" disabled>Copy link</button>
         <button class="button" id="surprise" type="button" data-copy="surprise">Surprise me</button>
       </div>
+      <p id="after-save" aria-live="polite" hidden><span data-copy="afterSave">Like it? A star on GitHub helps other people find Describble.</span> <a data-link="repo" href="#">${githubMark}<span>GitHub</span></a></p>
       <noscript><p data-copy="noscript">Describble draws with JavaScript. Turn it on to describe your character.</p></noscript>
     </div>
   </div>

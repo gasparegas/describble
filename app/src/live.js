@@ -171,6 +171,9 @@ function liveMain() {
     if (!state.started) return;
     await exportPng(state, darken, FILL_SCALE);
     confirm(downloadButton, 'downloaded', 'download');
+    // The happiest moment of a visit: invite a star, once, only when the repository link is configured.
+    const afterSave = document.querySelector('#after-save');
+    if (afterSave.querySelector('a[href^="http"]')) afterSave.hidden = false;
   };
   input.addEventListener('keydown', async (event) => {
     if (event.key !== 'Enter' || event.shiftKey) return;
