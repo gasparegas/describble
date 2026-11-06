@@ -16,3 +16,24 @@ test('search pages have their own complete copy', () => {
     assert.equal(pageCopy(id, page.lang).download, siteCopy[page.lang].download);
   }
 });
+
+test('every site language has the whole copy', () => {
+  for (const lang of Object.keys(siteCopy)) {
+    const missing = Object.keys(siteCopy.en).filter((key) => !(key in siteCopy[lang]));
+    assert.deepEqual(missing, [], `${lang} is missing ${missing}`);
+  }
+});
+
+// Tapping a gallery face writes its sentence in the page's language: it must draw the same face.
+test('gallery sentences draw the same face in every language', async () => {
+  const { parse } = await import('../src/parser.js');
+  const { siteGallery } = await import('../src/site.js');
+  for (const lang of Object.keys(siteGallery)) {
+    assert.equal(siteGallery[lang].length, siteGallery.en.length, lang);
+    siteGallery[lang].forEach((sentence, i) => {
+      const expected = new Set(parse(siteGallery.en[i]).found);
+      const found = new Set(parse(sentence).found);
+      assert.deepEqual([...found].sort(), [...expected].sort(), `${lang}: "${sentence}"`);
+    });
+  }
+});

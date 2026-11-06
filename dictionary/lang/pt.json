@@ -39,8 +39,7 @@
       "carequinha",
       "sem cabelo",
       "cabeça raspada",
-      "vovô",
-      "avô"
+      "vovozinho"
     ],
     "hair:ponytail": [
       "rabo de cavalo",
@@ -49,8 +48,7 @@
     "hair:bun": [
       "coque",
       "cabelo preso",
-      "vovó",
-      "avó"
+      "vovozinha"
     ],
     "hair:mohawk": [
       "cabelo moicano"
@@ -294,10 +292,8 @@
       "programador",
       "programadora",
       "cientista",
-      "vovó",
-      "vovô",
-      "avó",
-      "avô"
+      "vovozinha",
+      "vovozinho"
     ],
     "eyewear:round": [
       "óculos redondos"
@@ -332,8 +328,7 @@
       "bigode",
       "bigodudo",
       "bigodinho",
-      "vovô",
-      "avô"
+      "vovozinho"
     ],
     "facial:goatee": [
       "cavanhaque",
@@ -629,12 +624,11 @@
       "feminino",
       "programadora",
       "enfermeira",
-      "vovó",
-      "avó",
       "velha",
       "freira",
       "rainha",
-      "princesa"
+      "princesa",
+      "vovozinha"
     ],
     "hair:wavyLong": [
       "cabelo ondulado",
@@ -918,8 +912,7 @@
       "lenhador"
     ],
     "hairColor:grey": [
-      "vovó",
-      "avó"
+      "vovozinha"
     ],
     "hair:mullet": [
       "cabelo mullet"
@@ -1015,10 +1008,12 @@
       "idosa",
       "velhinho",
       "velhinha",
-      "vovô",
       "vovó",
+      "vovô",
+      "avó",
       "avô",
-      "avó"
+      "vovozinha",
+      "vovozinho"
     ],
     "skin:dark": [
       "pele escura",
@@ -1222,7 +1217,10 @@
     "lindo",
     "linda",
     "fofo",
-    "fofa"
+    "fofa",
+    "e",
+    "de",
+    "o"
   ],
   "negations": [
     "sem",

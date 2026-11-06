@@ -8,7 +8,7 @@
 // and ALLOWED_ORIGIN, the site allowed to report (requests from other pages are refused).
 
 const WORD = /^\p{Ll}{3,24}$/u;
-const LANGS = new Set(['it', 'en']);
+const LANGS = new Set(['it', 'en', 'pt']);
 const MAX_WORDS = 8;
 
 function headers(env) {

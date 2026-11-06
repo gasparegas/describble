@@ -2,6 +2,15 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.4.0 (2026-11-06)
+
+The website speaks Portuguese.
+
+- A Portuguese page at `/pt/`, with its own gallery and examples, and a PT button. Portuguese browsers open it on their own; what was understood is still listed in English.
+- "vovó" and "vovô" (and "avó", "avô") lose their accents in the parser and looked the same, so they now only mean an older person; "vovozinha" and "vovozinho" keep grandma and grandpa.
+- Word reports from the Portuguese page are sent as `pt`.
+- On narrow phones the header no longer pushes the GitHub button off the screen.
+
 ## 0.3.0 (2026-11-06)
 
 Easier to find.

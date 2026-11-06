@@ -19,7 +19,7 @@ text → parser → dialogue state → scene → stage → SVG on screen
 | `pen.js` | Turns clean curves into hand-drawn strokes: splits them into pen strokes, applies seeded jitter, tapers the ends, offsets the colour fills. |
 | `stage.js` | Composes slots into 14 fixed SVG layers, animates piece changes (retract, then redraw) and expression morphs, and boils the lines between four variants at 9 fps. |
 | `live.js` | The main page: replays the whole text on every keystroke, settles the drawing after a pause, drives the 2.5D head pose and the background lines, and wires the download, share and surprise buttons. |
-| `site.js` | The website around it: English and Italian copy, the clickable gallery, the share link (`#s=…&k=…`) and the links set at build time. |
+| `site.js` | The website around it: English, Italian and Portuguese copy, the clickable gallery, the share link (`#s=…&k=…`) and the links set at build time. |
 | `app.js` | The earlier chat page (one message per Enter), the shareable URL state and the `?mode=catalog` review page. |
 | `export.js` | Renders the finished avatar off screen and downloads it as a PNG. |
 | `misses.js` | Local log of words not understood, plus the optional anonymous report of single words to the collector (see PRIVACY.md). |

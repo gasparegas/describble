@@ -119,6 +119,63 @@ export const siteCopy = {
     faqA6: 'Italiano, inglese e portoghese, anche mescolati. Altre lingue sono in arrivo, e puoi aiutare ad aggiungerle su GitHub.',
     noscript: 'Describble disegna con JavaScript. Attivalo per descrivere il tuo personaggio.',
   },
+  pt: {
+    title: 'Criar avatar grátis a partir de uma frase, sem IA · Describble',
+    kicker: 'Criador de avatar grátis · sem IA, sem cadastro',
+    description: 'Descreva alguém e ganhe um avatar desenhado à mão em segundos. Grátis: sem IA, sem foto, sem cadastro. Baixe o PNG para WhatsApp, Discord ou Instagram.',
+    headline: 'Descreva alguém. Veja ganhar forma.',
+    lede: 'Avatares desenhados à mão a partir de uma frase. Sem IA, sem conta, sem nada para instalar.',
+    inputLabel: 'Descreva o personagem',
+    stageLabel: 'O personagem que você está descrevendo',
+    download: 'Baixar PNG',
+    downloaded: 'Salvo',
+    afterSave: 'Gostou? Uma estrela no GitHub ajuda outras pessoas a encontrar o Describble.',
+    share: 'Copiar link',
+    shared: 'Link copiado',
+    surprise: 'Me surpreenda',
+    github: 'GitHub',
+    viewOnGithub: 'Ver no GitHub',
+    supportShort: 'Apoiar',
+    galleryTitle: 'Ideias de avatar para começar',
+    galleryNote: 'Toque num rosto para escrever a frase dele, depois mude o que quiser.',
+    howTitle: 'Um criador de avatar sem IA. Só palavras e um lápis.',
+    how: [
+      'Cada palavra que você escreve escolhe uma peça desenhada à mão: cabelo, chapéu, óculos, piercing, expressão. Se não conhece uma palavra, ele avisa.',
+      'Mude uma palavra e só aquela peça é redesenhada. As linhas continuam tremendo um pouco, como um rascunho ainda vivo.',
+      'Funciona no seu navegador, até offline. A sua frase nunca sai do seu aparelho.',
+    ],
+    useTitle: 'Crie sua foto de perfil',
+    use: ['Descreva você mesmo, ou quem quiser.', 'Baixe o PNG: 1024 × 1024, pronto para o recorte redondo.', 'Coloque no WhatsApp, Instagram, Discord ou onde precisar de um rosto.'],
+    openTitle: 'Código aberto e grátis',
+    open: 'O código é MIT e cada desenho é CC0: use seu avatar onde quiser, sem dar crédito. Falta uma palavra ou um chapéu? Sugira, ou desenhe.',
+    suggest: 'Sugerir uma palavra',
+    code: 'Ler o código',
+    supportTitle: 'Mantenha grátis',
+    support: 'O Describble não tem anúncios nem plano pago. Se ele te fez sorrir, você pode pagar um café para os desenhos.',
+    supportLink: 'Apoiar no Ko-fi',
+    privacy: 'A sua frase fica no seu navegador.',
+    privacyReports: 'Para aumentar o dicionário, palavras soltas que ele não entendeu são contadas de forma anônima. Nunca a frase.',
+    reports: (on) => `Envio de palavras: ${on ? 'ligado' : 'desligado'}`,
+    license: 'Código MIT, desenhos CC0.',
+    footerPrivacy: 'Privacidade',
+    footerCode: 'Código-fonte',
+    footerIssue: 'Relatar um problema',
+    faqTitle: 'Perguntas sobre o criador de avatar',
+    faqQ1: 'O Describble é grátis mesmo?',
+    faqA1: 'Sim. Sem cadastro, sem marca d\'água, sem plano pago. Descreva alguém, baixe o PNG e ele é seu.',
+    faqQ2: 'Ele usa inteligência artificial?',
+    faqA2: 'Não. As suas palavras são procuradas num dicionário feito à mão, e cada palavra encontrada escolhe uma peça desenhada por uma pessoa. Nenhum modelo de IA gera nada, e tudo roda no seu navegador.',
+    faqQ3: 'Posso usar meu avatar onde quiser?',
+    faqA3: 'Sim. Cada desenho é CC0: use como foto de perfil no WhatsApp, Instagram, Discord ou Twitch, num jogo ou num projeto, até comercial, sem dar crédito.',
+    faqQ4: 'Como coloco como foto de perfil?',
+    faqA4: 'Descreva o personagem, toque em Baixar PNG (1024 × 1024, funciona com recorte redondo) e envie a imagem nas configurações do seu perfil.',
+    faqQ5: 'O que eu escrevo fica privado?',
+    faqA5: 'A sua frase nunca sai do navegador. Para aprender palavras novas, palavras soltas que ele não entendeu podem ser contadas de forma anônima, nunca a frase, e um clique desliga tudo.',
+    faqQ6: 'Quais línguas ele entende?',
+    faqA6: 'Português, inglês e italiano, até misturados. As frases que aparecem embaixo do desenho ainda estão em inglês. Outras línguas estão a caminho, e você pode ajudar no GitHub.',
+    noscript: 'O Describble desenha com JavaScript. Ative para descrever o seu personagem.',
+    unknownWord: (word) => `Ainda não sei desenhar "${word}"`,
+  },
 };
 
 // Pages written for one search: the same live drawing, with their own title, text and questions.
@@ -219,6 +276,20 @@ export const siteGallery = {
     'suora sorridente',
     'ragazzino con l apparecchio e occhiali grandi',
   ],
+  pt: [
+    'loiro, cigarro na boca, olhos cansados',
+    'menina com cabelo chanel rosa e óculos de coração',
+    'vampiro com capa',
+    'vovozinha com bobes e óculos de leitura',
+    'gamer com headset e boné para trás',
+    'menina com alargadores, piercing no septo e cabelo fúcsia',
+    'pedreiro com capacete e barba',
+    'chapéu fedora, óculos do matrix, camisa preta aberta',
+    'marinheiro velho com cachimbo e barba branca',
+    'punk com moicano verde e jaqueta de couro',
+    'freira sorrindo',
+    'criança com aparelho e óculos grandes',
+  ],
 };
 
 // A shared link carries the sentence and the seed after the #, which browsers never send to a server.
@@ -260,11 +331,13 @@ export function pickSiteLanguage() {
   if (sitePages[page]) return sitePages[page].lang;
   try {
     const saved = localStorage.getItem('describble-lang');
-    if (saved === 'en' || saved === 'it') return saved;
+    if (saved in siteCopy) return saved;
   } catch {}
   // The Italian page (/it/) opens in Italian; the main page follows the browser.
-  if (document.documentElement.lang === 'it') return 'it';
-  return (navigator.language ?? 'en').toLowerCase().startsWith('it') ? 'it' : 'en';
+  const pageLang = document.documentElement.lang;
+  if (pageLang !== 'en' && pageLang in siteCopy) return pageLang;
+  const browser = (navigator.language ?? 'en').toLowerCase().slice(0, 2);
+  return browser in siteCopy ? browser : 'en';
 }
 
 export function saveSiteLanguage(lang) {
@@ -324,7 +397,7 @@ export function buildSiteGallery(lang, onPick) {
     stage.update(sceneFor(state), 0);
     stage.setPose({ yaw: [-0.3, 0, 0.3][i % 3] });
     stage.draw(1, 0);
-    button.addEventListener('click', () => onPick(siteGallery[document.documentElement.lang === 'it' ? 'it' : 'en'][i], 1000 + i * 7));
+    button.addEventListener('click', () => onPick((siteGallery[document.documentElement.lang] ?? siteGallery.en)[i], 1000 + i * 7));
   });
   applySiteLanguage(lang);
 }

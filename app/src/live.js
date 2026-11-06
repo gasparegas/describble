@@ -18,10 +18,19 @@ const CONFIRM_FOR = 1600;
 const examples = {
   it: ['biondo, sigaretta in bocca, occhi stanchi…', 'ragazza con caschetto rosa e occhiali a cuore…', 'vampiro con il mantello…', 'doomer…', 'nonno calvo con i baffi e la pipa…', 'gamer con le cuffie e il cappellino al contrario…', 'sorprendimi…'],
   en: ['blond, cigarette in mouth, tired eyes…', 'girl with a pink bob and heart glasses…', 'vampire with a cape…', 'doomer…', 'bald grandpa with a moustache and a pipe…', 'gamer with headset and backwards cap…', 'surprise me…'],
+  pt: ['loiro, cigarro na boca, olhos cansados…', 'menina com cabelo chanel rosa e óculos de coração…', 'vampiro com capa…', 'doomer…', 'vovozinho careca de bigode e cachimbo…', 'gamer com headset e boné para trás…', 'me surpreenda…'],
 };
+// The replies and the list of what was understood exist in Italian and English; other site languages use English.
+const replyLanguage = (lang) => (lang === 'it' ? 'it' : 'en');
 
 // Under the text: what was understood, as a quiet list; honest messages only for unknown words.
-function statusLine(result, state) {
+function statusLine(result, state, lang, text) {
+  // The Portuguese page lists what was understood in English and says in Portuguese what it cannot draw.
+  if (lang === 'pt') {
+    const understood = state.started ? describe(state, 'en').replace(/^Avatar: /, '') : '';
+    const unknown = missesIn(text);
+    return [understood, unknown.length ? siteCopy.pt.unknownWord(unknown[0]) : ''].filter(Boolean).join(' · ');
+  }
   if (/Non conosco|Non so|Intendevi|I don't know|I can't|Did you mean|per cosa|for what/.test(result.reply)) return result.reply;
   const understood = describe(state, state.lang).replace(/^Avatar: /, '');
   return state.started ? understood : '';
@@ -89,7 +98,7 @@ function liveMain() {
   const lines = startLines(document.querySelector('#lines'), calm);
   let lang = pickSiteLanguage();
   // One seed per visit: unmentioned traits stay put while the text grows.
-  let base = { ...initialState(lang), seed: Math.floor(Math.random() * 2 ** 31) };
+  let base = { ...initialState(replyLanguage(lang)), seed: Math.floor(Math.random() * 2 ** 31) };
   let state = base;
   let lastTyped = -1e9;
   let settled = false;
@@ -133,7 +142,7 @@ function liveMain() {
       pose.turnAt = performance.now();
     }
     traitCount = count;
-    status.textContent = text.trim() ? statusLine(result, state) : '';
+    status.textContent = text.trim() ? statusLine(result, state, lang, text) : '';
     // Nothing to download or share until something has been drawn.
     downloadButton.disabled = !state.started;
     shareButton.disabled = !text.trim();
@@ -157,7 +166,7 @@ function liveMain() {
     pendingLog = setTimeout(() => {
       if (!input.value.trim() || input.value === loggedText) return;
       loggedText = input.value;
-      recordMisses(missesIn(loggedText), loggedText.trim(), state.lang);
+      recordMisses(missesIn(loggedText), loggedText.trim(), lang === 'pt' ? 'pt' : state.lang);
     }, SETTLE_AFTER);
   });
 
@@ -200,7 +209,7 @@ function liveMain() {
   // Writes a sentence into the box letter by letter, so the drawing builds up as if typed.
   const typeInto = (text, seed) => {
     clearInterval(typing);
-    if (seed !== undefined) base = { ...initialState(lang), seed };
+    if (seed !== undefined) base = { ...initialState(replyLanguage(lang)), seed };
     traitCount = 0;
     document.querySelector('#hero').scrollIntoView({ behavior: calm ? 'auto' : 'smooth' });
     if (calm) {
@@ -298,7 +307,7 @@ function liveMain() {
     // Screen readers pick the voice from the page language, set by applySiteLanguage.
     input.setAttribute('aria-label', siteCopy[lang].inputLabel);
     input.placeholder = examples[lang][example % examples[lang].length];
-    base = { ...initialState(lang), seed: base.seed };
+    base = { ...initialState(replyLanguage(lang)), seed: base.seed };
     if (REPORT_ENDPOINT) reportLabel();
     redraw();
   };

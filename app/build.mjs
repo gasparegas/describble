@@ -116,6 +116,7 @@ const site = (script) => `<!doctype html>
 <meta name="description" content="Type a description and get a hand-drawn avatar in seconds. Free pfp maker: no AI, no photo, no sign-up. Download a PNG for Discord, GitHub or WhatsApp.">
 <link rel="alternate" hreflang="en" href="https://describble.com/">
 <link rel="alternate" hreflang="it" href="https://describble.com/it/">
+<link rel="alternate" hreflang="pt" href="https://describble.com/pt/">
 <link rel="alternate" hreflang="x-default" href="https://describble.com/">
 <meta property="og:locale" content="en_US">
 <!--structured-data-->
@@ -166,6 +167,8 @@ header { position: absolute; inset: 0 0 auto; z-index: 2; display: flex; align-i
 .lang { border: 0; background: none; padding: 6px 8px; border-radius: 8px; color: var(--faint); cursor: pointer; }
 .lang[aria-pressed=true] { color: var(--text); background: var(--rule); }
 .gh, .heart { width: 18px; height: 18px; flex: none; }
+.star { display: inline-flex; align-items: center; gap: 8px; margin-left: 8px; padding: 7px 14px; border: 1px solid var(--rule); border-radius: 999px; text-decoration: none; font-size: 15px; }
+.star:hover { border-color: var(--muted); }
 .support-link + .star { margin-left: 2px; }
 @media (max-width: 480px) {
   /* On phones the header links show only their icons; the words stay for screen readers. */
@@ -176,12 +179,11 @@ header { position: absolute; inset: 0 0 auto; z-index: 2; display: flex; align-i
   header { gap: 6px; }
   .wordmark { gap: 6px; font-size: 18px; }
   .mark { width: 26px; height: 26px; }
-  .lang { padding: 6px 5px; }
-  .star { margin-left: 2px; padding: 6px 8px; }
+  .tools { gap: 2px; }
+  .lang { padding: 6px 4px; }
+  .star { margin-left: 2px; padding: 6px 7px; }
 }
 
-.star { display: inline-flex; align-items: center; gap: 8px; margin-left: 8px; padding: 7px 14px; border: 1px solid var(--rule); border-radius: 999px; text-decoration: none; font-size: 15px; }
-.star:hover { border-color: var(--muted); }
 
 #hero { position: relative; z-index: 1; display: grid; gap: 18px 56px; align-items: center; min-height: 100svh;
   max-width: var(--wide); margin: 0 auto; padding: 76px var(--gutter) 28px;
@@ -267,6 +269,7 @@ footer p { margin: 0; max-width: 46em; }
   <nav class="tools" aria-label="Language and project">
     <button class="lang" type="button" data-lang="en" aria-pressed="true">EN</button>
     <button class="lang" type="button" data-lang="it" aria-pressed="false">IT</button>
+    <button class="lang" type="button" data-lang="pt" aria-pressed="false">PT</button>
     <a class="star support-link" data-link="support" href="#">${heartMark}<span class="label" data-copy="supportShort">Support</span></a>
     <a class="star" data-link="repo" href="#">${githubMark}<span class="label" data-copy="github">GitHub</span></a>
   </nav>
@@ -340,7 +343,7 @@ footer p { margin: 0; max-width: 46em; }
   <p id="privacy-reports" data-copy="privacyReports" hidden></p>
   <button id="report" type="button" hidden></button>
   <p data-copy="license">Code MIT, drawings CC0.</p>
-  <p><a class="other-language" href="/it/" hreflang="it">Italiano</a></p>
+  <p><!--other-languages--></p>
   <nav class="footer-links" aria-label="More">
     <a href="/pfp-maker/">PFP maker</a>
     <a href="/no-ai-avatar-maker/">No-AI avatar maker</a>
@@ -359,10 +362,12 @@ ${script}
 </html>
 `;
 // Each language gets a complete page: the copy from site.js is written into the HTML, so search
-// engines and visitors without JavaScript read it too. English at /, Italian at /it/.
+// engines and visitors without JavaScript read it too. English at /, Italian at /it/, Portuguese at /pt/.
 const { siteCopy, sitePages, pageCopy } = await import('./src/site.js');
 const SITE_REPO = links.repo.replace(/\/+$/, '');
 const escapeHtml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// The home page of each language: its path, its Open Graph locale and its name in that language.
+const homes = { en: { path: '/', locale: 'en_US', name: 'English' }, it: { path: '/it/', locale: 'it_IT', name: 'Italiano' }, pt: { path: '/pt/', locale: 'pt_BR', name: 'Português' } };
 const fillCopy = (html, copy) => html.replace(/(<(\w+)\b[^>]*\bdata-copy="(\w+)"[^>]*>)([\s\S]*?)(<\/\2>)/g, (whole, open, tag, key, inner, close) => {
     const value = copy[key];
     if (typeof value === 'string') return open + escapeHtml(value) + close;
@@ -374,7 +379,7 @@ const fillCopy = (html, copy) => html.replace(/(<(\w+)\b[^>]*\bdata-copy="(\w+)"
   });
 const prerender = (html, lang, page = 'home') => {
   const copy = pageCopy(page, lang);
-  const path = sitePages[page]?.path ?? (lang === 'it' ? '/it/' : '/');
+  const path = sitePages[page]?.path ?? homes[lang].path;
   const url = `https://describble.com${path}`;
   let out = html
     .replace('<html lang="en">', `<html lang="${lang}" data-page="${page}">`)
@@ -384,7 +389,7 @@ const prerender = (html, lang, page = 'home') => {
     .replace(/(<meta property="og:description" content=")[^"]*/, `$1${escapeHtml(copy.description)}`)
     .replace(/(<meta property="og:url" content=")[^"]*/, `$1${url}`)
     .replace(/(<link rel="canonical" href=")[^"]*/, `$1${url}`)
-    .replace(/(<meta property="og:locale" content=")[^"]*/, `$1${lang === 'it' ? 'it_IT' : 'en_US'}`);
+    .replace(/(<meta property="og:locale" content=")[^"]*/, `$1${homes[lang].locale}`);
   // A page written for one search gets its own section of text, and no language alternates:
   // it has no translation, and its canonical address is its own.
   const pageText = copy.pageTitle ? `<section aria-labelledby="page-title">
@@ -396,7 +401,8 @@ const prerender = (html, lang, page = 'home') => {
   if (sitePages[page]) out = out.replace(/<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n/g, '');
   out = fillCopy(out, copy);
   // The footer points to the other language as a plain link search engines can follow.
-  if (lang === 'it') out = out.replace('href="/it/" hreflang="it">Italiano</a>', 'href="/" hreflang="en">English</a>');
+  out = out.replace('<!--other-languages-->', Object.entries(homes).filter(([code]) => code !== lang)
+    .map(([code, home]) => `<a class="other-language" href="${home.path}" hreflang="${code}">${home.name}</a>`).join(' · '));
   // Structured data: the site as a free web app, and the questions section as an FAQ.
   const faq = [1, 2, 3, 4, 5, 6].map((i) => ({ '@type': 'Question', name: copy[`faqQ${i}`], acceptedAnswer: { '@type': 'Answer', text: copy[`faqA${i}`] } }));
   const data = [
@@ -414,6 +420,7 @@ const prerender = (html, lang, page = 'home') => {
 };
 const live = prerender(site(siteScript), 'en');
 const liveItalian = prerender(site(siteScript), 'it');
+const livePortuguese = prerender(site(siteScript), 'pt');
 writeFileSync(join(here, 'dist', 'index.html'), live);
 console.log(`ok: dist/index.html (${(live.length / 1024).toFixed(0)} KB${links.repo ? '' : ', no repo link yet'})`);
 
@@ -444,6 +451,8 @@ mkdirSync(join(here, 'dist', 'site'), { recursive: true });
 writeFileSync(join(here, 'dist', 'site', 'index.html'), live);
 mkdirSync(join(here, 'dist', 'site', 'it'), { recursive: true });
 writeFileSync(join(here, 'dist', 'site', 'it', 'index.html'), liveItalian);
+mkdirSync(join(here, 'dist', 'site', 'pt'), { recursive: true });
+writeFileSync(join(here, 'dist', 'site', 'pt', 'index.html'), livePortuguese);
 writeFileSync(join(here, 'dist', 'site', '_headers'), headers);
 // Pages written for one search, each at its own path (same script and style, so the same CSP).
 for (const [page, { path, lang }] of Object.entries(sitePages)) {
@@ -451,19 +460,21 @@ for (const [page, { path, lang }] of Object.entries(sitePages)) {
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), prerender(site(siteScript), lang, page));
 }
-// For search engines: everything may be crawled, and the sitemap lists both languages as alternates.
+// For search engines: everything may be crawled, and the sitemap lists the three languages as alternates.
 const today = new Date().toISOString().slice(0, 10);
 const pageEntry = (loc) => `  <url>
     <loc>${loc}</loc>
     <lastmod>${today}</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://describble.com/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://describble.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://describble.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://describble.com/"/>
   </url>`;
 writeFileSync(join(here, 'dist', 'site', 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${pageEntry('https://describble.com/')}
 ${pageEntry('https://describble.com/it/')}
+${pageEntry('https://describble.com/pt/')}
 ${Object.values(sitePages).map(({ path }) => `  <url>
     <loc>https://describble.com${path}</loc>
     <lastmod>${today}</lastmod>
