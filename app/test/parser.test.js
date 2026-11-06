@@ -146,3 +146,11 @@ test('words people typed after the Portuguese release', () => {
   assert.deepEqual(parse('extremely tired').unknown, []);
   assert.ok(!parse('bold eyebrows').found.includes('hair:bald'));
 });
+
+test('stretched words are read as the word they stretch', () => {
+  const cases = { 'greeen eyes': 'eyeColor:green', 'loooong hair': 'hair:long', 'baaald': 'hair:bald', 'glassses': 'eyewear:glasses', 'happpy': 'mood:happy' };
+  for (const [text, trait] of Object.entries(cases)) assert.ok(parse(text).found.includes(trait), `${text}: ${parse(text).found}`);
+  assert.deepEqual(parse('eyees').unknown, []);
+  // Italian doubled consonants are real words, never shortened: "tutta" is not "tuta" (tracksuit).
+  assert.ok(!parse('tutta rossa').found.includes('clothes:tracksuit'));
+});

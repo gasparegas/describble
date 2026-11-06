@@ -2,6 +2,10 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.2.2 (2026-11-06)
+
+- Stretched words are understood: "greeen eyes", "loooong hair", "baaald", "eyees". Only runs of three letters or doubled vowels are shortened, so Italian words like "tutta" stay as typed.
+
 ## 0.2.1 (2026-11-06)
 
 Words people typed after the Portuguese release, and a way to say thanks.

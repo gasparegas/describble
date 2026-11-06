@@ -86,6 +86,28 @@ function lookupTypo(token) {
   return match ? typoWords.get(match) : null;
 }
 
+// Stretched words: "greeen", "loooong", "eyees". Only runs of three or more letters, or a doubled
+// vowel in a word of five letters or more, are shortened, so Italian doubles ("tutta") stay as typed.
+// The shortened form is used only when the dictionary knows it.
+const knownToken = (token) => exactIndex.has(token) || lexiconIndex.has(phraseKey([token]));
+function destretch(token) {
+  if (knownToken(token)) return token;
+  const runs = [...token.matchAll(/(.)\1+/g)].map((m) => {
+    const keep = m[0].length >= 3 ? [2, 1] : /[aeiou]/.test(m[1]) && token.length >= 5 ? [1] : [];
+    return { at: m.index, length: m[0].length, letter: m[1], keep };
+  }).filter((run) => run.keep.length);
+  if (!runs.length || runs.length > 4) return token;
+  let variants = [{ text: '', from: 0 }];
+  for (const run of runs) {
+    variants = variants.flatMap((v) => [run.length, ...run.keep].map((n) => ({
+      text: v.text + token.slice(v.from, run.at) + run.letter.repeat(n), from: run.at + run.length,
+    })));
+  }
+  const candidates = variants.map((v) => v.text + token.slice(v.from)).filter((v) => v !== token);
+  candidates.sort((a, b) => b.length - a.length);
+  return candidates.find(knownToken) ?? token;
+}
+
 // Accessories with their own colour: "green scarf" becomes itemColor:scarf.green.
 const COLORABLE = ['scarf', 'tie', 'bowtie', 'bow', 'earmuffs', 'headphones', 'headset', 'cape', 'mask', 'choker'].map((d) => `detail:${d}`);
 const hasTrait = (hit, prefix) => hit.traits?.some((trait) => trait.startsWith(prefix));
@@ -106,7 +128,7 @@ const nounOf = (hit) => {
 export { tokenize };
 
 export function parse(text) {
-  const tokens = tokenize(text);
+  const tokens = tokenize(text).map(destretch);
   const hits = [];
   const consumed = new Array(tokens.length).fill(false);
   for (let i = 0; i < tokens.length; i++) {
