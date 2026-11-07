@@ -2,6 +2,11 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.4.3 (2026-11-07)
+
+- The moustache sits above the mouth instead of over it.
+- The shag haircut is redrawn layered and wavy, with curled ends and a choppy fringe, instead of a mop top.
+
 ## 0.4.2 (2026-11-07)
 
 - A colour between two things goes to the one that has no colour yet: "green hat purple t-shirt" gives a purple t-shirt and "blue eyes red hair" gives red hair, without needing "and".
