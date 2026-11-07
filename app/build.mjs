@@ -112,8 +112,8 @@ const site = (script) => `<!doctype html>
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,interactive-widget=resizes-content">
-<title>Describble: free avatar maker from a sentence, no AI</title>
-<meta name="description" content="Type a description and get a hand-drawn avatar in seconds. Free pfp maker: no AI, no photo, no sign-up. Download a PNG for Discord, GitHub or WhatsApp.">
+<title>Describble: free avatar maker from a sentence, no AI generation</title>
+<meta name="description" content="Type a description and get a sketchy, hand-drawn style avatar in seconds. Free pfp maker: no AI generation, no photo, no sign-up. Download a PNG for Discord, GitHub or WhatsApp.">
 <link rel="alternate" hreflang="en" href="https://describble.com/">
 <link rel="alternate" hreflang="it" href="https://describble.com/it/">
 <link rel="alternate" hreflang="pt" href="https://describble.com/pt/">
@@ -122,8 +122,8 @@ const site = (script) => `<!doctype html>
 <!--structured-data-->
 <meta name="theme-color" content="#0f1118">
 <meta name="color-scheme" content="dark">
-<meta property="og:title" content="Describble: free avatar maker from a sentence, no AI">
-<meta property="og:description" content="Type a description and get a hand-drawn avatar in seconds. No AI, no photo, no sign-up. Free and open source.">
+<meta property="og:title" content="Describble: free avatar maker from a sentence, no AI generation">
+<meta property="og:description" content="Type a description and get a hand-drawn style avatar in seconds. No AI generation, no photo, no sign-up. Free and open source.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://describble.com/">
 <link rel="canonical" href="https://describble.com/">
@@ -132,7 +132,7 @@ const site = (script) => `<!doctype html>
 <meta property="og:image" content="https://describble.com/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Describble: a hand-drawn avatar appearing from a sentence">
+<meta property="og:image:alt" content="Describble: a hand-drawn style avatar appearing from a sentence">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 @font-face { font-family: "Bricolage Grotesque"; font-weight: 750; font-display: swap; src: url(data:font/woff2;base64,${displayFont}) format("woff2");
@@ -277,8 +277,8 @@ footer p { margin: 0; max-width: 46em; }
 <main>
   <div id="hero">
     <div class="intro">
-      <h1><span class="kicker" data-copy="kicker">Free avatar maker · no AI, no sign-up</span> <span data-copy="headline">Describe someone. Watch them get drawn.</span></h1>
-      <p class="lede" data-copy="lede">Hand-drawn avatars from a sentence. No AI, no account, nothing to install.</p>
+      <h1><span class="kicker" data-copy="kicker">Free avatar maker · no AI generation, no sign-up</span> <span data-copy="headline">Describe someone. Watch them get drawn.</span></h1>
+      <p class="lede" data-copy="lede">Hand-drawn style avatars from a sentence. No AI model, no account, nothing to install.</p>
     </div>
     <div class="drawing"><svg id="stage" role="img" aria-label="The character you are describing"></svg></div>
     <div class="composer">
@@ -302,7 +302,7 @@ footer p { margin: 0; max-width: 46em; }
   </section>
 
   <section aria-labelledby="how-title">
-    <h2 id="how-title" data-copy="howTitle">No AI. Just words and a pencil.</h2>
+    <h2 id="how-title" data-copy="howTitle">An avatar maker with no AI model. Just words and rules.</h2>
     <div class="how" data-copy="how"><p></p><p></p><p></p></div>
   </section>
 
@@ -389,7 +389,7 @@ const galleryFiles = siteGallery.en.map((sentence, i) => {
   stage.draw(1, 0);
   delete globalThis.document;
   Object.assign(svg.attrs, { xmlns: 'http://www.w3.org/2000/svg', width: '512', height: '512' });
-  svg.children.unshift({ ...svgNode('title'), text: `Hand-drawn avatar: ${sentence}` });
+  svg.children.unshift({ ...svgNode('title'), text: `Hand-drawn style avatar: ${sentence}` });
   return { name: gallerySlug(sentence), svg: svgText(svg) };
 });
 const galleryHtml = (lang, depth) => (siteGallery[lang] ?? siteGallery.en).map((sentence, i) => {

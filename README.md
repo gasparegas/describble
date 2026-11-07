@@ -6,13 +6,17 @@
 
 ![Describble live: typing "blond, cigarette in mouth, tired eyes, red beanie" and then "girl with a pink bob, heart glasses and freckles" draws each character while you type](docs/demo.gif)
 
-Describble turns a sentence into a hand-drawn avatar while you type. Write `blond, cigarette in mouth, tired eyes` and a character appears on a round paper card, trembling while it figures you out, turning its head when something changes, settling when you stop. Download it, share the link, use it as your profile picture.
+Describble turns a sentence into a hand-drawn style avatar while you type. Write `blond, cigarette in mouth, tired eyes` and a character appears on a round paper card, trembling while it figures you out, turning its head when something changes, settling when you stop. Download it, share the link, use it as your profile picture.
 
-No AI. No account. No ads. It all runs in your browser and understands English, Italian and Portuguese. The only thing that can leave your browser is an anonymous count of single words it did not understand, so it can learn them, and one click turns that off. See [PRIVACY.md](PRIVACY.md).
+No AI model, no account, no ads: nothing is generated when you type. It all runs in your browser and understands English, Italian and Portuguese. The only thing that can leave your browser is an anonymous count of single words it did not understand, so it can learn them, and one click turns that off. See [PRIVACY.md](PRIVACY.md).
 
 If Describble made you smile, a ⭐ on this repository helps other people find it. And if it didn't understand a word, [tell us](https://github.com/gasparegas/describble/issues/new/choose).
 
 > Status: early, and growing fast.
+
+## How it was made
+
+Describble was built with a lot of help from [Claude Code](https://claude.com/claude-code), an AI coding assistant: it wrote much of the code and the SVG path data of the pieces, with a person steering, testing and fixing every step. That is what `CLAUDE.md` is for. The product itself has no AI model in it: a sentence goes through a dictionary and rules in your browser, and the same text always gives the same face.
 
 ## Why
 
@@ -26,7 +30,7 @@ Most avatar makers give you a random face or a long form of dropdowns. Describbl
 
 ## What it can draw
 
-![Twelve hand-drawn avatars, each with the sentence that generated it](docs/gallery.png)
+![Twelve hand-drawn style avatars, each with the sentence that generated it](docs/gallery.png)
 
 | Area | Examples |
 |---|---|
