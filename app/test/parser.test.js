@@ -154,3 +154,17 @@ test('stretched words are read as the word they stretch', () => {
   // Italian doubled consonants are real words, never shortened: "tutta" is not "tuta" (tracksuit).
   assert.ok(!parse('tutta rossa').found.includes('clothes:tracksuit'));
 });
+
+test('a colour between two nouns goes to the one that has no colour yet', () => {
+  const cases = {
+    'green hat purple t-shirt': ['hatColor:green', 'clothesColor:purple'], 'blue eyes red hair': ['eyeColor:blue', 'hairColor:red'],
+    'red scarf blue jacket': ['itemColor:scarf.red', 'clothesColor:blue'], 'occhi blu capelli rossi': ['eyeColor:blue', 'hairColor:red'],
+  };
+  for (const [text, traits] of Object.entries(cases)) {
+    const { found } = parse(text);
+    for (const trait of traits) assert.ok(found.includes(trait), `${text}: ${found}`);
+  }
+  assert.ok(!parse('green hat purple t-shirt').found.includes('hatColor:purple'));
+  // With a single noun, both colours still belong to it.
+  assert.deepEqual(parse('red and blue scarf').found.filter((t) => t.startsWith('itemColor')).sort(), ['itemColor:scarf.blue', 'itemColor:scarf.red']);
+});

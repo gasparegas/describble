@@ -170,6 +170,8 @@ export function parse(text) {
   const crossesBreak = (a, b) => tokens.slice(Math.min(a, b), Math.max(a, b)).some(isBreak);
 
   const refined = new Set();
+  // Nouns that already took a colour: "green hat purple t-shirt" gives purple to the t-shirt, not the hat.
+  const coloured = new Set();
   for (const hit of hits) {
     for (const trait of hit.traits ?? []) place(hit, trait);
     if (hit.contextual) {
@@ -185,8 +187,9 @@ export function parse(text) {
       .filter((other) => nounOf(other) && !crossesBreak(hit.start, other.start))
       .map((other) => ({ other, reach: Math.abs(hit.start - other.start) }))
       .filter(({ reach }) => reach <= COLOR_REACH)
-      .sort((a, b) => a.reach - b.reach || a.other.start - b.other.start);
+      .sort((a, b) => coloured.has(a.other) - coloured.has(b.other) || a.reach - b.reach || a.other.start - b.other.start);
     const owner = owners[0]?.other;
+    if (owner) coloured.add(owner);
     const noun = owner && nounOf(owner);
     if (noun?.startsWith('item.')) place(hit, `itemColor:${noun.slice(5)}.${hit.color}`);
     else if (noun && noun !== 'uncolored') place(hit, `${noun}Color:${hit.color}`);

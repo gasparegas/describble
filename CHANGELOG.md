@@ -2,6 +2,10 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.4.2 (2026-11-07)
+
+- A colour between two things goes to the one that has no colour yet: "green hat purple t-shirt" gives a purple t-shirt and "blue eyes red hair" gives red hair, without needing "and".
+
 ## 0.4.1 (2026-11-06)
 
 - The gallery faces are drawn once at build time as SVG files with descriptive names and alt text in the page's language, and the sitemap lists them, so they can show up in image search. The page also no longer draws twelve faces when it opens.
