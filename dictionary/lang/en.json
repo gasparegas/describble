@@ -225,7 +225,11 @@
       "muscular",
       "jacked",
       "jawline",
-      "chiseled"
+      "chiseled",
+      "strong chin",
+      "square chin",
+      "defined jaw",
+      "defined jawline"
     ],
     "face:long": [
       "skinny",
@@ -243,7 +247,8 @@
       "button nose",
       "small nose",
       "cute nose",
-      "tiny nose"
+      "tiny nose",
+      "round nose"
     ],
     "nose:long": [
       "long nose"
@@ -253,7 +258,12 @@
       "large nose",
       "huge nose",
       "schnoz",
-      "schnozz"
+      "schnozz",
+      "bulbous nose",
+      "protruding nose",
+      "big nouse",
+      "large nouse",
+      "huge nouse"
     ],
     "nose:pointy": [
       "pointy nose",
@@ -285,7 +295,10 @@
       "bloomer",
       "jolly",
       "delighted",
-      "in a good mood"
+      "in a good mood",
+      "excited",
+      "thrilled",
+      "enthusiastic"
     ],
     "mood:sad": [
       "sad",
@@ -346,7 +359,8 @@
       "afraid",
       "frightened",
       "terrified",
-      "spooked"
+      "spooked",
+      "horrified"
     ],
     "mood:bored": [
       "bored",
@@ -364,7 +378,9 @@
       "chad",
       "pleased with himself",
       "self satisfied",
-      "arrogant"
+      "arrogant",
+      "confident",
+      "self confident"
     ],
     "mood:blank": [
       "thousand yard stare",
@@ -443,7 +459,9 @@
       "sparkling",
       "huge eyes",
       "anime eyes",
-      "doe eyes"
+      "doe eyes",
+      "wide eyed",
+      "wide open eyes"
     ],
     "eyes:small": [
       "small eyes",
@@ -1610,7 +1628,10 @@
       "dark skinned",
       "black skin",
       "brown skin",
-      "dark complexion"
+      "dark complexion",
+      "darker skin",
+      "very dark skin",
+      "deep skin"
     ],
     "skin:tan": [
       "tan",
@@ -1619,7 +1640,11 @@
       "surfer",
       "tan skin",
       "suntanned",
-      "olive skinned"
+      "olive skinned",
+      "light brown skin",
+      "medium skin",
+      "medium brown skin",
+      "olive"
     ],
     "skin:pale": [
       "pale",
@@ -1632,7 +1657,10 @@
       "light skin",
       "ghostly",
       "fair",
-      "fair skinned"
+      "fair skinned",
+      "lighter skin",
+      "very light skin",
+      "porcelain skin"
     ],
     "clothes:turtleneck": [
       "turtleneck",
@@ -1744,6 +1772,15 @@
       "top",
       "dress",
       "skirt"
+    ],
+    "skin": [
+      "skin",
+      "skin tone",
+      "skin color",
+      "skin colour",
+      "skinned",
+      "complexion",
+      "skincolor"
     ]
   },
   "contextual": {
@@ -1786,7 +1823,33 @@
     "outside",
     "blush",
     "blushing",
-    "thick"
+    "thick",
+    "wearing",
+    "slightly",
+    "fairly",
+    "regular",
+    "real",
+    "both",
+    "around",
+    "that",
+    "while",
+    "full",
+    "half",
+    "chin",
+    "ears",
+    "cheeks",
+    "teeth",
+    "nose",
+    "nouse",
+    "adult",
+    "human",
+    "body",
+    "beautiful",
+    "pretty",
+    "ugly",
+    "soft",
+    "smooth skin",
+    "realistic"
   ],
   "negations": [
     "no",

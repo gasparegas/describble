@@ -108,8 +108,23 @@ function destretch(token) {
   return candidates.find(knownToken) ?? token;
 }
 
+// Two known words typed together: "redglasses", "longbeard", "mancap". Only when the whole word is
+// unknown (not even a typo or an altered form) and both halves are real entries, not filler words.
+const isContent = (part) => exactIndex.has(part) || (lexiconIndex.get(phraseKey([part])) && !lexiconIndex.get(phraseKey([part])).ignored);
+function splitJoined(token) {
+  if (token.length < 6 || knownToken(token) || lookupAltered(token) || lookupTypo(token)) return [token];
+  for (let at = 3; at <= token.length - 3; at++) {
+    const [left, right] = [token.slice(0, at), token.slice(at)];
+    if (isContent(left) && isContent(right)) return [left, right];
+  }
+  return [token];
+}
+
 // Accessories with their own colour: "green scarf" becomes itemColor:scarf.green.
 const COLORABLE = ['scarf', 'tie', 'bowtie', 'bow', 'earmuffs', 'headphones', 'headset', 'cape', 'mask', 'choker'].map((d) => `detail:${d}`);
+// "white skin", "skin tone dark": a colour next to "skin" picks the nearest skin tone we draw.
+// Yellow and red have no tone on purpose (they read as stereotypes), so they draw nothing.
+const SKIN_TONES = { white: 'pale', pink: 'pale', black: 'dark', brown: 'dark', orange: 'tan', green: 'green', blue: 'blue', grey: 'grey', purple: 'purple' };
 const hasTrait = (hit, prefix) => hit.traits?.some((trait) => trait.startsWith(prefix));
 
 // "uncolored": the colour belongs to this piece, but the catalog has no colour slot for it.
@@ -128,7 +143,7 @@ const nounOf = (hit) => {
 export { tokenize };
 
 export function parse(text) {
-  const tokens = tokenize(text).map(destretch);
+  const tokens = tokenize(text).map(destretch).flatMap(splitJoined);
   const hits = [];
   const consumed = new Array(tokens.length).fill(false);
   for (let i = 0; i < tokens.length; i++) {
@@ -191,7 +206,9 @@ export function parse(text) {
     const owner = owners[0]?.other;
     if (owner) coloured.add(owner);
     const noun = owner && nounOf(owner);
-    if (noun?.startsWith('item.')) place(hit, `itemColor:${noun.slice(5)}.${hit.color}`);
+    if (noun === 'skin') {
+      if (SKIN_TONES[hit.color]) place(hit, `skin:${SKIN_TONES[hit.color]}`);
+    } else if (noun?.startsWith('item.')) place(hit, `itemColor:${noun.slice(5)}.${hit.color}`);
     else if (noun && noun !== 'uncolored') place(hit, `${noun}Color:${hit.color}`);
     else if (!owner) place(hit, `accent:${hit.color}`);
   }

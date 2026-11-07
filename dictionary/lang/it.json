@@ -218,7 +218,10 @@
       "muscoloso",
       "muscolosa",
       "palestrato",
-      "palestrata"
+      "palestrata",
+      "mento pronunciato",
+      "mento squadrato",
+      "mento forte"
     ],
     "face:long": [
       "viso lungo",
@@ -260,7 +263,8 @@
       "sopracciglia folte",
       "sopraccigliona",
       "sopracciglioni",
-      "sopracciglia spesse"
+      "sopracciglia spesse",
+      "folte sopracciglia"
     ],
     "brows:thin": [
       "sopracciglia sottili"
@@ -279,7 +283,12 @@
       "felicissima",
       "allegra",
       "gioiosa",
-      "di buon umore"
+      "di buon umore",
+      "entusiasta",
+      "eccitato",
+      "eccitata",
+      "gasato",
+      "gasata"
     ],
     "mood:sad": [
       "triste",
@@ -359,7 +368,9 @@
       "😱",
       "spaventata",
       "impaurita",
-      "terrorizzata"
+      "terrorizzata",
+      "inorridito",
+      "inorridita"
     ],
     "mood:bored": [
       "annoiato",
@@ -383,7 +394,9 @@
       "spavalda",
       "arrogante",
       "presuntuoso",
-      "presuntuosa"
+      "presuntuosa",
+      "sicuro di sé",
+      "sicura di sé"
     ],
     "mood:blank": [
       "sguardo vuoto",
@@ -834,7 +847,8 @@
       "dottoressa",
       "medico",
       "mascherina chirurgica",
-      "mascherina ffp2"
+      "mascherina ffp2",
+      "maschera da hockey"
     ],
     "detail:eyepatch": [
       "benda sull occhio",
@@ -1751,6 +1765,11 @@
       "maglia",
       "abito",
       "gonna"
+    ],
+    "skin": [
+      "pelle",
+      "carnagione",
+      "incarnato"
     ]
   },
   "contextual": {
@@ -1796,7 +1815,22 @@
     "guance rosa",
     "persona",
     "mamma",
-    "volto"
+    "volto",
+    "sulla",
+    "sullo",
+    "sul",
+    "davanti",
+    "fronte",
+    "mento",
+    "sopracciglia",
+    "orecchie",
+    "orecchie nascoste",
+    "nascoste",
+    "occidentale",
+    "guance",
+    "denti",
+    "naso",
+    "testa"
   ],
   "negations": [
     "senza",

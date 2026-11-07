@@ -2,6 +2,16 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.4.4 (2026-11-07)
+
+Words people typed after the r/webdev post.
+
+- "skin" (and "pelle", "pele", "skin tone", "complexion") is a noun: "white skin", "skin tone dark" or "pelle scura" set the skin tone. Yellow and red skin draw nothing on purpose.
+- Noses: "round nose", "bulbous nose", "protruding nose"; chins: "strong chin", "mento pronunciato"; "maschera da hockey".
+- Moods: "confident", "excited", "horrified" (and "entusiasta", "inorridito").
+- Two known words typed together are split: "redglasses", "longbeard", "glassesgray".
+- Filler words such as "wearing", "slightly", "fairly", "sulla", "davanti" are no longer reported as unknown.
+
 ## 0.4.3 (2026-11-07)
 
 - The moustache sits above the mouth instead of over it.

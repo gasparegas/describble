@@ -168,3 +168,21 @@ test('a colour between two nouns goes to the one that has no colour yet', () => 
   // With a single noun, both colours still belong to it.
   assert.deepEqual(parse('red and blue scarf').found.filter((t) => t.startsWith('itemColor')).sort(), ['itemColor:scarf.blue', 'itemColor:scarf.red']);
 });
+
+test('words people typed on the r/webdev day: skin as a noun, noses, moods, joined words', () => {
+  const cases = {
+    'white skin': 'skin:pale', 'skin tone dark': 'skin:dark', 'light brown skin': 'skin:tan', 'pelle scura': 'skin:dark', 'pele morena': 'skin:tan',
+    'round nose': 'nose:button', 'bulbous nose': 'nose:big', 'big nouse': 'nose:big', 'strong chin': 'face:square', 'mento pronunciato': 'face:square',
+    'confident guy': 'mood:smug', 'excited girl': 'mood:happy', 'horrified man': 'mood:scared', 'maschera da hockey': 'detail:mask',
+    'redglasses': 'eyewear:glasses', 'longbeard': 'facial:longBeard',
+  };
+  for (const [text, trait] of Object.entries(cases)) assert.ok(parse(text).found.includes(trait), `${text}: ${parse(text).found}`);
+  // A colour next to skin never becomes a hair or accent colour, and yellow skin draws nothing.
+  assert.deepEqual(parse('yellow skin').found, []);
+  assert.ok(!parse('white skin').found.some((t) => t.startsWith('accent:')));
+  for (const text of ['wearing a hat', 'slightly tired', 'fairly long hair', 'sulla testa', 'orecchie nascoste']) {
+    assert.deepEqual(parse(text).unknown.filter((w) => w !== 'a'), [], text);
+  }
+  // Joined words split only into real entries: "leather" stays one word.
+  assert.ok(parse('leather jacket').found.includes('clothes:jacket'));
+});

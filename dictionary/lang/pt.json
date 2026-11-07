@@ -1017,19 +1017,23 @@
     ],
     "skin:dark": [
       "pele escura",
-      "pele negra"
+      "pele negra",
+      "pele preta"
     ],
     "skin:tan": [
       "bronzeado",
       "bronzeada",
-      "pele bronzeada"
+      "pele bronzeada",
+      "pele morena",
+      "pele oliva"
     ],
     "skin:pale": [
       "pálido",
       "pálida",
       "pele clara",
       "branquelo",
-      "branquela"
+      "branquela",
+      "pele branca"
     ]
   },
   "colors": {
@@ -1143,6 +1147,10 @@
       "roupa",
       "roupas",
       "blusa"
+    ],
+    "skin": [
+      "pele",
+      "tom de pele"
     ]
   },
   "contextual": {
@@ -1220,7 +1228,11 @@
     "fofa",
     "e",
     "de",
-    "o"
+    "o",
+    "queixo",
+    "orelhas",
+    "bochechas",
+    "dentes"
   ],
   "negations": [
     "sem",

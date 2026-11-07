@@ -198,6 +198,30 @@
       "lang": "it",
       "status": "skip",
       "note": "an action, not a portrait"
+    },
+    {
+      "word": "athletic",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs a body-build piece (broad shoulders)"
+    },
+    {
+      "word": "toned",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs a body-build piece (broad shoulders)"
+    },
+    {
+      "word": "scollato",
+      "lang": "it",
+      "status": "todo",
+      "note": "needs a low-neck top"
+    },
+    {
+      "word": "aerei",
+      "lang": "it",
+      "status": "skip",
+      "note": "a scene, not a portrait"
     }
   ]
 }
