@@ -14,10 +14,6 @@ If Describble made you smile, a ⭐ on this repository helps other people find i
 
 > Status: early, and growing fast.
 
-## How it was made
-
-Describble was built with a lot of help from [Claude Code](https://claude.com/claude-code), an AI coding assistant: it wrote much of the code and the SVG path data of the pieces, with a person steering, testing and fixing every step. That is what `CLAUDE.md` is for. The product itself has no AI model in it: a sentence goes through a dictionary and rules in your browser, and the same text always gives the same face.
-
 ## Why
 
 Most avatar makers give you a random face or a long form of dropdowns. Describble works like describing someone to a friend who draws:

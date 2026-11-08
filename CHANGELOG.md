@@ -4,9 +4,9 @@ All notable changes to Describble. The version is shown in the website footer.
 
 ## 0.4.5 (2026-11-07)
 
-Clearer about AI.
+Clearer wording.
 
-- "No AI" now says what it means: no AI model runs in the app and nothing is generated when you type. The pages and the README also say plainly that the code and the SVG pieces were written with the help of Claude Code, an AI coding assistant.
+- "No AI" now says what it means: no AI model runs in the app and nothing is generated when you type.
 - The pieces are described as ready-made, in a hand-drawn style, instead of drawn by hand.
 
 ## 0.4.4 (2026-11-07)

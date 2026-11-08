@@ -10,11 +10,6 @@ app/dist/
 .idea/
 *.log
 
-# Local tool state
-.claude/
-.hallmark/
-.taste-skill/
-.impeccable/
 node_modules/
 
 # Collector deploy config (contains account ids)
