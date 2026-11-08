@@ -21,7 +21,9 @@
       "longhair",
       "shoulder length hair",
       "waist length hair",
-      "flowing hair"
+      "flowing hair",
+      "long locks",
+      "flowing locks"
     ],
     "hair:spiky": [
       "spiky",
@@ -57,7 +59,9 @@
       "hairless",
       "baldie",
       "chrome dome",
-      "bold"
+      "bold",
+      "baldy",
+      "bald guy"
     ],
     "hair:ponytail": [
       "ponytail",
@@ -99,7 +103,13 @@
       "windblown",
       "windswept",
       "wind blown hair",
-      "blown hair"
+      "blown hair",
+      "fluffy hair",
+      "pluffy hair",
+      "fluffy",
+      "floofy hair",
+      "poofy hair",
+      "puffy hair"
     ],
     "hair:braids": [
       "braids",
@@ -137,7 +147,10 @@
       "bangs",
       "fringe",
       "straight bangs",
-      "blunt bangs"
+      "blunt bangs",
+      "bowl cut",
+      "bowl haircut",
+      "bowl"
     ],
     "hair:quiff": [
       "banana",
@@ -154,7 +167,10 @@
       "soldier",
       "buzzed",
       "buzzed hair",
-      "army cut"
+      "army cut",
+      "shaved",
+      "shaved hair",
+      "shaved short"
     ],
     "hair:pigtails": [
       "due code",
@@ -169,7 +185,17 @@
       "side part",
       "slicked",
       "combed",
-      "vampire"
+      "vampire",
+      "campire",
+      "left parting",
+      "right parting",
+      "side parting",
+      "parting",
+      "comb over",
+      "combover",
+      "combed over",
+      "left part",
+      "right part"
     ],
     "hair:undercut": [
       "undercut",
@@ -214,7 +240,12 @@
       "chubby face",
       "full face",
       "baby face",
-      "round cheeks"
+      "round cheeks",
+      "double chin",
+      "obese",
+      "fat face",
+      "plump",
+      "chunky"
     ],
     "face:square": [
       "square jaw",
@@ -229,26 +260,42 @@
       "strong chin",
       "square chin",
       "defined jaw",
-      "defined jawline"
+      "defined jawline",
+      "sharp jaw",
+      "sharp jawline",
+      "angular jaw",
+      "stocky",
+      "stalky",
+      "strong",
+      "broad shoulders"
     ],
     "face:long": [
       "skinny",
       "slim",
       "thin",
       "thin face",
-      "long face"
+      "long face",
+      "oval face",
+      "narrow face",
+      "long oval face"
     ],
     "face:pointy": [
       "pointy chin",
       "sharp chin",
-      "pointed chin"
+      "pointed chin",
+      "sharp face",
+      "angular face",
+      "angled face",
+      "pointy face"
     ],
     "nose:button": [
       "button nose",
       "small nose",
       "cute nose",
       "tiny nose",
-      "round nose"
+      "round nose",
+      "button nosed",
+      "small nosed"
     ],
     "nose:long": [
       "long nose"
@@ -263,12 +310,19 @@
       "protruding nose",
       "big nouse",
       "large nouse",
-      "huge nouse"
+      "huge nouse",
+      "wide nose",
+      "big nosed",
+      "large nosed",
+      "broad nose"
     ],
     "nose:pointy": [
       "pointy nose",
       "hooked nose",
-      "sharp nose"
+      "sharp nose",
+      "hook nosed",
+      "pointy nosed",
+      "hooknose"
     ],
     "brows:thick": [
       "bushy eyebrows",
@@ -277,7 +331,11 @@
       "bushy brows",
       "big eyebrows",
       "bold eyebrows",
-      "bold brows"
+      "bold brows",
+      "strong eyebrows",
+      "heavy eyebrows",
+      "thick eyebrow",
+      "eyebrows bushy"
     ],
     "brows:thin": [
       "thin eyebrows",
@@ -298,7 +356,11 @@
       "in a good mood",
       "excited",
       "thrilled",
-      "enthusiastic"
+      "enthusiastic",
+      "wide smile",
+      "big smile",
+      "grinning",
+      "grin"
     ],
     "mood:sad": [
       "sad",
@@ -337,7 +399,10 @@
       "burnt out",
       "burned out",
       "sleep deprived",
-      "drugged"
+      "drugged",
+      "drunk",
+      "tipsy",
+      "hungover"
     ],
     "mood:asleep": [
       "asleep",
@@ -380,7 +445,11 @@
       "self satisfied",
       "arrogant",
       "confident",
-      "self confident"
+      "self confident",
+      "evil",
+      "evil smile",
+      "smirking",
+      "smirk"
     ],
     "mood:blank": [
       "thousand yard stare",
@@ -390,7 +459,11 @@
       "expressionless",
       "doomer",
       "poker face",
-      "emotionless"
+      "emotionless",
+      "dead",
+      "dead eyes",
+      "dead eyed",
+      "vacant"
     ],
     "mood:despair": [
       "despair",
@@ -461,7 +534,8 @@
       "anime eyes",
       "doe eyes",
       "wide eyed",
-      "wide open eyes"
+      "wide open eyes",
+      "alian"
     ],
     "eyes:small": [
       "small eyes",
@@ -483,7 +557,14 @@
       "nerd glasses",
       "rimmed glasses",
       "bespectacled",
-      "four eyes"
+      "four eyes",
+      "rectangular glasses",
+      "rectangle glasses",
+      "rimless glasses",
+      "rimless",
+      "square glasses",
+      "transparent glasses",
+      "clear glasses"
     ],
     "eyewear:round": [
       "round glasses",
@@ -492,7 +573,10 @@
       "nerd",
       "nerdy",
       "circle glasses",
-      "harry potter glasses"
+      "harry potter glasses",
+      "oval glasses",
+      "rounded glasses",
+      "round lenses"
     ],
     "eyewear:monocle": [
       "monocle",
@@ -514,7 +598,8 @@
       "dark glasses",
       "cool glasses",
       "aviator glasses",
-      "wayfarers"
+      "wayfarers",
+      "blind"
     ],
     "facial:beard": [
       "beard",
@@ -525,7 +610,13 @@
       "full beard",
       "bearded man",
       "beardy",
-      "thick beard"
+      "thick beard",
+      "trimmed beard",
+      "neat beard",
+      "neckbeard",
+      "neckbird",
+      "neck beard",
+      "salt and pepper beard"
     ],
     "facial:longBeard": [
       "barbone",
@@ -589,7 +680,9 @@
       "trucker hat",
       "trucker cap",
       "snapback",
-      "dad hat"
+      "dad hat",
+      "ballcap",
+      "baseballcap"
     ],
     "hat:hood": [
       "hood",
@@ -794,7 +887,8 @@
       "button up",
       "farmer",
       "lumberjack",
-      "woodcutter"
+      "woodcutter",
+      "blous"
     ],
     "clothes:sweater": [
       "sweater",
@@ -900,7 +994,9 @@
       "trapper",
       "tatted",
       "inked",
-      "neck tattoo"
+      "neck tattoo",
+      "tatto",
+      "tattoed"
     ],
     "detail:bags": [
       "bags under",
@@ -921,7 +1017,9 @@
       "medical mask"
     ],
     "detail:eyepatch": [
-      "eye patch"
+      "eye patch",
+      "patch",
+      "eyepatch"
     ],
     "detail:wrinkles": [
       "wrinkles",
@@ -1012,7 +1110,10 @@
       "girly",
       "femme",
       "chick",
-      "cowgirl"
+      "cowgirl",
+      "women",
+      "womens",
+      "bombshell"
     ],
     "hair:wavyLong": [
       "long wavy hair",
@@ -1322,7 +1423,8 @@
       "cape",
       "cloak",
       "vampire",
-      "superhero cape"
+      "superhero cape",
+      "campire"
     ],
     "detail:lashes": [
       "lashes",
@@ -1344,14 +1446,17 @@
       "fangs",
       "vampire teeth",
       "vampire",
-      "sharp teeth"
+      "sharp teeth",
+      "campire",
+      "sharp fangs"
     ],
     "skin:green": [
       "goblin",
       "green skin",
       "alien",
       "orc",
-      "green skinned"
+      "green skinned",
+      "alian"
     ],
     "skin:blue": [
       "blue skin"
@@ -1359,7 +1464,9 @@
     "skin:grey": [
       "zombie",
       "grey skin",
-      "gray skin"
+      "gray skin",
+      "ghoul",
+      "undead"
     ],
     "skin:purple": [
       "purple skin"
@@ -1600,7 +1707,11 @@
       "little kid",
       "toddler",
       "young kid",
-      "tween"
+      "tween",
+      "baby",
+      "infant",
+      "toddler girl",
+      "toddler boy"
     ],
     "age:young": [
       "young",
@@ -1644,7 +1755,8 @@
       "light brown skin",
       "medium skin",
       "medium brown skin",
-      "olive"
+      "dusky",
+      "dusky skin"
     ],
     "skin:pale": [
       "pale",
@@ -1660,7 +1772,8 @@
       "fair skinned",
       "lighter skin",
       "very light skin",
-      "porcelain skin"
+      "porcelain skin",
+      "campire"
     ],
     "clothes:turtleneck": [
       "turtleneck",
@@ -1674,11 +1787,14 @@
       "black",
       "dark",
       "corvine",
-      "jet black"
+      "jet black",
+      "drak"
     ],
     "white": [
       "white",
-      "platinum"
+      "platinum",
+      "whute",
+      "whyte"
     ],
     "grey": [
       "grey",
@@ -1688,7 +1804,9 @@
     "brown": [
       "brown",
       "beige",
-      "camel"
+      "camel",
+      "browner",
+      "brownish"
     ],
     "red": [
       "red",
@@ -1721,13 +1839,16 @@
       "navy",
       "turquoise",
       "teal",
-      "cyan"
+      "cyan",
+      "baby blue"
     ],
     "purple": [
       "purple",
       "lilac",
       "lavender",
-      "violet"
+      "violet",
+      "purplish",
+      "purpley"
     ],
     "pink": [
       "pink",
@@ -1751,6 +1872,10 @@
     "red": [
       "ginger",
       "redhead"
+    ],
+    "grey": [
+      "salt and pepper",
+      "salt n pepper"
     ]
   },
   "colorNouns": {
@@ -1759,7 +1884,10 @@
       "bg"
     ],
     "hair": [
-      "hair"
+      "hair",
+      "gair",
+      "jair",
+      "hairs"
     ],
     "eye": [
       "eyes",
@@ -1849,7 +1977,104 @@
     "ugly",
     "soft",
     "smooth skin",
-    "realistic"
+    "realistic",
+    "eyebrows",
+    "eyebrow",
+    "sharp",
+    "wide",
+    "light",
+    "round",
+    "rounded",
+    "curved",
+    "angled",
+    "angular",
+    "oval",
+    "narrow",
+    "handsome",
+    "hansome",
+    "attractive",
+    "funny",
+    "modern",
+    "rare",
+    "straight",
+    "straight hair",
+    "year",
+    "years",
+    "year old",
+    "years old",
+    "old year",
+    "left",
+    "right",
+    "little",
+    "semi",
+    "somewhat",
+    "ultra",
+    "well",
+    "tall",
+    "high",
+    "five",
+    "side",
+    "middle",
+    "down",
+    "bottom",
+    "north",
+    "west",
+    "world",
+    "your",
+    "show",
+    "showing",
+    "second",
+    "split",
+    "soul",
+    "mount",
+    "hear",
+    "call",
+    "care",
+    "color",
+    "colour",
+    "colored",
+    "coloured",
+    "defined",
+    "cracked",
+    "crispy",
+    "trimmed",
+    "trim",
+    "locks",
+    "hairy",
+    "lens",
+    "lenses",
+    "iris",
+    "pupil",
+    "pupils",
+    "triangle",
+    "cross",
+    "eatting",
+    "eating",
+    "crawling",
+    "migrated",
+    "worker",
+    "engineer",
+    "supervisor",
+    "seductive",
+    "kissable",
+    "blown",
+    "blushy",
+    "rose",
+    "fcae",
+    "fsce",
+    "rectangular",
+    "bulbous",
+    "bushy",
+    "comb",
+    "nosed",
+    "pluffy",
+    "protruding",
+    "transparent",
+    "button",
+    "double",
+    "ball",
+    "shoulder",
+    "sign"
   ],
   "negations": [
     "no",

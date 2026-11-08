@@ -186,3 +186,20 @@ test('words people typed on the r/webdev day: skin as a noun, noses, moods, join
   // Joined words split only into real entries: "leather" stays one word.
   assert.ok(parse('leather jacket').found.includes('clothes:jacket'));
 });
+
+test('words people typed after the r/webdev day: hair, beards, glasses, faces and typos', () => {
+  const cases = {
+    'salt and pepper hair': 'hairColor:grey', 'left parting': 'hair:sidepart', 'comb over': 'hair:sidepart', 'bowl cut': 'hair:bangs',
+    'fluffy hair': 'hair:messy', 'trimmed beard': 'facial:beard', 'neckbeard': 'facial:beard', 'rimless glasses': 'eyewear:glasses',
+    'rectangular glasses': 'eyewear:glasses', 'bushy eyebrows': 'brows:thick', 'sharp jawline': 'face:square', 'oval face': 'face:long',
+    'double chin': 'face:round', 'hook nosed': 'nose:pointy', 'ballcap': 'hat:cap', 'evil': 'mood:smug', 'dead eyes': 'mood:blank',
+    'campire': 'detail:fangs', 'alian': 'skin:green', 'tatto': 'detail:tattoo', 'whute hoodie': 'clothesColor:white', 'drak hair': 'hairColor:black',
+  };
+  for (const [text, trait] of Object.entries(cases)) assert.ok(parse(text).found.includes(trait), `${text}: ${parse(text).found}`);
+  // "olive" alone is a colour, not a skin tone; "40 year old" does not make someone old.
+  assert.ok(parse('olive shirt').found.includes('clothesColor:green'));
+  assert.ok(!parse('olive shirt').found.includes('skin:tan'));
+  assert.ok(!parse('40 year old man').found.includes('age:old'));
+  // Italian "salta" must not collide with English words.
+  assert.deepEqual(parse('salta').found, []);
+});

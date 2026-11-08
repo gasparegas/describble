@@ -2,6 +2,18 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.4.6 (2026-11-08)
+
+The rest of the words people typed over the weekend.
+
+- Hair: "salt and pepper", "left parting", "comb over", "bowl cut", "fluffy hair", "shaved", "baldy", "long locks".
+- Beards and faces: "trimmed beard", "neckbeard", "double chin", "oval face", "sharp jawline", "stocky", "bushy eyebrows", "hook nosed".
+- Glasses and hats: "rimless", "rectangular glasses", "oval glasses", "ballcap".
+- Moods: "evil", "drunk", "dead eyes", "wide smile".
+- Common typos: "campire", "alian", "tatto", "whute", "drak", "neckbird".
+- "olive" on its own is a colour again, not a skin tone, and "40 year old" no longer makes someone old.
+- Many filler words are no longer reported as unknown. Real people, franchise characters and ethnicity words stay out on purpose; skin tone words work instead.
+
 ## 0.4.5 (2026-11-07)
 
 Clearer wording.

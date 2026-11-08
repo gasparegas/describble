@@ -222,6 +222,168 @@
       "lang": "it",
       "status": "skip",
       "note": "a scene, not a portrait"
+    },
+    {
+      "word": "rainbow",
+      "lang": "en",
+      "status": "todo",
+      "note": "rainbow or two-tone hair, like multicolor"
+    },
+    {
+      "word": "winking",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs a wink expression"
+    },
+    {
+      "word": "drooling",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs a drool detail on the mouth"
+    },
+    {
+      "word": "spacesuit",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs a space helmet piece"
+    },
+    {
+      "word": "monster",
+      "lang": "en",
+      "status": "todo",
+      "note": "needs horns, fur or claws pieces"
+    },
+    {
+      "word": "peace",
+      "lang": "en",
+      "status": "todo",
+      "note": "peace sign needs a hand in the frame"
+    },
+    {
+      "word": "alligator",
+      "lang": "en",
+      "status": "skip",
+      "note": "an animal, not a portrait"
+    },
+    {
+      "word": "parot",
+      "lang": "en",
+      "status": "skip",
+      "note": "a pet on the shoulder, not drawn yet"
+    },
+    {
+      "word": "pizza",
+      "lang": "en",
+      "status": "skip",
+      "note": "food, not a portrait"
+    },
+    {
+      "word": "tomato",
+      "lang": "en",
+      "status": "skip",
+      "note": "food, not a portrait"
+    },
+    {
+      "word": "snout",
+      "lang": "en",
+      "status": "skip",
+      "note": "animal face, not a portrait"
+    },
+    {
+      "word": "pokemon",
+      "lang": "en",
+      "status": "skip",
+      "note": "belongs to an existing franchise"
+    },
+    {
+      "word": "pikachu",
+      "lang": "en",
+      "status": "skip",
+      "note": "belongs to an existing franchise"
+    },
+    {
+      "word": "naruto",
+      "lang": "en",
+      "status": "skip",
+      "note": "belongs to an existing franchise"
+    },
+    {
+      "word": "roblox",
+      "lang": "en",
+      "status": "skip",
+      "note": "belongs to an existing franchise"
+    },
+    {
+      "word": "malfoy",
+      "lang": "en",
+      "status": "skip",
+      "note": "belongs to an existing franchise"
+    },
+    {
+      "word": "trump",
+      "lang": "en",
+      "status": "skip",
+      "note": "a real person, not drawn on purpose"
+    },
+    {
+      "word": "obama",
+      "lang": "en",
+      "status": "skip",
+      "note": "a real person, not drawn on purpose"
+    },
+    {
+      "word": "kanye",
+      "lang": "en",
+      "status": "skip",
+      "note": "a real person, not drawn on purpose"
+    },
+    {
+      "word": "hitler",
+      "lang": "en",
+      "status": "skip",
+      "note": "not drawn on purpose"
+    },
+    {
+      "word": "asian",
+      "lang": "en",
+      "status": "skip",
+      "note": "ethnicity words are not drawn, to avoid stereotypes; skin tone words work instead"
+    },
+    {
+      "word": "african",
+      "lang": "en",
+      "status": "skip",
+      "note": "ethnicity words are not drawn, to avoid stereotypes; skin tone words work instead"
+    },
+    {
+      "word": "chinese",
+      "lang": "en",
+      "status": "skip",
+      "note": "ethnicity words are not drawn, to avoid stereotypes"
+    },
+    {
+      "word": "japanese",
+      "lang": "en",
+      "status": "skip",
+      "note": "ethnicity words are not drawn, to avoid stereotypes"
+    },
+    {
+      "word": "indian",
+      "lang": "en",
+      "status": "skip",
+      "note": "ethnicity words are not drawn, to avoid stereotypes"
+    },
+    {
+      "word": "caucasian",
+      "lang": "en",
+      "status": "skip",
+      "note": "ethnicity words are not drawn; skin tone words work instead"
+    },
+    {
+      "word": "burka",
+      "lang": "en",
+      "status": "skip",
+      "note": "religious dress, easily a stereotype on its own"
     }
   ]
 }
