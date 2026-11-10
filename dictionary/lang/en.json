@@ -109,7 +109,8 @@
       "fluffy",
       "floofy hair",
       "poofy hair",
-      "puffy hair"
+      "puffy hair",
+      "genius"
     ],
     "hair:braids": [
       "braids",
@@ -425,7 +426,11 @@
       "frightened",
       "terrified",
       "spooked",
-      "horrified"
+      "horrified",
+      "embarrassed",
+      "nervous",
+      "awkward",
+      "shy"
     ],
     "mood:bored": [
       "bored",
@@ -449,7 +454,9 @@
       "evil",
       "evil smile",
       "smirking",
-      "smirk"
+      "smirk",
+      "wonky smile",
+      "wonky grin"
     ],
     "mood:blank": [
       "thousand yard stare",
@@ -504,7 +511,9 @@
       "devilish",
       "devilish smile",
       "devilish grin",
-      "evil grin"
+      "evil grin",
+      "wonky smile",
+      "wonky grin"
     ],
     "mouth:frown": [
       "frown",
@@ -564,7 +573,8 @@
       "rimless",
       "square glasses",
       "transparent glasses",
-      "clear glasses"
+      "clear glasses",
+      "genius"
     ],
     "eyewear:round": [
       "round glasses",
@@ -811,7 +821,12 @@
       "classy",
       "business suit",
       "three piece suit",
-      "formal wear"
+      "formal wear",
+      "businessman",
+      "business man",
+      "millionaire",
+      "rich",
+      "billionaire"
     ],
     "clothes:tshirt": [
       "t shirt",
@@ -923,7 +938,8 @@
       "cop",
       "police",
       "soldier",
-      "medical uniform"
+      "medical uniform",
+      "genius"
     ],
     "detail:cigarette": [
       "cigarette",
@@ -1057,7 +1073,9 @@
     "detail:tie": [
       "tie",
       "necktie",
-      "neck tie"
+      "neck tie",
+      "businessman",
+      "business man"
     ],
     "detail:sideburns": [
       "sideburns"
@@ -1477,7 +1495,8 @@
     ],
     "hairColor:white": [
       "santa",
-      "scientist"
+      "scientist",
+      "genius"
     ],
     "hatColor:black": [
       "doomer"
@@ -2074,7 +2093,21 @@
     "double",
     "ball",
     "shoulder",
-    "sign"
+    "sign",
+    "about",
+    "absolutely",
+    "every",
+    "easily",
+    "things",
+    "ideas",
+    "direction",
+    "wears",
+    "arms",
+    "legs",
+    "mouth",
+    "terrible",
+    "intelligence",
+    "hatred"
   ],
   "negations": [
     "no",

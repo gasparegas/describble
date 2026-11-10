@@ -2,6 +2,15 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.4.7 (2026-11-10)
+
+More words people typed.
+
+- Moods: "embarrassed", "nervous", "awkward", "shy", "wonky smile".
+- Characters: "genius", "businessman", "millionaire", "rich".
+- Two words typed together with "and", "with" or "man" are now read apart ("glassesand", "mancap").
+- "hatred" no longer draws a red hat, and common words like "about", "wears" or "mouth" are no longer reported as unknown.
+
 ## 0.4.6 (2026-11-08)
 
 The rest of the words people typed over the weekend.

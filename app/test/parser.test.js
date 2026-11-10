@@ -203,3 +203,17 @@ test('words people typed after the r/webdev day: hair, beards, glasses, faces an
   // Italian "salta" must not collide with English words.
   assert.deepEqual(parse('salta').found, []);
 });
+
+test('words people typed on 10 November: moods, jobs, filler and glued words', () => {
+  const cases = {
+    'embarrassed girl': 'mood:scared', 'nervous guy': 'mood:scared', 'shy boy': 'mood:scared', 'wonky smile': 'mouth:smirk',
+    'genius': 'eyewear:glasses', 'businessman': 'clothes:suit', 'rich man': 'clothes:suit', 'millionaire': 'clothes:suit',
+    'mancap': 'hat:cap', 'glassesand': 'eyewear:glasses',
+  };
+  for (const [text, trait] of Object.entries(cases)) assert.ok(parse(text).found.includes(trait), `${text}: ${parse(text).found}`);
+  // "hatred" is a word of its own, not a red hat.
+  assert.deepEqual(parse('hatred').found, []);
+  for (const text of ['absolutely terrible ideas about things', 'wears glasses', 'arms and legs']) {
+    assert.deepEqual(parse(text).unknown.filter((w) => w !== 'and'), [], text);
+  }
+});

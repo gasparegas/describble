@@ -108,14 +108,17 @@ function destretch(token) {
   return candidates.find(knownToken) ?? token;
 }
 
-// Two known words typed together: "redglasses", "longbeard", "mancap". Only when the whole word is
-// unknown (not even a typo or an altered form) and both halves are real entries, not filler words.
+// Two known words typed together: "redglasses", "longbeard", "mancap", "glassesand". Only when the
+// whole word is unknown (not even a typo or an altered form) and both halves are real entries, or one
+// is a real entry and the other a common glue word.
 const isContent = (part) => exactIndex.has(part) || (lexiconIndex.get(phraseKey([part])) && !lexiconIndex.get(phraseKey([part])).ignored);
+const GLUE = new Set(['and', 'with', 'the', 'man', 'guy', 'con', 'uomo']);
 function splitJoined(token) {
   if (token.length < 6 || knownToken(token) || lookupAltered(token) || lookupTypo(token)) return [token];
   for (let at = 3; at <= token.length - 3; at++) {
     const [left, right] = [token.slice(0, at), token.slice(at)];
-    if (isContent(left) && isContent(right)) return [left, right];
+    const [a, b] = [isContent(left), isContent(right)];
+    if ((a && b) || (a && GLUE.has(right)) || (b && GLUE.has(left))) return [left, right];
   }
   return [token];
 }
