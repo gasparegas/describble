@@ -48,7 +48,10 @@
       "coily",
       "coily hair",
       "frizzy",
-      "frizzy hair"
+      "frizzy hair",
+      "waves",
+      "wavy waves",
+      "voluminous hair"
     ],
     "hair:bald": [
       "bald",
@@ -171,7 +174,12 @@
       "army cut",
       "shaved",
       "shaved hair",
-      "shaved short"
+      "shaved short",
+      "faded hair",
+      "fade haircut",
+      "skin fade",
+      "faded haircut",
+      "fade"
     ],
     "hair:pigtails": [
       "due code",
@@ -196,7 +204,8 @@
       "combover",
       "combed over",
       "left part",
-      "right part"
+      "right part",
+      "sidepart"
     ],
     "hair:undercut": [
       "undercut",
@@ -385,7 +394,9 @@
       "pissed",
       "irritated",
       "raging",
-      "fuming"
+      "fuming",
+      "agreesive",
+      "aggressive"
     ],
     "mood:tired": [
       "tired",
@@ -403,7 +414,8 @@
       "drugged",
       "drunk",
       "tipsy",
-      "hungover"
+      "hungover",
+      "dreamy"
     ],
     "mood:asleep": [
       "asleep",
@@ -456,7 +468,8 @@
       "smirking",
       "smirk",
       "wonky smile",
-      "wonky grin"
+      "wonky grin",
+      "villainous"
     ],
     "mood:blank": [
       "thousand yard stare",
@@ -574,7 +587,11 @@
       "square glasses",
       "transparent glasses",
       "clear glasses",
-      "genius"
+      "genius",
+      "geek",
+      "bookish",
+      "teacher",
+      "rims"
     ],
     "eyewear:round": [
       "round glasses",
@@ -720,7 +737,8 @@
       "re",
       "king",
       "prince",
-      "royal crown"
+      "royal crown",
+      "royal"
     ],
     "hat:generic": [
       "hat",
@@ -826,7 +844,9 @@
       "business man",
       "millionaire",
       "rich",
-      "billionaire"
+      "billionaire",
+      "sport jacket",
+      "sport coat"
     ],
     "clothes:tshirt": [
       "t shirt",
@@ -903,7 +923,8 @@
       "farmer",
       "lumberjack",
       "woodcutter",
-      "blous"
+      "blous",
+      "smart casual"
     ],
     "clothes:sweater": [
       "sweater",
@@ -968,7 +989,10 @@
       "cross earring",
       "cross earrings",
       "triangle earring",
-      "triangle earrings"
+      "triangle earrings",
+      "jewellery",
+      "jewelry",
+      "diamond"
     ],
     "detail:piercing": [
       "piercing",
@@ -1030,7 +1054,8 @@
       "doctor",
       "face mask",
       "surgical mask",
-      "medical mask"
+      "medical mask",
+      "criminal"
     ],
     "detail:eyepatch": [
       "eye patch",
@@ -1207,7 +1232,8 @@
       "visor",
       "cyberpunk",
       "futuristic visor",
-      "goggles"
+      "goggles",
+      "visior"
     ],
     "clothes:dress": [
       "dress",
@@ -1260,7 +1286,9 @@
     ],
     "detail:cyborg": [
       "robot",
-      "android"
+      "android",
+      "cybor",
+      "cyborg"
     ],
     "detail:ninja": [
       "ninja",
@@ -1365,7 +1393,12 @@
       "track jacket",
       "track suit",
       "zip up",
-      "zip-up"
+      "zip-up",
+      "trainer",
+      "fitness",
+      "sport",
+      "soccer",
+      "sporty"
     ],
     "eyewear:reading": [
       "reading glasses",
@@ -1391,7 +1424,10 @@
       "builder",
       "construction worker",
       "construction helmet",
-      "safety helmet"
+      "safety helmet",
+      "contruction",
+      "construction",
+      "contruction worker"
     ],
     "hat:bowler": [
       "bowler",
@@ -1676,7 +1712,9 @@
       "overalls",
       "dungarees",
       "mechanic",
-      "bib overalls"
+      "bib overalls",
+      "carpenter",
+      "tradie"
     ],
     "clothes:puffer": [
       "puffer",
@@ -1739,7 +1777,9 @@
       "girl",
       "boy",
       "young adult",
-      "youngster"
+      "youngster",
+      "yong",
+      "younger"
     ],
     "age:old": [
       "old",
@@ -1818,7 +1858,8 @@
     "grey": [
       "grey",
       "gray",
-      "silver"
+      "silver",
+      "greay"
     ],
     "brown": [
       "brown",
@@ -1875,7 +1916,10 @@
       "fuchsia",
       "rosa shocking",
       "neon pink",
-      "hot pink"
+      "hot pink",
+      "pinkish",
+      "rosey",
+      "rosy"
     ]
   },
   "hairOnlyColors": {
@@ -2107,7 +2151,59 @@
     "mouth",
     "terrible",
     "intelligence",
-    "hatred"
+    "hatred",
+    "aesthetic",
+    "alternative",
+    "avatar",
+    "build",
+    "business",
+    "cartoon",
+    "centred",
+    "centered",
+    "clean",
+    "clothing",
+    "complex",
+    "composition",
+    "details",
+    "drawn",
+    "expression",
+    "expressive",
+    "facing",
+    "features",
+    "framing",
+    "hairstyle",
+    "home",
+    "imperfect",
+    "looking",
+    "loose",
+    "minimal",
+    "neatly",
+    "normal",
+    "outlines",
+    "plain",
+    "shading",
+    "stands",
+    "style",
+    "subtle",
+    "striking",
+    "symmetrical",
+    "asymetric",
+    "tight",
+    "visible",
+    "visble",
+    "want",
+    "vision",
+    "length",
+    "layers",
+    "delicate",
+    "hard",
+    "sticking",
+    "stick",
+    "strands",
+    "faded",
+    "voluminous",
+    "calm",
+    "haircut"
   ],
   "negations": [
     "no",

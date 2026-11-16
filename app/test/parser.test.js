@@ -217,3 +217,19 @@ test('words people typed on 10 November: moods, jobs, filler and glued words', (
     assert.deepEqual(parse(text).unknown.filter((w) => w !== 'and'), [], text);
   }
 });
+
+test('words people typed in mid November: jobs, typos, moods and prompt filler', () => {
+  const cases = {
+    'sidepart': 'hair:sidepart', 'faded haircut': 'hair:buzz', 'cybor': 'detail:cyborg', 'greay hair': 'hairColor:grey',
+    'yong guy': 'age:young', 'visior': 'eyewear:visor', 'contruction worker': 'hat:helmet', 'geek': 'eyewear:glasses',
+    'tradie': 'clothes:overalls', 'royal': 'hat:crown', 'fitness trainer': 'clothes:tracksuit', 'criminal': 'detail:mask',
+    'villainous': 'mood:smug', 'agreesive': 'mood:angry', 'diamond': 'detail:earring', 'pinkish shirt': 'clothesColor:pink',
+    'smart casual': 'clothes:shirt', 'sport jacket': 'clothes:suit',
+  };
+  for (const [text, trait] of Object.entries(cases)) assert.ok(parse(text).found.includes(trait), `${text}: ${parse(text).found}`);
+  // Words copied from image prompts draw nothing and are not reported as unknown.
+  assert.deepEqual(parse('minimal cartoon style avatar, clean outlines, subtle shading').unknown, []);
+  assert.deepEqual(parse('minimal cartoon style avatar, clean outlines, subtle shading').found, []);
+  // "smart" alone is not a pair of glasses.
+  assert.ok(!parse('smart casual').found.includes('eyewear:glasses'));
+});

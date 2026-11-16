@@ -2,6 +2,17 @@
 
 All notable changes to Describble. The version is shown in the website footer.
 
+## 0.4.8 (2026-11-16)
+
+More words people typed.
+
+- Hair: "sidepart", "waves", "faded haircut", "voluminous hair".
+- Jobs and types: "geek", "bookish", "teacher", "carpenter", "tradie", "royal", "fitness trainer", "soccer", "criminal", "smart casual", "sport jacket".
+- Moods: "villainous", "aggressive", "dreamy".
+- Typos: "cybor", "greay", "yong", "visior", "contruction", "agreesive".
+- "pinkish", "rosey", "jewellery", "diamond", "rims".
+- Words copied from image prompts ("minimal", "cartoon style", "clean outlines", "shading") are no longer reported as unknown.
+
 ## 0.4.7 (2026-11-10)
 
 More words people typed.
